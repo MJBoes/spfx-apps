@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "whisky-app-webpart-client-side-solution",
+    "id": "b9f84695-4d44-46db-a926-dee3f3e1c342",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/whisky-app-webpart.sppkg"
+  }
+}

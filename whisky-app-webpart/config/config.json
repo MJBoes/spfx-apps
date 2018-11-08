@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "whisky-app-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/whiskyApp/WhiskyAppWebPart.js",
+          "manifest": "./src/webparts/whiskyApp/WhiskyAppWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "WhiskyAppWebPartStrings": "lib/webparts/whiskyApp/loc/{locale}.js"
+  }
+}

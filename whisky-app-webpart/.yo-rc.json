@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.6.0",
+    "libraryName": "whisky-app-webpart",
+    "libraryId": "b9f84695-4d44-46db-a926-dee3f3e1c342",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}

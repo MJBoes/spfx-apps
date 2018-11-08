@@ -1,0 +1,40 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.row {
+    @include ms-Grid-row;
+    padding: 20px;
+}
+
+.col5 {
+    @include ms-Grid-col;
+    @include ms-sm5;
+    i {
+        margin:0.5em;
+        font-size:24px;
+    }    
+}
+
+.card{
+    text-align: center;
+    line-height: 24px;
+    border: 2px solid silver;
+    span{
+        display:inline-block;
+        margin:0.5em;
+        text-align: center;
+        background-color: #ccc;
+        width:24px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .selected{
+        background-color: #eee;
+        color:#ddd;
+        cursor: not-allowed;        
+    }
+    .used{
+        background-color: #aaddaa;
+        color:#99bb99;            
+        cursor: not-allowed;
+    }
+}
