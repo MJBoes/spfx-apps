@@ -43,3 +43,11 @@ Update web part manifest to enable full width view (add "supportsFullBleed": tru
 gulp package-solution
 
 "npm run serve" start proxy en local dev. Rest werkt, full width waarschijnlijk ook. Volgende: hoe een async view te maken en hoe multipage
+
+==== GIT created new repo spfx-apps ==========
+git init (in d:\data\spfx-apps)
+git remote add origin https://github.com/MJBoes/spfx-apps.git
+Added .gitignore (content: node_modules/**)
+git add .
+git push -u origin master
+
