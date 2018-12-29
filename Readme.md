@@ -51,3 +51,16 @@ Added .gitignore (content: node_modules/**)
 git add .
 git push -u origin master
 
+=== Deploy ===
+gulp bundle --ship
+gulp package-solution --ship
+
+=== upgrade 1.7 ===
+See http://www.andrewconnell.com/blog/sharepoint-framework-v1-7-0-what-s-in-the-latest-update-of-spfx
+npm outdated --global // no outdated stuff
+npm outdated // both @microsoft/generator-sharepoint and @microsoft/sp-office-ui-fabric-core are (outdated) version 1.6.0
+npm install @microsoft/generator-sharepoint --save-dev
+npm install @microsoft/sp-office-ui-fabric-core
+
+
+

@@ -19,7 +19,7 @@
     "group": { "default": "Other" },
     "title": { "default": "Whisky App" },
     "description": { "default": "SPFX front-end UX for whisky assets on SharePoint" },
-    "officeFabricIconFontName": "Page",
+    "officeFabricIconFontName": "FavoriteStarFill",
     "properties": {
       "description": "Whisky App"
     }

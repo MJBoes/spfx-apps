@@ -14,6 +14,15 @@
     }    
 }
 
+.col2 {
+    @include ms-Grid-col;
+    @include ms-sm2;
+    i {
+        margin:0.5em;
+    }    
+    text-align: center;
+}
+
 .card{
     text-align: center;
     line-height: 24px;
@@ -41,4 +50,28 @@
         color:#99bb99;            
         cursor: not-allowed;
     }
+}
+
+.button{
+    line-height: 24px;
+    width:50px;
+    margin:0.5em;
+}
+
+.buttonSuccess{
+    background-color: green;
+    line-height: 24px;
+    width:50px;
+    margin:0.5em;
+}
+
+.buttonDanger{
+    background-color: red;
+    line-height: 24px;
+    width:50px;
+    margin:0.5em;
+}
+
+.doneFrame{
+    text-align: center;
 }
