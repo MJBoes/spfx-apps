@@ -40,3 +40,9 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
     );
   }
 }
+
+export const ExportedComponent = (props) => {
+  return (
+      <div>ExportedComponent Component</div>
+  );
+};
