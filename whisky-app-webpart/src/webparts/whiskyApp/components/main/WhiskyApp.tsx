@@ -4,6 +4,8 @@ import { IWhiskyAppProps } from './IWhiskyAppProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { SPHttpClient, SPHttpClientResponse, SPHttpClientConfiguration } from '@microsoft/sp-http';
 import {DistilleryList} from '../distillery/DistilleryList';
+import {PivotFabricExample} from '../fabriccomponents/fabric';
+
 import { Game } from '../game/stars';
 
 export default class WhiskyApp extends React.Component<IWhiskyAppProps, {}> {
@@ -16,7 +18,7 @@ export default class WhiskyApp extends React.Component<IWhiskyAppProps, {}> {
     return (
       <div className={styles.whiskyApp}>
         {this.state.route==0 && <Game/>}
-        {this.state.route==1 && <DistilleryList/>}
+        {this.state.route==1 && <PivotFabricExample/>}
         <a href="https://desktopservices.sharepoint.com/sites/communication-showcase-spfx/_layouts/15/workbench.aspx" className={styles.button}>
           <span className={styles.label}>Hosted workbench</span>
         </a>
