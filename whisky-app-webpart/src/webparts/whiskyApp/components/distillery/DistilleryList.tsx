@@ -6,8 +6,6 @@ import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
 import DocumentCardExample from './DocumentCardExample';
 import { ExportedComponent } from './DocumentCardExample';
 import { IDocumentCardExampleProps } from './IDocumentCardExampleProps';
-import { CommandBarBasicExample } from './FabricCommandBar';
-import { SearchBoxFullSizeExample } from './FabricSearchBox';
 
 export interface IWhiskyAppProps {
     description: string;
@@ -42,7 +40,7 @@ export class DistilleryList extends React.Component {
           );
         //return (<div>{element}</div>);
         
-        return (<div><CommandBarBasicExample/><SearchBoxFullSizeExample />Plan componenten:<ul><li>JSON file met REST calls</li><li>Geselecteerde call als bron gebruiken voor het renderen van Office UI componenten</li></ul>{element}<p><LocalComponent/><ExportedComponent/></p></div>);
+        return (<div>Plan componenten:<ul><li>JSON file met REST calls</li><li>Geselecteerde call als bron gebruiken voor het renderen van Office UI componenten</li></ul>{element}<p><LocalComponent/><ExportedComponent/></p></div>);
     }
 }
 

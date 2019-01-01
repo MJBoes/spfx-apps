@@ -9,7 +9,7 @@ import {PivotFabricExample} from '../fabriccomponents/fabric';
 import { Game } from '../game/stars';
 
 export default class WhiskyApp extends React.Component<IWhiskyAppProps, {}> {
-  state={route:1};
+  public state={route:1};
   public render(): React.ReactElement<IWhiskyAppProps> {
     //this.props.spHttpClient.get(this.props.webabsoluteurl + `/_api/search/query?querytext='refinablestring04:Distillery+ContentType%3dDossier'&trimduplicates=false&rowlimit=100&selectproperties='Title'&clienttype='ContentSearchRegular'`, SPHttpClient.configurations.v1)
     //.then((response: SPHttpClientResponse) => {

@@ -23,6 +23,8 @@ export class SearchBoxFullSizeExample extends React.Component<any, any> {
           onChange={() => console.log('onChange called')}
           disableAnimation
         /> */}
+        <p><a href="https://uifabricicons.azurewebsites.net/">Office UI Fabric Icons</a></p>
+        
       </div>
     );
   }

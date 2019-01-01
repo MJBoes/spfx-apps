@@ -73,7 +73,7 @@ export class CommandBarBasicExample extends React.Component<{}, {}> {
         onClick: () => console.log('Download')
       }
     ];
-  };
+  }
 
   private getOverlflowItems = () => {
     return [
@@ -102,7 +102,7 @@ export class CommandBarBasicExample extends React.Component<{}, {}> {
         }
       }
     ];
-  };
+  }
 
   private getFarItems = () => {
     return [
@@ -133,5 +133,5 @@ export class CommandBarBasicExample extends React.Component<{}, {}> {
         onClick: () => console.log('Info')
       }
     ];
-  };
+  }
 }

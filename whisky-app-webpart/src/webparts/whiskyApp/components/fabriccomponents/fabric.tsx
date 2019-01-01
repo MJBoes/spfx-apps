@@ -4,8 +4,9 @@ import { PivotLinkSize, PivotLinkFormat, PivotItem, Pivot } from 'office-ui-fabr
 
 import DocumentCardExample from './documentcard/DocumentCardExample';
 import { IDocumentCardExampleProps } from './documentcard/IDocumentCardExampleProps';
-import { CommandBarBasicExample } from '../distillery/FabricCommandBar';
-import { SearchBoxFullSizeExample } from '../distillery/FabricSearchBox';
+import { CommandBarBasicExample } from './commandbar/CommandBar';
+import { SearchBoxFullSizeExample } from './search/SearchBox';
+import { ListGridExample } from './list/gridlist';
 
 
 export class PivotFabricExample extends React.Component<any, any> {
@@ -25,6 +26,10 @@ export class PivotFabricExample extends React.Component<any, any> {
           <PivotItem linkText="SearchBox">
             <Label>SearchBox Example</Label>
             <SearchBoxFullSizeExample />
+          </PivotItem>
+          <PivotItem linkText="GridList">
+            <Label>GridList Example</Label>
+            <ListGridExample items={[{key: 1, name: 'example 1', thumbnail: 'https://placehold.it/214x214' }, { key: 2, name: 'example 2', thumbnail: 'https://placehold.it/214x214'}]} />
           </PivotItem>
         </Pivot>
       </div>

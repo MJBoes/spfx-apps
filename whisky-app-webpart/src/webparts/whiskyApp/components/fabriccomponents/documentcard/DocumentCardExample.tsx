@@ -32,7 +32,7 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
           activity='Created Feb 23, 2016'
           people={
             [
-              { name: 'Kat Larrson', profileImageSrc: String(require('./avatar-kat.png')) }
+              { name: 'Kat Larrson', profileImageSrc: String(require('./avatar-kat.png')) },{ name: 'Kat Larrson', profileImageSrc: String(require('./avatar-kat.png')) }
             ]
           }
         />

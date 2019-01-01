@@ -19,7 +19,7 @@ npm install concurrently --save-dev
 Aanpassen "scripts" sectie in package.json om met "npm run serve" commando alles te starten:
     "proxy": "node ./proxy",
     "serve": "concurrently --kill-others \"npm run proxy\" \"gulp serve\""
-> Werkt
+> Werkt (check http://localhost:8081/_api/web/lists?$filter=Hidden%20eq%20false)
 
 === App extension ===
 https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension
@@ -62,5 +62,6 @@ npm outdated // both @microsoft/generator-sharepoint and @microsoft/sp-office-ui
 npm install @microsoft/generator-sharepoint --save-dev
 npm install @microsoft/sp-office-ui-fabric-core
 
-
-
+=== Test deploy ===
+Upload in /sites/appcat
+Gebruiken in /sites/communication-showcase-spfx/SitePages/Waiting-for-SPFX-full-page.aspx
