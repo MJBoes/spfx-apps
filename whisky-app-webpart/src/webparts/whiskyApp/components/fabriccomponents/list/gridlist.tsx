@@ -69,5 +69,5 @@ export class ListGridExample extends React.Component<IListGridExampleProps> {
         </div>
       </div>
     );
-  };
+  }
 }

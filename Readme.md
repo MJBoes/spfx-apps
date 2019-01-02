@@ -61,6 +61,10 @@ npm outdated --global // no outdated stuff
 npm outdated // both @microsoft/generator-sharepoint and @microsoft/sp-office-ui-fabric-core are (outdated) version 1.6.0
 npm install @microsoft/generator-sharepoint --save-dev
 npm install @microsoft/sp-office-ui-fabric-core
+npm install --save office-ui-fabric-react
+npm uninstall @microsoft/sp-office-ui-fabric-core --save
+npm uninstall --save office-ui-fabric-react
+npm install --save office-ui-fabric-react@5.124.0
 
 === Test deploy ===
 Upload in /sites/appcat

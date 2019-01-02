@@ -16,7 +16,7 @@ export class PivotFabricExample extends React.Component<any, any> {
       <div>
         <Pivot linkFormat={PivotLinkFormat.links} linkSize={PivotLinkSize.normal}>
           <PivotItem linkText="DocumentCard">
-            <Label>Document Card Example</Label>
+            <Label>Document Card Example (npm install --save office-ui-fabric-react@5.124.0)</Label>
             {DocCard}
           </PivotItem>
           <PivotItem linkText="CommandBar">
@@ -29,7 +29,7 @@ export class PivotFabricExample extends React.Component<any, any> {
           </PivotItem>
           <PivotItem linkText="GridList">
             <Label>GridList Example</Label>
-            <ListGridExample items={[{key: 1, name: 'example 1', thumbnail: 'https://placehold.it/214x214' }, { key: 2, name: 'example 2', thumbnail: 'https://placehold.it/214x214'}]} />
+            <ListGridExample items={[{key: 1, name: 'example 1', thumbnail: 'https://desktopservices.sharepoint.com/sites/showcase/dossier/_layouts/15/getpreview.ashx?resolution=0&path=https://desktopservices.sharepoint.com/sites/showcase/dossier/DossierFiles/Bottle%20Photos/Bowmore/Bowmore-Whitesands.jpg' }, { key: 2, name: 'example 2', thumbnail: 'https://placehold.it/214x214'}]} />
           </PivotItem>
         </Pivot>
       </div>
