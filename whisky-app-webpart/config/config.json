@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/whiskyApp/WhiskyAppWebPart.manifest.json"
         }
       ]
+    },
+    "camera-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/camera/CameraWebPart.js",
+          "manifest": "./src/webparts/camera/CameraWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "WhiskyAppWebPartStrings": "lib/webparts/whiskyApp/loc/{locale}.js"
+    "WhiskyAppWebPartStrings": "lib/webparts/whiskyApp/loc/{locale}.js",
+    "CameraWebPartStrings": "lib/webparts/camera/loc/{locale}.js"
   }
 }

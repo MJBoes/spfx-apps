@@ -15,7 +15,8 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
     const previewProps: IDocumentCardPreviewProps = {
       previewImages: [
         {
-          previewImageSrc: String(require('./document-preview.png')),
+          //previewImageSrc: String(require('./document-preview.png')),
+          previewImageSrc:'https://desktopservices.sharepoint.com/sites/showcase/dossier/_layouts/15/getpreview.ashx?resolution=0&path=https://desktopservices.sharepoint.com/sites/showcase/dossier/DossierFiles/Distillery%20Photos/bowmore-distillery.jpg',
           iconSrc: String(require('./icon-ppt.png')),
           width: 318,
           height: 196,

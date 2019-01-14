@@ -11,12 +11,15 @@ import {
  } from 'office-ui-fabric-react/lib/DocumentCard';
 
 export default class DocumentCardExample extends React.Component<IDocumentCardExampleProps, {}> {
+  constructor(props: IDocumentCardExampleProps) {
+    super(props);
+  }
   public render(): JSX.Element {
     const previewProps: IDocumentCardPreviewProps = {
       previewImages: [
         {
-          previewImageSrc: String(require('./document-preview.png')),
-          iconSrc: String(require('./icon-ppt.png')),
+          previewImageSrc: this.props.imageurl,
+          iconSrc: this.props.iconurl,
           width: 318,
           height: 196,
           accentColor: '#ce4b1f'
@@ -27,7 +30,7 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
     return (
       <DocumentCard onClickHref='http://bing.com'>
         <DocumentCardPreview { ...previewProps } />
-        <DocumentCardTitle title='Revenue stream proposal fiscal year 2016 version02.pptx' />
+        <DocumentCardTitle title={this.props.title} />
         <DocumentCardActivity
           activity='Created Feb 23, 2016'
           people={

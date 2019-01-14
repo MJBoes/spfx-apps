@@ -10,15 +10,19 @@ import { Game } from '../game/stars';
 
 export default class WhiskyApp extends React.Component<IWhiskyAppProps, {}> {
   public state={route:1};
+  constructor(props: IWhiskyAppProps) {
+    super(props);
+  }
   public render(): React.ReactElement<IWhiskyAppProps> {
     //this.props.spHttpClient.get(this.props.webabsoluteurl + `/_api/search/query?querytext='refinablestring04:Distillery+ContentType%3dDossier'&trimduplicates=false&rowlimit=100&selectproperties='Title'&clienttype='ContentSearchRegular'`, SPHttpClient.configurations.v1)
     //.then((response: SPHttpClientResponse) => {
     //  console.log(response.json());
     //});
+    const element: React.ReactElement<IWhiskyAppProps> = React.createElement(PivotFabricExample,this.props);
     return (
       <div className={styles.whiskyApp}>
         {this.state.route==0 && <Game/>}
-        {this.state.route==1 && <PivotFabricExample/>}
+        {this.state.route==1 && element}
         <a href="https://desktopservices.sharepoint.com/sites/communication-showcase-spfx/_layouts/15/workbench.aspx" className={styles.button}>
           <span className={styles.label}>Hosted workbench</span>
         </a>
