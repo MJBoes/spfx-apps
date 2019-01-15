@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.2/MicrosoftTeams.schema.json",
   "manifestVersion": "1.2",
-  "packageName": "Camera",
-  "id": "c2b50dbc-d676-4d61-822d-e7ec10b167c3",
+  "packageName": "ReactAdaptiveCardsImageGallery",
+  "id": "790e75b3-a429-4aee-84a0-cef3d7cba2b4",
   "version": "0.1",
   "developer": {
     "name": "SPFx + Teams Dev",
@@ -11,11 +11,11 @@
     "termsOfUseUrl": "https://www.microsoft.com/en-us/servicesagreement"
   },
   "name": {
-    "short": "Camera"
+    "short": "ReactAdaptiveCardsImageGallery"
   },
   "description": {
-    "short": "Configurable web part which saves photos from device camera in a sharepoint folder (as file) or list (as base 64 url)",
-    "full": "Configurable web part which saves photos from device camera in a sharepoint folder (as file) or list (as base 64 url)"
+    "short": "Image Gallery implemented with Adaptive Cards",
+    "full": "Image Gallery implemented with Adaptive Cards"
   },
   "icons": {
     "outline": "tab20x20.png",
@@ -24,7 +24,7 @@
   "accentColor": "#004578",
   "configurableTabs": [
     {
-      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=c2b50dbc-d676-4d61-822d-e7ec10b167c3",
+      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=790e75b3-a429-4aee-84a0-cef3d7cba2b4",
       "canUpdateConfiguration": false,
       "scopes": [
         "team"

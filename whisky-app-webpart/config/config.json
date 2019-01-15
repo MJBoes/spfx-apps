@@ -17,11 +17,29 @@
           "manifest": "./src/webparts/camera/CameraWebPart.manifest.json"
         }
       ]
+    },
+    "trending-in-this-site-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/trendingInThisSite/TrendingInThisSiteWebPart.js",
+          "manifest": "./src/webparts/trendingInThisSite/TrendingInThisSiteWebPart.manifest.json"
+        }
+      ]
+    },
+    "react-adaptive-cards-image-gallery-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reactAdaptiveCardsImageGallery/ReactAdaptiveCardsImageGalleryWebPart.js",
+          "manifest": "./src/webparts/reactAdaptiveCardsImageGallery/ReactAdaptiveCardsImageGalleryWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "WhiskyAppWebPartStrings": "lib/webparts/whiskyApp/loc/{locale}.js",
-    "CameraWebPartStrings": "lib/webparts/camera/loc/{locale}.js"
+    "CameraWebPartStrings": "lib/webparts/camera/loc/{locale}.js",
+    "TrendingInThisSiteWebPartStrings": "lib/webparts/trendingInThisSite/loc/{locale}.js",
+    "ReactAdaptiveCardsImageGalleryWebPartStrings": "lib/webparts/reactAdaptiveCardsImageGallery/loc/{locale}.js"
   }
 }
