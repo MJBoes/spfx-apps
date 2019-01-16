@@ -23,7 +23,7 @@ export default class WhiskyApp extends React.Component<IWhiskyAppProps, {}> {
       <div className={styles.whiskyApp}>
         {this.state.route==0 && <Game/>}
         {this.state.route==1 && element}
-        <a href="https://desktopservices.sharepoint.com/sites/communication-showcase-spfx/_layouts/15/workbench.aspx" className={styles.button}>
+        <a href="https://desktopservices.sharepoint.com/sites/showcase/spfx/_layouts/15/workbench.aspx" className={styles.button}>
           <span className={styles.label}>Hosted workbench</span>
         </a>
       </div>

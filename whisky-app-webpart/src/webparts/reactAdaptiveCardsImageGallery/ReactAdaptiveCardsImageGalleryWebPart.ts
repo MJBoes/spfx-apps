@@ -6,6 +6,7 @@ import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
+import { MSGraphClient } from '@microsoft/sp-http';
 
 import * as strings from 'ReactAdaptiveCardsImageGalleryWebPartStrings';
 import AdaptiveCardsImageGallery from './components/ReactAdaptiveCardsImageGallery';
@@ -35,7 +36,17 @@ export default class AdaptiveCardsImageGalleryWebPart extends BaseClientSideWebP
         imagesToDisplay: this.properties.imagesToDisplay || 10
       }
     );
-
+    this.context.msGraphClientFactory
+     .getClient()
+     .then((client: MSGraphClient): void => {
+       // get information about the current user from the Microsoft Graph
+       client
+         .api('/me')
+         .get((error, response: any, rawResponse?: any) => {
+           // handle the response
+           console.log(error,response);
+       });
+     });
     ReactDom.render(element, this.domElement);
   }
 

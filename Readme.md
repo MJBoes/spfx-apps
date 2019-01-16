@@ -69,3 +69,18 @@ npm install --save office-ui-fabric-react@5.124.0
 === Test deploy ===
 Upload in /sites/appcat
 Gebruiken in /sites/communication-showcase-spfx/SitePages/Waiting-for-SPFX-full-page.aspx
+
+=== whisky-app-webpart, reactAdaptiveCardsImageGallery
+npm install adaptivecards --save
+
+#Instellen toegang Graph voor SharePoint Online Client Extensibility Web Application Principal
+https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps
+App registrations, All apps, SharePoint Online Client Extensibility Web Application Principal
+Choose "Settings" > "Required Permissions"
+  - Click "Add"
+    - "Select an API" and choose "MS Graph", press "Select"
+    - "Select Permissions" and choose "Read all users' basic profiles", press "Select"
+  - Click "Done"
+  - Click "Grant permissions" and "Yes"
+  => werkt: {@odata.context: "https://graph.microsoft.com/v1.0/$metadata#users/$entity", businessPhones: Array(1), displayName: "Marc Boes", givenName: "Marc", jobTitle: null, …}
+  

@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from './ReactAdaptiveCardsImageGallery.module.scss';
 import { IAdaptiveCardsImageGalleryProps } from './IAdaptiveCardsImageGalleryProps';
 import { IAdaptiveCardsImageGalleryState } from './IAdaptiveCardsImageGalleryState';
-import { escape } from '@microsoft/sp-lodash-subset';
 
 import * as AdaptiveCards from "adaptivecards";
 import { ImageGalleryService, IImageGalleryService } from '../services/ImageGalleryService';
