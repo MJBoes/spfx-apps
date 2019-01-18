@@ -44,7 +44,7 @@ export default class Dataservices extends React.Component<IDataservicesProps, {}
     let ds:IDossierService=new DossierService;
     ds.loadData();
     console.log(ds.bottlings);
-    
+    console.log(ds.distilleries);
     return (
       <div className={ styles.dataservices }>
         <div className={ styles.container }>
