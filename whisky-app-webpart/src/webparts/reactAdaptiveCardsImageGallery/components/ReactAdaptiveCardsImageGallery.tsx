@@ -83,7 +83,7 @@ export default class AdaptiveCardsImageGallery extends React.Component<IAdaptive
 
       // Set the adaptive card's event handlers. onExecuteAction is invoked
       // whenever an action is clicked in the card
-      adaptiveCard.onExecuteAction = function(action) { 
+      adaptiveCard.onExecuteAction = action=> { 
         window.location.href = action.iconUrl;
       };
 
@@ -101,7 +101,7 @@ export default class AdaptiveCardsImageGallery extends React.Component<IAdaptive
       <div className={styles.adaptiveCardsImageGallery}>
         <div className={styles.container}>
           {this.state.isLoading && <Spinner className={styles.spinner} size={SpinnerSize.large} />}
-          {!this.state.isLoading && <div ref={(n) => { n && n.appendChild(this.renderedCard) }} />}
+          {!this.state.isLoading && <div ref={(n) => { n && n.appendChild(this.renderedCard); }} />}
         </div>
       </div>
     );

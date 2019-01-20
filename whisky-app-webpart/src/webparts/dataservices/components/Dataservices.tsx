@@ -1,50 +1,22 @@
 import * as React from 'react';
 import styles from './Dataservices.module.scss';
 import { IDataservicesProps } from './IDataservicesProps';
+import { IDataservicesState } from './IDataservicesState';
 import { escape } from '@microsoft/sp-lodash-subset';
-//import { AadHttpClient, MSGraphClient } from "@microsoft/sp-http";
 import { DossierService,IDossierService } from '../whiskyservice/dossierservice';
-import { Dossier } from '../whiskyservice/dossierclasses';
 
-export default class Dataservices extends React.Component<IDataservicesProps, {}> {
-  public render(): React.ReactElement<IDataservicesProps> {
-    // this.props.msGraphClientFactory
-    // .getClient()
-    //   .then((client: MSGraphClient): void => {
-    //     // From https://github.com/microsoftgraph/msgraph-sdk-javascript sample
-    //     client
-    //       .api("users")
-    //       .version("v1.0")
-    //       .select("displayName,mail,userPrincipalName")
-    //       //.filter(`(givenName eq '${escape(this.state.searchFor)}') or (surname eq '${escape(this.state.searchFor)}') or (displayName eq '${escape(this.state.searchFor)}')`)
-    //       .get((err, res) => {  
+export default class Dataservices extends React.Component<IDataservicesProps, IDataservicesState> {
+  constructor(props: IDataservicesProps){
+    super(props);
+    this.state={ dossierService:new DossierService };
+  }
 
-    //         if (err) {
-    //           console.error(err);
-    //           return;
-    //         }
-    //         console.log("Using _searchWithGraph() method");
-    //         console.log(res);
-    //       });
-    //     });
-    //   this.props.aadHttpClientFactory
-    //     .getClient('https://graph.microsoft.com')
-    //     .then((client: AadHttpClient) => {
-    //       // Search for the users with givenName, surname, or displayName equal to the searchFor value
-    //       return client
-    //         .get(
-    //           `https://graph.microsoft.com/v1.0/users?$select=displayName,mail,userPrincipalName`,
-    //           AadHttpClient.configurations.v1
-    //         );
-    //     })
-    //     .then(response => {
-    //       console.log("Using _searchWithAad() method");
-    //       console.log(response.json());
-    //     })
-    let ds:IDossierService=new DossierService;
-    ds.loadData();
-    console.log(ds.bottlings);
-    console.log(ds.distilleries);
+  public componentDidMount(): void {
+    this.state.dossierService.loadData();
+    this.setState({dossierService:this.state.dossierService});
+  }
+
+public render(): React.ReactElement<IDataservicesProps> {
     return (
       <div className={ styles.dataservices }>
         <div className={ styles.container }>
@@ -53,6 +25,12 @@ export default class Dataservices extends React.Component<IDataservicesProps, {}
               <span className={ styles.title }>Welcome to SharePoint!</span>
               <p className={ styles.subTitle }>Customize SharePoint experiences using Web Parts.</p>
               <p className={ styles.description }>{escape(this.props.description)}</p>
+              {console.log(this.state.dossierService)}
+              {
+                this.state.dossierService.distilleries.map((item,i)=>{
+                   return <div key={i}>{item.shortname}</div>
+                })
+              }
               <a href="https://aka.ms/spfx" className={ styles.button }>
                 <span className={ styles.label }>Learn more</span>
               </a>
