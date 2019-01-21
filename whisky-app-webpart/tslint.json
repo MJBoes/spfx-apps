@@ -18,7 +18,7 @@
     "no-shadowed-variable": true,
     "no-switch-case-fall-through": true,
     "no-unnecessary-semicolons": true,
-    "no-unused-expression": true,
+    "no-unused-expression": [true, "allow-fast-null-checks"],
     "no-use-before-declare": true,
     "no-with-statement": true,
     "semicolon": true,
@@ -30,3 +30,5 @@
     "whitespace": false
   }
 }
+
+//    "no-unused-expression": true,

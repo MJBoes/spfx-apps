@@ -61,7 +61,7 @@ export default class AdaptiveCardsImageGallery extends React.Component<IAdaptive
         "body": [
           {
             "type": "TextBlock",
-            "text": "Adaptive Image Gallery",
+            "text": "1 card: Adaptive Image Gallery",
             "size": "medium"
           },
           {
@@ -101,7 +101,7 @@ export default class AdaptiveCardsImageGallery extends React.Component<IAdaptive
       <div className={styles.adaptiveCardsImageGallery}>
         <div className={styles.container}>
           {this.state.isLoading && <Spinner className={styles.spinner} size={SpinnerSize.large} />}
-          {!this.state.isLoading && <div ref={(n) => { n && n.appendChild(this.renderedCard); }} />}
+          {!this.state.isLoading && <div ref={(n) => { n && n.appendChild(this.renderedCard);}} />}
         </div>
       </div>
     );

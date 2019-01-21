@@ -46,6 +46,9 @@ Gebruiken in /sites/communication-showcase-spfx/SitePages/Waiting-for-SPFX-full-
 === whisky-app-webpart, reactAdaptiveCardsImageGallery
 npm install adaptivecards --save
 
+Changed tslint.json to handle syntax for adaptivecards:
+replaced "no-unused-expression": true, with "no-unused-expression": [true, "allow-fast-null-checks"],
+
 #Instellen toegang Graph voor SharePoint Online Client Extensibility Web Application Principal
 https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps
 App registrations, All apps, SharePoint Online Client Extensibility Web Application Principal
