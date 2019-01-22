@@ -41,7 +41,10 @@ export interface IDataCardsState {
 }
 
 export interface IDataCardsProps {
-
+  title:string;
+  group:string;
+  description:string;
+  imageurl:string;
 }
 
 export class ExportedComponent extends React.Component<IDataCardsProps, IDataCardsState> {
@@ -68,20 +71,26 @@ export class ExportedComponent extends React.Component<IDataCardsProps, IDataCar
           width: 2,
           items: [{
             type: "TextBlock",
-            text: "Islay"
+            text: this.props.group,
           },{
               "type": "TextBlock",
-              "text": "Arbeg",
+              "text": this.props.title,
               "weight": "bolder",
               "size": "extraLarge",
               "spacing": "none"
+          },
+          {
+              "type": "TextBlock",
+              "text": this.props.description,
+              "size": "small",
+              "wrap": true
           }]
         }, {
           type: "Column",
           width: 1,
           items: [{
             type:"Image",
-              url:"https://picsum.photos/300?image=593",
+              url:this.props.imageurl,
               size:"auto"
           }]
         }]
@@ -107,7 +116,6 @@ export class ExportedComponent extends React.Component<IDataCardsProps, IDataCar
   public render(): JSX.Element {
     return (
       <div>
-        Simple Element
         {/* <div ref={(n) => { n && n.appendChild(this.renderedCard);}} /> */}
         {!this.state.isLoading && <div ref={(n) => { n && n.appendChild(this.renderedCard); }} />}
       </div>

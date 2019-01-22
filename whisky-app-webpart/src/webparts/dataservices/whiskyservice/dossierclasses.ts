@@ -36,10 +36,14 @@ export interface IBottling {
 
 export class Dossier {
     public files: IFile[]=[];
+    public imageurl: string;
     constructor(public code: string, public shortname: string, public description: string) {
 
     }
     public addFile(file:IFile){
+        if(this.files.length==0){
+            this.imageurl="https://localhost:4321/src/images"+file.unc;
+        }
         this.files.push(file);
     }
 }
