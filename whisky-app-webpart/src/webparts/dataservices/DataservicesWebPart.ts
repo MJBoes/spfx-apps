@@ -10,14 +10,16 @@ import {
 import * as strings from 'DataservicesWebPartStrings';
 import Dataservices from './components/Dataservices';
 import { IDataservicesProps } from './components/IDataservicesProps';
+import * as markdownit from 'markdown-it';
 
 export interface IDataservicesWebPartProps {
   description: string;
 }
 
 export default class DataservicesWebPart extends BaseClientSideWebPart<IDataservicesWebPartProps> {
-
   public render(): void {
+    (<any>window).markdownit=()=>markdownit();
+    console.log(window);
     const element: React.ReactElement<IDataservicesProps > = React.createElement(
       Dataservices,
       {

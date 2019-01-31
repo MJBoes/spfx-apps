@@ -49,6 +49,18 @@ export class DossierService implements IDossierService {
     
     private loadBottlings(data: IBottling) {
         let d = new Bottling(data.code, data.shortname, data.description);
+        d.barcode=data.barcode;
+        d.bottlercodes=data.bottlercodes;
+        d.brandcodes=data.brandcodes;
+        d.casktype=data.casktype;
+        d.category=data.category;
+        d.collectionclosed=data.collectionclosed;
+        d.collectionopen=data.collectionopen;
+        d.distillerycodes=data.distillerycodes;
+        d.region=data.region;
+        d.size=data.size;
+        d.statedage=data.statedage;
+        d.strength=data.strength;
         return d;
     }
     private loadFiles(data: IFile) {

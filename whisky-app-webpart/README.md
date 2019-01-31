@@ -4,6 +4,14 @@ https://blog.mastykarz.nl/build-multi-page-sharepoint-framework-client-side-web-
 https://github.com/SharePoint/sp-dev-fx-webparts/tree/e04847620126ff7c17e2106e61596a9641eba7b5/samples/react-multipage
 https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/basics/use-web-parts-full-width-column
 https://support.office.com/en-us/article/manage-the-site-collection-app-catalog-928b9b61-a9de-4563-a7d1-6231aa9d4d19
+https://github.com/SharePoint/sp-dev-training-spfx-graph-3rdpartyapis
+https://pnp.github.io/generator-spfx/
+https://adaptivecards.io/samples/
+https://mertarauh.com/tutorials/typescript-design-patterns/builder-pattern/
+https://developer.microsoft.com/en-us/sharepoint/blogs/updated-sharepoint-framework-developer-training-package-now-available-2019/
+
+Nog uitzoeken Markdown-It installatie en toepassing op adaptivecards
+
 md whisky-app-webpart
 cd whisky-app-webpart
 yo @microsoft/sharepoint
@@ -45,6 +53,8 @@ Gebruiken in /sites/communication-showcase-spfx/SitePages/Waiting-for-SPFX-full-
 
 === whisky-app-webpart, reactAdaptiveCardsImageGallery
 npm install adaptivecards --save
+npm install markdown-it --save
+npm install --save @types/markdown-it
 
 Changed tslint.json to handle syntax for adaptivecards:
 replaced "no-unused-expression": true, with "no-unused-expression": [true, "allow-fast-null-checks"],

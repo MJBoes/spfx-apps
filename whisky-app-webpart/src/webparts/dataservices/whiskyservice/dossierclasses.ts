@@ -1,4 +1,4 @@
-import { Files } from "sp-pnp-js";
+import { Version, Environment, EnvironmentType } from '@microsoft/sp-core-library';
 
 export interface IFile {
     name: string;
@@ -42,7 +42,8 @@ export class Dossier {
     }
     public addFile(file:IFile){
         if(this.files.length==0){
-            this.imageurl="https://localhost:4321/src/images"+file.unc;
+            let _root:string=Environment.type === EnvironmentType.Local ? "https://localhost:4321/src/images" : "https://desktopservices.sharepoint.com/sites/showcase/dossier/_layouts/15/getpreview.ashx?resolution=0&path=https://desktopservices.sharepoint.com/sites/showcase/dossier/DossierFiles";
+            this.imageurl=_root+file.unc;
         }
         this.files.push(file);
     }
