@@ -8,6 +8,7 @@ import { escape } from '@microsoft/sp-lodash-subset';
 import { DossierService,IDossierService } from '../whiskyservice/dossierservice';
 
 import {ExportedComponent} from './datacards';
+import { CommandBarBasicExample } from './elements/CommandBar';
 
 export default class Dataservices extends React.Component<IDataservicesProps, IDataservicesState> {
   constructor(props: IDataservicesProps){
@@ -24,6 +25,7 @@ export default class Dataservices extends React.Component<IDataservicesProps, ID
     return (
       <div className={ styles.dataservices }>
         <div className={ styles.container }>
+          <CommandBarBasicExample />
             {/* {
               this.state.dossierService.distilleries.map((item,i)=>{
                 return this.state.currentPage==0 && <ExportedComponent title={item.shortname} group="Distillery" description={item.description} imageurl={item.imageurl} />;
@@ -45,7 +47,7 @@ export default class Dataservices extends React.Component<IDataservicesProps, ID
                   {title:"Barcode",value:item.barcode},
                   {title:"Casktype",value:item.casktype}
                 ];
-                return this.state.currentPage==0 && <ExportedComponent title={item.shortname} group="Bottling" description="" imageurl={item.imageurl} facts={facts} />;
+                return this.state.currentPage==0 && <ExportedComponent key={item.shortname} title={item.shortname} group="Bottling" description="" imageurl={item.imageurl} facts={facts} />;
                 // return <div key={i}>{item.shortname}</div>;
               })
             }

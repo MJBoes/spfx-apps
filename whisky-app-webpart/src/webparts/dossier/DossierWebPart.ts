@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import { IDataservicesWebPartProps} from './IDataservicesWebPartProps';
 import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
@@ -8,23 +7,25 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'DataservicesWebPartStrings';
-import Dataservices from './components/Dataservices';
-import { IDataservicesProps } from './components/IDataservicesProps';
+import * as strings from 'DossierWebPartStrings';
+import Dossier from './components/Dossier';
+import { IDossierProps } from './components/IDossierProps';
 
-import * as markdownit from 'markdown-it';
+export interface IDossierWebPartProps {
+  description: string;
+}
 
-export default class DataservicesWebPart extends BaseClientSideWebPart<IDataservicesWebPartProps> {
+export default class DossierWebPart extends BaseClientSideWebPart<IDossierWebPartProps> {
+
   public render(): void {
-    (<any>window).markdownit=()=>markdownit();
-    const element: React.ReactElement<IDataservicesProps > = React.createElement(
-      Dataservices,
+    const element: React.ReactElement<IDossierProps > = React.createElement(
+      Dossier,
       {
         description: this.properties.description,
-        msGraphClientFactory:this.context.msGraphClientFactory,
-        aadHttpClientFactory:this.context.aadHttpClientFactory
+        currentPage: 'distillerylist'
       }
     );
+
     ReactDom.render(element, this.domElement);
   }
 

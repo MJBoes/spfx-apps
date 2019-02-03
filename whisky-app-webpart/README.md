@@ -55,6 +55,10 @@ Gebruiken in /sites/communication-showcase-spfx/SitePages/Waiting-for-SPFX-full-
 npm install adaptivecards --save
 npm install markdown-it --save
 npm install --save @types/markdown-it
+Opgenomen in de global namespace in DataservicesWebPart.ts door:
+* import * as markdownit from 'markdown-it';
+* (<any>window).markdownit=()=>markdownit();
+
 
 Changed tslint.json to handle syntax for adaptivecards:
 replaced "no-unused-expression": true, with "no-unused-expression": [true, "allow-fast-null-checks"],

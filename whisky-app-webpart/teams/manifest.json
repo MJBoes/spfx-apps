@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.2/MicrosoftTeams.schema.json",
   "manifestVersion": "1.2",
-  "packageName": "Dataservices",
-  "id": "c900d6f8-ab53-4cf6-a704-eb5cb0000b75",
+  "packageName": "Dossier",
+  "id": "f69bdc95-ba02-4404-8ac6-a29d3b59c20b",
   "version": "0.1",
   "developer": {
     "name": "SPFx + Teams Dev",
@@ -11,11 +11,11 @@
     "termsOfUseUrl": "https://www.microsoft.com/en-us/servicesagreement"
   },
   "name": {
-    "short": "Dataservices"
+    "short": "Dossier"
   },
   "description": {
-    "short": "Development and samples of dataservices using ms graph data",
-    "full": "Development and samples of dataservices using ms graph data"
+    "short": "Multi page item list, list item web part",
+    "full": "Multi page item list, list item web part"
   },
   "icons": {
     "outline": "tab20x20.png",
@@ -24,7 +24,7 @@
   "accentColor": "#004578",
   "configurableTabs": [
     {
-      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=c900d6f8-ab53-4cf6-a704-eb5cb0000b75",
+      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=f69bdc95-ba02-4404-8ac6-a29d3b59c20b",
       "canUpdateConfiguration": false,
       "scopes": [
         "team"

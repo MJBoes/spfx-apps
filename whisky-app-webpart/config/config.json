@@ -41,6 +41,14 @@
           "manifest": "./src/webparts/dataservices/DataservicesWebPart.manifest.json"
         }
       ]
+    },
+    "dossier-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/dossier/DossierWebPart.js",
+          "manifest": "./src/webparts/dossier/DossierWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -49,6 +57,7 @@
     "CameraWebPartStrings": "lib/webparts/camera/loc/{locale}.js",
     "TrendingInThisSiteWebPartStrings": "lib/webparts/trendingInThisSite/loc/{locale}.js",
     "ReactAdaptiveCardsImageGalleryWebPartStrings": "lib/webparts/reactAdaptiveCardsImageGallery/loc/{locale}.js",
-    "DataservicesWebPartStrings": "lib/webparts/dataservices/loc/{locale}.js"
+    "DataservicesWebPartStrings": "lib/webparts/dataservices/loc/{locale}.js",
+    "DossierWebPartStrings": "lib/webparts/dossier/loc/{locale}.js"
   }
 }
