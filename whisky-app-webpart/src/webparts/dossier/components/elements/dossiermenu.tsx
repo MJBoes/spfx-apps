@@ -1,8 +1,9 @@
 import * as React from 'react';
+import{ IDossierProps } from '../IDossierProps';
 
 import { CommandBar } from 'office-ui-fabric-react/lib/CommandBar';
 
-export class DossierMenu extends React.Component<{}, {}> {
+export class DossierMenu extends React.Component<IDossierProps, {}> {
   public render(): JSX.Element {
     return (
       <div>
@@ -27,6 +28,10 @@ export class DossierMenu extends React.Component<{}, {}> {
         //   iconName: 'Add'
         // },
         ariaLabel: 'New. Use left and right arrow keys to navigate',
+        onClick: () => {
+          this.props.setPage('view');
+          this.props.setDosierType('Distilleries');
+        }
       },
       {
         key: 'bottlerList',
@@ -43,7 +48,10 @@ export class DossierMenu extends React.Component<{}, {}> {
         iconProps: {
           iconName: 'Share'
         },
-        onClick: () => console.log('Share')
+        onClick: () => {
+          this.props.setPage('list');
+          this.props.setDosierType('Brands');
+        }
       },
       {
         key: 'bottlingList',

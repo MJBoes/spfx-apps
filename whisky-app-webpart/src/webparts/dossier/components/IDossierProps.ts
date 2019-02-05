@@ -1,4 +1,5 @@
 export interface IDossierProps {
-  description: string;
-  currentPage: string;
+  currentDosierType: string;
+  setDosierType(s: string): void;
+  setPage(s: string):void;
 }

@@ -10,6 +10,7 @@ import {
 import * as strings from 'DossierWebPartStrings';
 import Dossier from './components/Dossier';
 import { IDossierProps } from './components/IDossierProps';
+import { IDossierState } from './components/IDossierState';
 
 export interface IDossierWebPartProps {
   description: string;
@@ -21,8 +22,7 @@ export default class DossierWebPart extends BaseClientSideWebPart<IDossierWebPar
     const element: React.ReactElement<IDossierProps > = React.createElement(
       Dossier,
       {
-        description: this.properties.description,
-        currentPage: 'distillerylist'
+        currentDosierType: 'distillery',
       }
     );
 
