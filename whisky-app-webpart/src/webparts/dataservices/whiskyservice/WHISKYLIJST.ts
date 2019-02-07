@@ -1500,19 +1500,19 @@ export let mockresponse = {
 			"file": [
 				{
 					"filename": "Arbeg-Blasda",
-					"unc": "/Bottle%20Photos/Ardbeg/Arbeg-Blasda.jpg",
+					"unc": "/BottlingPhotos/Arbeg-Blasda.jpg",
 					"bottlingcodes": "Ardbeg Blasda",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Arbeg-Uigeadail",
-					"unc": "/Bottle%20Photos/Ardbeg/Arbeg-Uigeadail.jpg",
+					"unc": "/BottlingPhotos/Arbeg-Uigeadail.jpg",
 					"bottlingcodes": "Ardbeg Uigeadail",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Ardbeg-10",
-					"unc": "/Bottle%20Photos/Ardbeg/Ardbeg-10.jpg",
+					"unc": "/BottlingPhotos/Ardbeg-10.jpg",
 					"bottlingcodes": "Ardbeg Ten",
 					"distillerycodes": ""
 				},
@@ -1752,121 +1752,121 @@ export let mockresponse = {
 				},
 				{
 					"filename": "ardbeg-panorama",
-					"unc": "/Distillery%20Photos/ardbeg-panorama.jpg",
+					"unc": "/DistilleryPhotos/ardbeg-panorama.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Ardbeg"
 				},
 				{
 					"filename": "arran_distillery",
-					"unc": "/Distillery%20Photos/arran_distillery.jpg",
+					"unc": "/DistilleryPhotos/arran_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Arran"
 				},
 				{
 					"filename": "bowmore-distillery",
-					"unc": "/Distillery%20Photos/bowmore-distillery.jpg",
+					"unc": "/DistilleryPhotos/bowmore-distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Bowmore"
 				},
 				{
 					"filename": "bruichladdich_distillery",
-					"unc": "/Distillery%20Photos/bruichladdich_distillery.jpg",
+					"unc": "/DistilleryPhotos/bruichladdich_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Bruichladdich"
 				},
 				{
 					"filename": "bunnahabhain_distillery",
-					"unc": "/Distillery%20Photos/bunnahabhain_distillery.jpg",
+					"unc": "/DistilleryPhotos/bunnahabhain_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Bunnahabhain"
 				},
 				{
 					"filename": "caol_ila_distillery",
-					"unc": "/Distillery%20Photos/caol_ila_distillery.jpg",
+					"unc": "/DistilleryPhotos/caol_ila_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "CaolIla"
 				},
 				{
 					"filename": "cragganmore_distillery",
-					"unc": "/Distillery%20Photos/cragganmore_distillery.jpg",
+					"unc": "/DistilleryPhotos/cragganmore_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "glenfiddich-distillery",
-					"unc": "/Distillery%20Photos/glenfiddich-distillery.jpg",
+					"unc": "/DistilleryPhotos/glenfiddich-distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Glenfiddich"
 				},
 				{
 					"filename": "glenlivet-distillery",
-					"unc": "/Distillery%20Photos/glenlivet-distillery.jpg",
+					"unc": "/DistilleryPhotos/glenlivet-distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Glenlivet"
 				},
 				{
 					"filename": "IsleOfJura_Distillery",
-					"unc": "/Distillery%20Photos/IsleOfJura_Distillery.jpg",
+					"unc": "/DistilleryPhotos/IsleOfJura_Distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Jura"
 				},
 				{
 					"filename": "kilbeggandistillery",
-					"unc": "/Distillery%20Photos/kilbeggandistillery.jpg",
+					"unc": "/DistilleryPhotos/kilbeggandistillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Kilchoman_Distillery",
-					"unc": "/Distillery%20Photos/Kilchoman_Distillery.jpg",
+					"unc": "/DistilleryPhotos/Kilchoman_Distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Kilchoman"
 				},
 				{
 					"filename": "lagavulin-distillery",
-					"unc": "/Distillery%20Photos/lagavulin-distillery.jpg",
+					"unc": "/DistilleryPhotos/lagavulin-distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Lagavulin"
 				},
 				{
 					"filename": "laphroaig_distillery",
-					"unc": "/Distillery%20Photos/laphroaig_distillery.jpg",
+					"unc": "/DistilleryPhotos/laphroaig_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Laphroaig"
 				},
 				{
 					"filename": "macallan_distillery",
-					"unc": "/Distillery%20Photos/macallan_distillery.jpg",
+					"unc": "/DistilleryPhotos/macallan_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Macallan"
 				},
 				{
 					"filename": "oban_distillery",
-					"unc": "/Distillery%20Photos/oban_distillery.JPG",
+					"unc": "/DistilleryPhotos/oban_distillery.JPG",
 					"bottlingcodes": "",
 					"distillerycodes": "Oban"
 				},
 				{
 					"filename": "portellen_distillery",
-					"unc": "/Distillery%20Photos/portellen_distillery.jpg",
+					"unc": "/DistilleryPhotos/portellen_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "PortEllen"
 				},
 				{
 					"filename": "scapa_distillery",
-					"unc": "/Distillery%20Photos/scapa_distillery.jpg",
+					"unc": "/DistilleryPhotos/scapa_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Scapa"
 				},
 				{
 					"filename": "springbank_distillery",
-					"unc": "/Distillery%20Photos/springbank_distillery.jpg",
+					"unc": "/DistilleryPhotos/springbank_distillery.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "Springbank"
 				},
 				{
 					"filename": "usheit",
-					"unc": "/Distillery%20Photos/usheit.jpg",
+					"unc": "/DistilleryPhotos/usheit.jpg",
 					"bottlingcodes": "",
 					"distillerycodes": "UsHeit"
 				}

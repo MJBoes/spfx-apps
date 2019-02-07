@@ -1,9 +1,9 @@
 import * as React from 'react';
-import{ IDossierProps } from '../IDossierProps';
+import{ IDataCardContainerProps } from '../datacardcontainer';
 
 import { CommandBar } from 'office-ui-fabric-react/lib/CommandBar';
 
-export class DossierMenu extends React.Component<IDossierProps, {}> {
+export class DossierMenu extends React.Component<IDataCardContainerProps, {}> {
   public render(): JSX.Element {
     return (
       <div>

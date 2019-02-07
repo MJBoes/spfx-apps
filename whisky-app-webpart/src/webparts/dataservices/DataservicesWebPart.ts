@@ -9,22 +9,34 @@ import {
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'DataservicesWebPartStrings';
-import Dataservices from './components/Dataservices';
-import { IDataservicesProps } from './components/IDataservicesProps';
+// import Dataservices from './components/Dataservices';
+// import { IDataservicesProps } from './components/IDataservicesProps';
+import { DataCardContainer, IDataCardContainerProps } from './datacardlist/datacardcontainer';
 
 import * as markdownit from 'markdown-it';
 
 export default class DataservicesWebPart extends BaseClientSideWebPart<IDataservicesWebPartProps> {
+  // public render(): void {
+  //   (<any>window).markdownit=()=>markdownit();
+  //   const element: React.ReactElement<IDataservicesProps > = React.createElement(
+  //     Dataservices,
+  //     {
+  //       description: this.properties.description,
+  //       msGraphClientFactory:this.context.msGraphClientFactory,
+  //       aadHttpClientFactory:this.context.aadHttpClientFactory
+  //     }
+  //   );
+  //   ReactDom.render(element, this.domElement);
+  // }
+
   public render(): void {
-    (<any>window).markdownit=()=>markdownit();
-    const element: React.ReactElement<IDataservicesProps > = React.createElement(
-      Dataservices,
+    const element: React.ReactElement<IDataCardContainerProps > = React.createElement(
+      DataCardContainer,
       {
-        description: this.properties.description,
-        msGraphClientFactory:this.context.msGraphClientFactory,
-        aadHttpClientFactory:this.context.aadHttpClientFactory
+        currentDosierType: 'distillery',
       }
     );
+
     ReactDom.render(element, this.domElement);
   }
 
