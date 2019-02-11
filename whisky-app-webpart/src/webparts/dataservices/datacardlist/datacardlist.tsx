@@ -31,7 +31,7 @@ export class ItemList extends React.Component<IDataCardContainerProps, IDataserv
     return (
       <div>
         LIST {this.props.currentDosierType}
-        <button onClick={() => this.props.setDosierType('test')}>Switch</button>
+        <button onClick={() => this.props.setPage('item')}>Switch</button>
         {this.props.currentDosierType==="Distilleries" && <List items={this.state.dossierService.distilleries} onRenderCell={this._onRenderCell} /> }
         {this.props.currentDosierType==="Bottlings" && <List items={this.state.dossierService.bottlings} onRenderCell={this._onRenderCell} /> }
         {/* <List items={this.state.dossierService.distilleries} onRenderCell={this._onRenderCell} /> */}
@@ -41,11 +41,11 @@ export class ItemList extends React.Component<IDataCardContainerProps, IDataserv
   private _onRenderCell(item: any, index: number | undefined): JSX.Element {
     return (
       <div className="ms-ListBasicExample-itemCell" data-is-focusable={true}>
-        <Image className="ms-ListBasicExample-itemImage" src={item.imageurl} width={150} height={150} imageFit={ImageFit.cover} />
+        <Image className="ms-ListBasicExample-itemImage" src={item.imageurl} width={50} height={50} imageFit={ImageFit.cover} />
         <div className="ms-ListBasicExample-itemContent">
           <div className="ms-ListBasicExample-itemName">{item.shortname}</div>
-          <div className="ms-ListBasicExample-itemIndex">{`Item ${index}`}</div>
-          <div className="ms-ListBasicExample-itemDesc">{item.description}</div>
+          {/* <div className="ms-ListBasicExample-itemIndex">{`Item ${index}`}</div> */}
+          <div className="ms-ListBasicExample-itemDesc truncate">{item.description}</div>
         </div>
         <Icon className="ms-ListBasicExample-chevron" iconName={getRTL() ? 'ChevronLeft' : 'ChevronRight'} />
       </div>

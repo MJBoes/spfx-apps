@@ -88,32 +88,32 @@ export class DossierMenu extends React.Component<IDataCardContainerProps, {}> {
 
   private getFarItems = () => {
     return [
-      {
-        key: 'sort',
-        name: 'Sort',
-        iconProps: {
-          iconName: 'SortLines'
-        },
-        onClick: () => console.log('Sort')
-      },
-      {
-        key: 'tile',
-        name: 'Grid view',
-        iconProps: {
-          iconName: 'Tiles'
-        },
-        iconOnly: true,
-        onClick: () => console.log('Tiles')
-      },
-      {
-        key: 'info',
-        name: 'Info',
-        iconProps: {
-          iconName: 'Info'
-        },
-        iconOnly: true,
-        onClick: () => console.log('Info')
-      }
+      // {
+      //   key: 'sort',
+      //   name: 'Sort',
+      //   iconProps: {
+      //     iconName: 'SortLines'
+      //   },
+      //   onClick: () => console.log('Sort')
+      // },
+      // {
+      //   key: 'tile',
+      //   name: 'Grid view',
+      //   iconProps: {
+      //     iconName: 'Tiles'
+      //   },
+      //   iconOnly: true,
+      //   onClick: () => console.log('Tiles')
+      // },
+      // {
+      //   key: 'info',
+      //   name: 'Info',
+      //   iconProps: {
+      //     iconName: 'Info'
+      //   },
+      //   iconOnly: true,
+      //   onClick: () => console.log('Info')
+      // }
     ];
   }
 }

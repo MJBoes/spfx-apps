@@ -3,7 +3,7 @@
   "solution": {
     "name": "whisky-star-app-webpart-client-side-solution",
     "id": "b9f84695-4d44-46db-a926-dee3f3e1c342",
-    "version": "1.0.0.10",
+    "version": "1.0.0.21",
     "includeClientSideAssets": true
   },
   "paths": {

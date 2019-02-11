@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { escape } from '@microsoft/sp-lodash-subset';
-import { DossierMenu } from './components/DossierMenu';
+import { DossierMenuPivot } from './components/DossierMenuPivot';
 import { ItemList } from './datacardlist';
 import { ItemView } from './datacarditem';
 import './datacardcontainer.module.scss';
 
 export interface IDataCardContainerProps{
     currentDosierType: string;
+    currentPage: string;
     setDosierType(s: string): void;
     setPage(s: string):void;  
 }
@@ -31,9 +32,9 @@ export class DataCardContainer extends React.Component<IDataCardContainerProps, 
   public render(): React.ReactElement<IDataCardContainerProps> {
     return (
       <div>
-        <DossierMenu {...this.state} setDosierType={this.setDossierType} setPage={this.setPage} />
+        <DossierMenuPivot {...this.state} setDosierType={this.setDossierType} setPage={this.setPage} />
         {this.state.currentPage==="list" && <ItemList {...this.state} setDosierType={this.setDossierType} setPage={this.setPage} /> }
-        {this.state.currentPage==="view" && <ItemView {...this.state} setDosierType={this.setDossierType} setPage={this.setPage}/> }
+        {this.state.currentPage==="item" && <ItemView {...this.state} setDosierType={this.setDossierType} setPage={this.setPage}/> }
       </div>
     );
   }

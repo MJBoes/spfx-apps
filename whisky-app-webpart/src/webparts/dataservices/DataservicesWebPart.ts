@@ -7,13 +7,12 @@ import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
+import * as markdownit from 'markdown-it';
 
 import * as strings from 'DataservicesWebPartStrings';
 // import Dataservices from './components/Dataservices';
 // import { IDataservicesProps } from './components/IDataservicesProps';
 import { DataCardContainer, IDataCardContainerProps } from './datacardlist/datacardcontainer';
-
-import * as markdownit from 'markdown-it';
 
 export default class DataservicesWebPart extends BaseClientSideWebPart<IDataservicesWebPartProps> {
   // public render(): void {
@@ -30,6 +29,7 @@ export default class DataservicesWebPart extends BaseClientSideWebPart<IDataserv
   // }
 
   public render(): void {
+    (<any>window).markdownit=()=>markdownit();
     const element: React.ReactElement<IDataCardContainerProps > = React.createElement(
       DataCardContainer,
       {
