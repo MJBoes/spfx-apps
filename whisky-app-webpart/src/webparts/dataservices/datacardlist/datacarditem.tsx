@@ -18,11 +18,11 @@ export class ItemView extends React.Component<IDataCardContainerProps, IDataserv
   }
 
   public componentDidMount(): void {
-    this.state.dossierService.loadData();
+    this.state.dossierService.loadData(this.props.spHttpClient);
     this.setState({ dossierService: this.state.dossierService });
   }
 
-  public render(): React.ReactElement<{}> {
+  public render(): React.ReactElement<{}> {   
     return (
       <div>
           VIEW {this.props.currentDosierType} {this.props.currentPage}

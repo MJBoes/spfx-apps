@@ -23,7 +23,7 @@ export class ItemList extends React.Component<IDataCardContainerProps, IDataserv
   }
 
   public componentDidMount(): void {
-    this.state.dossierService.loadData();
+    this.state.dossierService.loadData(this.props.spHttpClient);
     this.setState({ dossierService: this.state.dossierService });
   }
 

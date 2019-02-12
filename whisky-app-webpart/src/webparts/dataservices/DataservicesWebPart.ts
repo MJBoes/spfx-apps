@@ -33,6 +33,7 @@ export default class DataservicesWebPart extends BaseClientSideWebPart<IDataserv
     const element: React.ReactElement<IDataCardContainerProps > = React.createElement(
       DataCardContainer,
       {
+        spHttpClient: this.context.spHttpClient,
         currentDosierType: 'distillery',
       }
     );

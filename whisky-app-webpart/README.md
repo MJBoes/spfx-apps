@@ -24,6 +24,7 @@ Update web part manifest to enable full width view (add "supportsFullBleed": tru
 gulp package-solution
 
 "npm run serve" start proxy en local dev. Rest werkt, full width waarschijnlijk ook. Volgende: hoe een async view te maken en hoe multipage
+Test URL: http://localhost:8081/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title (werkt als een zonnetje)
 
 ==== GIT created new repo spfx-apps ==========
 git init (in d:\data\spfx-apps)
@@ -75,7 +76,17 @@ Choose "Settings" > "Required Permissions"
   => werkt: {@odata.context: "https://graph.microsoft.com/v1.0/$metadata#users/$entity", businessPhones: Array(1), displayName: "Marc Boes", givenName: "Marc", jobTitle: null, …}
   
   npm install @microsoft/microsoft-graph-types --save-dev
-  
+
+Sample graph explorer calls
+https://graph.microsoft.com/v1.0/sites/desktopservices.sharepoint.com:/sites/showcase
+https://graph.microsoft.com/beta/sites/desktopservices.sharepoint.com:/sites/showcase/factbook/
+https://graph.microsoft.com/beta/sites/desktopservices.sharepoint.com,91ce0b05-c46b-44f6-b17e-b92da1d982d5,a6b3f9a3-fe37-4592-becf-71861cf8a1a6/lists
+
+# pnp js library
+sp-pnp-js is depricated. Install
+npm install @pnp/logging @pnp/common @pnp/odata @pnp/sp @pnp/graph --save
+
+
 ### Building the code
 
 ```bash

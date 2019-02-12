@@ -1518,109 +1518,109 @@ export let mockresponse = {
 				},
 				{
 					"filename": "Ardbeg-10-17-mini",
-					"unc": "/Bottle%20Photos/Ardbeg/Ardbeg-10-17-mini.jpg",
+					"unc": "/BottlingPhotos/Ardbeg-10-17-mini.jpg",
 					"bottlingcodes": "Ardbeg 10 and 17 Year Old Presentation Tin",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Ardbeg-17",
-					"unc": "/Bottle%20Photos/Ardbeg/Ardbeg-17.jpg",
+					"unc": "/BottlingPhotos/Ardbeg-17.jpg",
 					"bottlingcodes": "Ardbeg 17-year-old",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Ardbeg-18",
-					"unc": "/Bottle%20Photos/Ardbeg/Ardbeg-18.jpg",
+					"unc": "/BottlingPhotos/Ardbeg-18.jpg",
 					"bottlingcodes": "Ardbeg 18-year-old",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Ardbeg-Alligator",
-					"unc": "/Bottle%20Photos/Ardbeg/Ardbeg-Alligator.jpg",
+					"unc": "/BottlingPhotos/Ardbeg-Alligator.jpg",
 					"bottlingcodes": "Ardbeg Alligator",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Ardbeg-Corryvreckan",
-					"unc": "/Bottle%20Photos/Ardbeg/Ardbeg-Corryvreckan.jpg",
+					"unc": "/BottlingPhotos/Ardbeg-Corryvreckan.jpg",
 					"bottlingcodes": "Ardbeg Corryvreckan",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Ardbeg-Darkcove",
-					"unc": "/Bottle%20Photos/Ardbeg/Ardbeg-Darkcove.jpg",
+					"unc": "/BottlingPhotos/Ardbeg-Darkcove.jpg",
 					"bottlingcodes": "Ardbeg Dark Cove",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Ardbeg-Renaissance",
-					"unc": "/Bottle%20Photos/Ardbeg/Ardbeg-Renaissance.jpg",
+					"unc": "/BottlingPhotos/Ardbeg-Renaissance.jpg",
 					"bottlingcodes": "Ardbeg Renaissance",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Arran-10",
-					"unc": "/Bottle%20Photos/Arran/Arran-10.jpg",
+					"unc": "/BottlingPhotos/Arran-10.jpg",
 					"bottlingcodes": "Arran 10-year-old",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "MacallanLaphroaig",
-					"unc": "/Bottle%20Photos/Bottler%20Items/MacallanLaphroaig.JPG",
+					"unc": "/BottlingPhotos/MacallanLaphroaig.JPG",
 					"bottlingcodes": "Double Barrel Macallan / Laphroaig DL",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Bowmore 9-years-old",
-					"unc": "/Bottle%20Photos/Bowmore/Bowmore 9-years-old.jpg",
+					"unc": "/BottlingPhotos/Bowmore 9-years-old.jpg",
 					"bottlingcodes": "Bowmore 09-year-old",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Bowmore No 1",
-					"unc": "/Bottle%20Photos/Bowmore/Bowmore No 1.jpg",
+					"unc": "/BottlingPhotos/Bowmore No 1.jpg",
 					"bottlingcodes": "Bowmore No. 1",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Bowmore-12",
-					"unc": "/Bottle%20Photos/Bowmore/Bowmore-12.jpg",
+					"unc": "/BottlingPhotos/Bowmore-12.jpg",
 					"bottlingcodes": "Bowmore 12-year-old",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Bowmore-15",
-					"unc": "/Bottle%20Photos/Bowmore/Bowmore-15.jpg",
+					"unc": "/BottlingPhotos/Bowmore-15.jpg",
 					"bottlingcodes": "Bowmore 15-year-old",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "bowmore-18-years",
-					"unc": "/Bottle%20Photos/Bowmore/bowmore-18-years.jpg",
+					"unc": "/BottlingPhotos/bowmore-18-years.jpg",
 					"bottlingcodes": "Bowmore 18-year-old",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Bowmore-21",
-					"unc": "/Bottle%20Photos/Bowmore/Bowmore-21.jpg",
+					"unc": "/BottlingPhotos/Bowmore-21.jpg",
 					"bottlingcodes": "Bowmore 21-year-old",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Bowmore-8",
-					"unc": "/Bottle%20Photos/Bowmore/Bowmore-8.jpg",
+					"unc": "/BottlingPhotos/Bowmore-8.jpg",
 					"bottlingcodes": "Bowmore 08-year-old",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Bowmore-Legend",
-					"unc": "/Bottle%20Photos/Bowmore/Bowmore-Legend.jpg",
+					"unc": "/BottlingPhotos/Bowmore-Legend.jpg",
 					"bottlingcodes": "Bowmore Legend",
 					"distillerycodes": ""
 				},
 				{
 					"filename": "Bowmore-Whitesands",
-					"unc": "/Bottle%20Photos/Bowmore/Bowmore-Whitesands.jpg",
+					"unc": "/BottlingPhotos/Bowmore-Whitesands.jpg",
 					"bottlingcodes": "Bowmore 17-year-old Whitesands",
 					"distillerycodes": ""
 				},

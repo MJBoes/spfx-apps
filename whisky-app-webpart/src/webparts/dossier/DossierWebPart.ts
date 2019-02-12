@@ -12,14 +12,20 @@ import Dossier from './components/Dossier';
 import { IDossierProps } from './components/IDossierProps';
 import { IDossierState } from './components/IDossierState';
 
+import { Logger, FunctionListener, LogLevel } from "@pnp/logging";
+
 export interface IDossierWebPartProps {
   description: string;
 }
 
 export default class DossierWebPart extends BaseClientSideWebPart<IDossierWebPartProps> {
+  public onInit(): Promise<void> {
+    return super.onInit().then(_ => {
+    });
+  }
 
   public render(): void {
-    const element: React.ReactElement<IDossierProps > = React.createElement(
+    const element: React.ReactElement<IDossierProps> = React.createElement(
       Dossier,
       {
         currentDosierType: 'distillery',
