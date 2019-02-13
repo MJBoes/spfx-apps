@@ -23,6 +23,8 @@ export class ItemView extends React.Component<IDataCardContainerProps, IDataserv
   }
 
   public render(): React.ReactElement<{}> {   
+    console.log(this.state);
+    console.log(this.state.dossierService.bottlings.length);
     return (
       <div>
           VIEW {this.props.currentDosierType} {this.props.currentPage}

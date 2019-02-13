@@ -19,29 +19,33 @@ export class DossierService implements IDossierService {
     public loadData(spHttpClient:SPHttpClient) {
         // get dossiers
 
-        for (let data of this.dossierSource.getDossiers("distillery")) {
-            let _distillery = this.loadDistillery(<IDistillery>data);
-            this.distilleries.push(_distillery);
-        }
-        for (let data of this.dossierSource.getDossiers("bottling")) {
-            let _bottling = this.loadBottlings(<IBottling>data);
-            this.bottlings.push(_bottling);
-        }
-        // add files to the dossiers
-        for (let data of this.dossierSource.getFiles()) {
-            console.log(data);
-            let _file: IFile = this.loadFiles({ name: data.filename, unc: data.unc, distillerycodes: data.distillerycodes, bottlingcodes: data.bottlingcodes });
-            for (let _dossierReference of data.distillerycodes.split(",")){
-                for (let _dossierItem of this.distilleries.filter(d=>{return d.code==_dossierReference;})){
-                    _dossierItem.addFile(_file);
-                }
+        this.dossierSource.mockService("distillery").then(result=>{
+            for (let data of result) {
+                let _distillery = this.loadDistillery(<IDistillery>data);
+                this.distilleries.push(_distillery);
             }
-            for (let _dossierReference of data.bottlingcodes.split(",")){
-                for (let _dossierItem of this.bottlings.filter(d=>{return d.code==_dossierReference;})){
-                    _dossierItem.addFile(_file);
-                }
+        });
+        this.dossierSource.mockService("bottling").then(result=>{
+            for (let data of result) {
+                let _bottling = this.loadBottlings(<IBottling>data);
+                this.bottlings.push(_bottling);
             }
-        }
+        });
+        this.dossierSource.mockService("files").then(result=>{
+            for (let data of result) {
+                let _file: IFile = this.loadFiles({ name: data.filename, unc: data.unc, distillerycodes: data.distillerycodes, bottlingcodes: data.bottlingcodes });
+                for (let _dossierReference of data.distillerycodes.split(",")){
+                    for (let _dossierItem of this.distilleries.filter(d=>{return d.code==_dossierReference;})){
+                        _dossierItem.addFile(_file);
+                    }
+                }
+                for (let _dossierReference of data.bottlingcodes.split(",")){
+                    for (let _dossierItem of this.bottlings.filter(d=>{return d.code==_dossierReference;})){
+                        _dossierItem.addFile(_file);
+                    }
+                }                
+            }
+        });
     }
 
     private loadDistillery(data: IDistillery) {

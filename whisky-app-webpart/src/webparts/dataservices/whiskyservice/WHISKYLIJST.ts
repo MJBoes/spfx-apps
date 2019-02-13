@@ -1,4 +1,16 @@
 //https://codebeautify.org/xmltojson
+
+// export fetch(serverRelativeUrl: string): Promise<any> {
+// 	let p = new Promise((resolve, reject) => {
+// 		setTimeout({})
+// 		this._http.fetch(this.rooturl + serverRelativeUrl)
+// 			.then(this.handleErrors)
+// 			.then(data => resolve(data.json())
+// 			)
+// 	});
+// 	return p;
+// }
+
 export let mockresponse = {
 	"whiskyregistry": {
 		"distilleries": {
