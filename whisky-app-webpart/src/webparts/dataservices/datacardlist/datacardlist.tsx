@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { getRTL } from 'office-ui-fabric-react/lib/Utilities';
 import * as AdaptiveCards from "adaptivecards";
-import { IDataCardContainerProps } from './datacardcontainer';
+import { IDataCardProps } from './datacardcontainer';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { List } from 'office-ui-fabric-react/lib/List';
 import { Image, ImageFit } from 'office-ui-fabric-react/lib/Image';
@@ -13,28 +13,17 @@ export interface IDataservicesState {
   dossierService: DossierService;
 }
 
-export class ItemList extends React.Component<IDataCardContainerProps, IDataservicesState> {
-  constructor(props: IDataCardContainerProps) {
+export class ItemList extends React.Component<IDataCardProps, IDataservicesState> {
+  constructor(props: IDataCardProps) {
     super(props);
-    this.state = {
-      filterText: '',
-      dossierService: new DossierService
-    };
-  }
-
-  public componentDidMount(): void {
-    this.state.dossierService.loadData(this.props.spHttpClient);
-    this.setState({ dossierService: this.state.dossierService });
   }
 
   public render(): React.ReactElement<{}> {
     return (
       <div>
-        LIST {this.props.currentDosierType}
-        <button onClick={() => this.props.setPage('item')}>Switch</button>
-        {this.props.currentDosierType==="Distilleries" && <List items={this.state.dossierService.distilleries} onRenderCell={this._onRenderCell} /> }
-        {this.props.currentDosierType==="Bottlings" && <List items={this.state.dossierService.bottlings} onRenderCell={this._onRenderCell} /> }
-        {/* <List items={this.state.dossierService.distilleries} onRenderCell={this._onRenderCell} /> */}
+        
+        {this.props.currentDosierType==="Distilleries" && <List items={this.props.dataService.distilleries} onRenderCell={this._onRenderCell} /> }
+        {this.props.currentDosierType==="Bottlings" && <List items={this.props.dataService.bottlings} onRenderCell={this._onRenderCell} /> }
       </div>
     );
   }

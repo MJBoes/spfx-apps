@@ -1,5 +1,5 @@
 import * as React from 'react';
-import{ IDataCardContainerProps } from './datacardcontainer';
+import{ IDataCardProps } from './datacardcontainer';
 import {DossierCard} from './components/DossierCard';
 import { DossierService, IDossierService } from '../whiskyservice/dossierservice';
 
@@ -8,8 +8,8 @@ export interface IDataservicesState {
   dossierService: DossierService;
 }
 
-export class ItemView extends React.Component<IDataCardContainerProps, IDataservicesState> {
-  constructor(props: IDataCardContainerProps){
+export class ItemView extends React.Component<IDataCardProps, IDataservicesState> {
+  constructor(props: IDataCardProps){
     super(props);
     this.state = {
       filterText: '',
@@ -17,19 +17,12 @@ export class ItemView extends React.Component<IDataCardContainerProps, IDataserv
     };
   }
 
-  public componentDidMount(): void {
-    this.state.dossierService.loadData(this.props.spHttpClient);
-    this.setState({ dossierService: this.state.dossierService });
-  }
-
   public render(): React.ReactElement<{}> {   
-    console.log(this.state);
-    console.log(this.state.dossierService.bottlings.length);
     return (
       <div>
           VIEW {this.props.currentDosierType} {this.props.currentPage}
           {
-              this.state.dossierService.bottlings.map((item,i)=>{
+              this.props.dataService.bottlings.map((item,i)=>{
                 let facts=[
                   {title:"Distillery",value:item.distillerycodes},
                   {title:"Bottler",value:item.bottlercodes},

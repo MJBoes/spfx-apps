@@ -9,7 +9,7 @@ export class DossierMenuPivot extends React.Component<IDataCardContainerProps, a
       <div>
         <Pivot linkFormat={PivotLinkFormat.tabs} onLinkClick={this.onLinkClick}>
           <PivotItem linkText="Distilleries">
-            <Label>Distilleries</Label>
+            {/* <Label>Distilleries</Label> */}
           </PivotItem>
           <PivotItem linkText="Bottlers">
             <Label>Bottlers</Label>
