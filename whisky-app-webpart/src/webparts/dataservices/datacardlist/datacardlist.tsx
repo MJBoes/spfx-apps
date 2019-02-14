@@ -8,22 +8,27 @@ import { Image, ImageFit } from 'office-ui-fabric-react/lib/Image';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { DossierService, IDossierService } from '../whiskyservice/dossierservice';
 
-export interface IDataservicesState {
+export interface IDataCardListState {
   filterText: string;
-  dossierService: DossierService;
+  items: any;
 }
 
-export class ItemList extends React.Component<IDataCardProps, IDataservicesState> {
+export class ItemList extends React.Component<IDataCardProps, IDataCardListState> {
   constructor(props: IDataCardProps) {
     super(props);
+    this.state = {
+      filterText: '',
+      items: this.props.items
+    };
   }
 
   public render(): React.ReactElement<{}> {
+    console.log("=====>",this.props);
     return (
       <div>
-        
-        {this.props.currentDosierType==="Distilleries" && <List items={this.props.dataService.distilleries} onRenderCell={this._onRenderCell} /> }
-        {this.props.currentDosierType==="Bottlings" && <List items={this.props.dataService.bottlings} onRenderCell={this._onRenderCell} /> }
+        <button onClick={() => this.props.setPage('item')}>Switch</button>
+        <TextField label={'Filter by name'} onBeforeChange={this._onFilterChanged} />
+        <List items={this.state.items} onRenderCell={this._onRenderCell} />
       </div>
     );
   }
@@ -39,5 +44,15 @@ export class ItemList extends React.Component<IDataCardProps, IDataservicesState
         <Icon className="ms-ListBasicExample-chevron" iconName={getRTL() ? 'ChevronLeft' : 'ChevronRight'} />
       </div>
     );
+  }
+  private _onFilterChanged(text: string): void {
+    this.setState({
+      items: text ? this.state.items.filter(item => item.name.toLowerCase().indexOf(text.toLowerCase()) >= 0) : this.state.items
+    });
+
+    // this.setState({
+    //   filterText: text,
+    //   items: text ? items.filter(item => item.name.toLowerCase().indexOf(text.toLowerCase()) >= 0) : items
+    // });
   }
 }

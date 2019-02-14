@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Label } from 'office-ui-fabric-react/lib/Label';
 import { Pivot, PivotItem, PivotLinkFormat } from 'office-ui-fabric-react/lib/Pivot';
-import{ IDataCardContainerProps } from '../datacardcontainer';
+import{ IDataCardProps } from '../datacardcontainer';
 
-export class DossierMenuPivot extends React.Component<IDataCardContainerProps, any> {
+export class DossierMenuPivot extends React.Component<IDataCardProps, any> {
   public render(): JSX.Element {
     return (
       <div>

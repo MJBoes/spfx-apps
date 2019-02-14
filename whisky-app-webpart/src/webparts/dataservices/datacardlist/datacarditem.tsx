@@ -1,5 +1,6 @@
 import * as React from 'react';
 import{ IDataCardProps } from './datacardcontainer';
+import { Bottling } from '../whiskyservice/dossierclasses';
 import {DossierCard} from './components/DossierCard';
 import { DossierService, IDossierService } from '../whiskyservice/dossierservice';
 
@@ -22,7 +23,7 @@ export class ItemView extends React.Component<IDataCardProps, IDataservicesState
       <div>
           VIEW {this.props.currentDosierType} {this.props.currentPage}
           {
-              this.props.dataService.bottlings.map((item,i)=>{
+              this.props.items.map((item:Bottling,i)=>{
                 let facts=[
                   {title:"Distillery",value:item.distillerycodes},
                   {title:"Bottler",value:item.bottlercodes},

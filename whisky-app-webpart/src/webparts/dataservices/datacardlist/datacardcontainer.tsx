@@ -16,7 +16,8 @@ export interface IDataCardContainerProps{
 }
 
 export interface IDataCardProps{
-  dataService: DossierService;
+  // dataService: DossierService;
+  items: {}[];
   currentDosierType: string;
   currentPage: string;
   setDosierType(s: string): void;
@@ -24,33 +25,49 @@ export interface IDataCardProps{
 }
 
 export interface IDataCardContainerState{
-  dataService: DossierService;
+  // dataService: DossierService;
+  items: {}[];
   currentPage: string;
   currentDosierType: string;
 }
 
 export class DataCardContainer extends React.Component<IDataCardContainerProps, IDataCardContainerState> {
+  private ds: DossierService;
+
   constructor(props) {
     super(props);
     this.state=({
-      dataService: new DossierService,
+      items: [],
       currentDosierType: "Distilleries",
       currentPage: "list"
     });
   }
 
   public componentDidMount(): void {
-    this.state.dataService.loadData(this.props.spHttpClient);
-    this.setState({ dataService: this.state.dataService });
+    this.ds=new DossierService;
+    this.ds.loadData(this.props.spHttpClient);
+    this.setState({ items: this.ds.distilleries });
   }
 
   private setPage=(s=>{ this.setState({currentPage:s}); });
-  private setDossierType=(s=>{ this.setState({currentDosierType:s}); });
+  private setDossierType=(s=>{
+    switch (s) {
+      case "Distilleries": {
+        this.setState({ items: this.ds.distilleries,currentDosierType:s });
+        break;
+      }
+      case "Bottlings": {
+        this.setState({ items: this.ds.bottlings,currentDosierType:s });
+        break;
+      }
+      default: { }
+    }
+  });
 
   public render(): React.ReactElement<IDataCardContainerProps> {
     return (
       <div>
-        <DossierMenuPivot {...this.state} spHttpClient={this.props.spHttpClient} setDosierType={this.setDossierType} setPage={this.setPage} />
+        <DossierMenuPivot {...this.state} setDosierType={this.setDossierType} setPage={this.setPage} />
         {this.state.currentPage==="list" && <ItemList {...this.state} setDosierType={this.setDossierType} setPage={this.setPage} /> }
         {this.state.currentPage==="item" && <ItemView {...this.state} setDosierType={this.setDossierType} setPage={this.setPage}/> }
       </div>
