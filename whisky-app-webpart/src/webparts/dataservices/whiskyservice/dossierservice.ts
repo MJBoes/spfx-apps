@@ -1,3 +1,4 @@
+import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import { IFile, File, IDistillery, Distillery, IBottling, Bottling } from './dossierclasses';
 import { SPHttpClient } from '@microsoft/sp-http';
 import { Dossiers } from './mockadapter';

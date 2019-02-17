@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { IDataservicesWebPartProps} from './IDataservicesWebPartProps';
-import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
@@ -10,30 +9,28 @@ import {
 import * as markdownit from 'markdown-it';
 
 import * as strings from 'DataservicesWebPartStrings';
-// import Dataservices from './components/Dataservices';
-// import { IDataservicesProps } from './components/IDataservicesProps';
+import {DossierService, IDossierService} from './whiskyservice/dossierservice';
 import { DataCardContainer, IDataCardContainerProps } from './datacardlist/datacardcontainer';
 
 export default class DataservicesWebPart extends BaseClientSideWebPart<IDataservicesWebPartProps> {
-  // public render(): void {
-  //   (<any>window).markdownit=()=>markdownit();
-  //   const element: React.ReactElement<IDataservicesProps > = React.createElement(
-  //     Dataservices,
-  //     {
-  //       description: this.properties.description,
-  //       msGraphClientFactory:this.context.msGraphClientFactory,
-  //       aadHttpClientFactory:this.context.aadHttpClientFactory
-  //     }
-  //   );
-  //   ReactDom.render(element, this.domElement);
-  // }
+  private dossierService: IDossierService;
+
+  protected onInit(): Promise<void> {
+    this.dossierService=new DossierService;
+    return super.onInit();
+  }
+
+  protected componentDidMount(): void {
+    this.dossierService.loadData(this.context.spHttpClient);
+    console.log("Dataserviceswebpart ==>", this.dossierService);
+  }
 
   public render(): void {
     (<any>window).markdownit=()=>markdownit();
     const element: React.ReactElement<IDataCardContainerProps > = React.createElement(
       DataCardContainer,
       {
-        spHttpClient: this.context.spHttpClient,
+        dossierService: this.dossierService,
         currentDosierType: 'distillery',
       }
     );
@@ -43,10 +40,6 @@ export default class DataservicesWebPart extends BaseClientSideWebPart<IDataserv
 
   protected onDispose(): void {
     ReactDom.unmountComponentAtNode(this.domElement);
-  }
-
-  protected get dataVersion(): Version {
-    return Version.parse('1.0');
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

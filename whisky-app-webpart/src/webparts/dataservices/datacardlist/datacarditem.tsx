@@ -21,9 +21,9 @@ export class ItemView extends React.Component<IDataCardProps, IDataservicesState
   public render(): React.ReactElement<{}> {   
     return (
       <div>
-          VIEW {this.props.currentDosierType} {this.props.currentPage}
+          VIEW {this.props.currentDosierType} {this.props.currentPageType}
           {
-              this.props.items.map((item:Bottling,i)=>{
+              this.props.dossierService.bottlings.map((item:Bottling,i)=>{
                 let facts=[
                   {title:"Distillery",value:item.distillerycodes},
                   {title:"Bottler",value:item.bottlercodes},

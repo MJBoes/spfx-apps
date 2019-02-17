@@ -18,15 +18,14 @@ export class ItemList extends React.Component<IDataCardProps, IDataCardListState
     super(props);
     this.state = {
       filterText: '',
-      items: this.props.items
+      items: []
     };
   }
 
   public render(): React.ReactElement<{}> {
-    console.log("=====>",this.props);
     return (
       <div>
-        <button onClick={() => this.props.setPage('item')}>Switch</button>
+        <button onClick={() => this.props.setPageType('item')}>Switch</button>
         <TextField label={'Filter by name'} onBeforeChange={this._onFilterChanged} />
         <List items={this.state.items} onRenderCell={this._onRenderCell} />
       </div>

@@ -1,34 +1,33 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import { Version } from '@microsoft/sp-core-library';
+import { Version, Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'DossierWebPartStrings';
-import Dossier from './components/Dossier';
-import { IDossierProps } from './components/IDossierProps';
-import { IDossierState } from './components/IDossierState';
+import * as strings from 'DossierFilesWebPartStrings';
+import DossierFiles from './components/DossierFiles';
+import { IDossierFilesProps } from './components/IDossierFilesProps';
 
-import { Logger, FunctionListener, LogLevel } from "@pnp/logging";
+import { IDataProvider } from './spdataprovider/SPDataProvider.ts';
 
-export interface IDossierWebPartProps {
-  description: string;
+export interface IDossierFilesWebPartProps {
+  dossierlistUrl: string;
+
 }
 
-export default class DossierWebPart extends BaseClientSideWebPart<IDossierWebPartProps> {
-  public onInit(): Promise<void> {
-    return super.onInit().then(_ => {
-    });
-  }
+export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierFilesWebPartProps> {
+  private _dataProvider: IDataProvider;
 
   public render(): void {
-    const element: React.ReactElement<IDossierProps> = React.createElement(
-      Dossier,
+    const element: React.ReactElement<IDossierFilesProps> = React.createElement(
+      DossierFiles,
       {
-        currentDosierType: 'distillery',
+        title: "Browse Dossier Files",
+        webPartDisplayMode: this.displayMode,
+        dataProvider: this._dataProvider
       }
     );
 

@@ -3,7 +3,7 @@ import { Label } from 'office-ui-fabric-react/lib/Label';
 import { Pivot, PivotItem, PivotLinkFormat } from 'office-ui-fabric-react/lib/Pivot';
 import{ IDataCardProps } from '../datacardcontainer';
 
-export class DossierMenuPivot extends React.Component<IDataCardProps, any> {
+export class DossierMenuPivot extends React.Component<IDataCardProps> {
   public render(): JSX.Element {
     return (
       <div>
@@ -26,7 +26,7 @@ export class DossierMenuPivot extends React.Component<IDataCardProps, any> {
   }
   private onLinkClick=(item:PivotItem)=> {
     // alert(item.props.linkText);
-    this.props.setPage('list');
+    this.props.setPageType('list');
     this.props.setDosierType(item.props.linkText);
   }
 }
