@@ -1,0 +1,1926 @@
+{
+    "@odata.context": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/$metadata#SP.ListData.DossierListItems",
+    "value": [
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "e84b07bf-fc37-48da-bc92-6c41b30de7ac",
+            "@odata.etag": "\"3\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(2)",
+            "Id": 2,
+            "Title": "Bottlings",
+            "dossierdescription": null,
+            "ID": 2,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(2)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(2)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(2)/ContentType",
+                "Name": "dossierbottlingfolder"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "7688891a-47fc-4333-aa7b-ad57834b4889",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(3)",
+            "Id": 3,
+            "Title": "Ardbeg Ten",
+            "dossierdescription": null,
+            "ID": 3,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(3)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(3)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(3)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "ade33236-a3eb-49f9-b68c-e8c576b3af18",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(4)",
+            "Id": 4,
+            "Title": "Ardbeg 10 and 17 Year Old Presentation Tin",
+            "dossierdescription": null,
+            "ID": 4,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(4)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(4)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(4)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "dded4888-c56c-4342-a9e9-82fbccc00d61",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(5)",
+            "Id": 5,
+            "Title": "Ardbeg 17-year-old",
+            "dossierdescription": null,
+            "ID": 5,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(5)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(5)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(5)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "bee699dd-c402-4149-8f2a-41274b19d2a5",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(6)",
+            "Id": 6,
+            "Title": "Ardbeg 18-year-old",
+            "dossierdescription": null,
+            "ID": 6,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(6)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(6)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(6)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "ad5e544e-44cc-42d0-b32d-daaa650445e3",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(7)",
+            "Id": 7,
+            "Title": "Ardbeg Alligator",
+            "dossierdescription": null,
+            "ID": 7,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(7)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(7)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(7)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "b3b69611-e0a6-487a-ba63-d4b22ab691d8",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(8)",
+            "Id": 8,
+            "Title": "Ardbeg Blasda",
+            "dossierdescription": null,
+            "ID": 8,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(8)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(8)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(8)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "71c15a4d-7993-4066-bd74-49a35e1c1422",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(9)",
+            "Id": 9,
+            "Title": "Ardbeg Corryvreckan",
+            "dossierdescription": null,
+            "ID": 9,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(9)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(9)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(9)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "54a08bea-6e70-422a-8b2f-6467e9fc5e2e",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(10)",
+            "Id": 10,
+            "Title": "Ardbeg Dark Cove",
+            "dossierdescription": null,
+            "ID": 10,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(10)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(10)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(10)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "6db032ef-830a-41a1-807b-001586360adf",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(11)",
+            "Id": 11,
+            "Title": "Ardbeg Renaissance",
+            "dossierdescription": null,
+            "ID": 11,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(11)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(11)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(11)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "bb31223b-ac4b-411b-ae70-16c57a09fe01",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(12)",
+            "Id": 12,
+            "Title": "Ardbeg Uigeadail",
+            "dossierdescription": null,
+            "ID": 12,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(12)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(12)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(12)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "e6857c8f-66ff-4afa-94a2-9923d553282b",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(13)",
+            "Id": 13,
+            "Title": "Arran 10-year-old",
+            "dossierdescription": null,
+            "ID": 13,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(13)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(13)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(13)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "a59ca524-f0ff-4572-af5b-525e7785e022",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(14)",
+            "Id": 14,
+            "Title": "Bowmore No. 1",
+            "dossierdescription": null,
+            "ID": 14,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(14)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(14)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(14)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "cc29e487-b07b-4adc-9532-9c0a493a2dbd",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(15)",
+            "Id": 15,
+            "Title": "Bowmore Legend",
+            "dossierdescription": null,
+            "ID": 15,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(15)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(15)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(15)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "fe46c62e-3c9b-4173-81dc-fcfdc17682b5",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(16)",
+            "Id": 16,
+            "Title": "Bowmore Black Rock",
+            "dossierdescription": null,
+            "ID": 16,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(16)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(16)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(16)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "fe47eca1-dbeb-41ca-a22c-16f5efc3bd6f",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(17)",
+            "Id": 17,
+            "Title": "Bowmore Gold Reef",
+            "dossierdescription": null,
+            "ID": 17,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(17)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(17)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(17)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "37083c27-527d-4495-aa99-ac2a37377c74",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(18)",
+            "Id": 18,
+            "Title": "Bowmore 08-year-old",
+            "dossierdescription": null,
+            "ID": 18,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(18)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(18)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(18)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "7c64605d-402f-4480-b960-effecb847cfa",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(19)",
+            "Id": 19,
+            "Title": "Bowmore 09-year-old",
+            "dossierdescription": null,
+            "ID": 19,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(19)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(19)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(19)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "9f535aa2-d315-42ae-ad74-b48e8271905b",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(20)",
+            "Id": 20,
+            "Title": "Bowmore 12-year-old",
+            "dossierdescription": null,
+            "ID": 20,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(20)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(20)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(20)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "024b2157-b867-4e99-b90c-0de88ff06828",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(21)",
+            "Id": 21,
+            "Title": "Bowmore 15-year-old",
+            "dossierdescription": null,
+            "ID": 21,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(21)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(21)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(21)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "d852a39a-57a8-478c-ac1f-671fb9ca42b5",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(22)",
+            "Id": 22,
+            "Title": "Bowmore 17-year-old Whitesands",
+            "dossierdescription": null,
+            "ID": 22,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(22)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(22)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(22)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "acfff480-bb56-4f68-91e0-39da9d9c9491",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(23)",
+            "Id": 23,
+            "Title": "Bowmore 18-year-old",
+            "dossierdescription": null,
+            "ID": 23,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(23)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(23)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(23)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "a2921188-9957-454a-98a8-fd4df1629c8a",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(24)",
+            "Id": 24,
+            "Title": "Bowmore 21-year-old",
+            "dossierdescription": null,
+            "ID": 24,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(24)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(24)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(24)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "7b0cd9b7-b03e-4b47-bc48-73b9bcadcd08",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(25)",
+            "Id": 25,
+            "Title": "Bruichladdich The Classic Laddie",
+            "dossierdescription": null,
+            "ID": 25,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(25)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(25)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(25)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "925e3ce2-fbfd-487f-9ce8-456d6dd5a702",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(26)",
+            "Id": 26,
+            "Title": "Bruichladdich First Edition Miniature Tasting Pack",
+            "dossierdescription": null,
+            "ID": 26,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(26)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(26)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(26)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "c8bee7a2-11b1-40d5-83e5-a5c3de708d03",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(27)",
+            "Id": 27,
+            "Title": "Bunnahabhain Moine",
+            "dossierdescription": null,
+            "ID": 27,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(27)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(27)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(27)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "5a7fddcf-b2be-4eed-8251-a7d6c97a0937",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(28)",
+            "Id": 28,
+            "Title": "Bunnahabhain 11-year-old",
+            "dossierdescription": null,
+            "ID": 28,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(28)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(28)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(28)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "737e1516-329e-4be6-b106-df467fc22f8e",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(29)",
+            "Id": 29,
+            "Title": "Bunnahabhain 12-year-old",
+            "dossierdescription": null,
+            "ID": 29,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(29)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(29)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(29)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "9adf4052-a573-462a-bfc2-4b9e42c82127",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(30)",
+            "Id": 30,
+            "Title": "Bunnahabhain-18-year-old",
+            "dossierdescription": null,
+            "ID": 30,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(30)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(30)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(30)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "71cfe57b-44a3-42c7-892e-b14446e0636f",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(31)",
+            "Id": 31,
+            "Title": "Bunnahabhain Eirigh Na Greine",
+            "dossierdescription": null,
+            "ID": 31,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(31)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(31)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(31)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "4df10b77-0060-400a-a178-840672198faa",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(32)",
+            "Id": 32,
+            "Title": "Caol Ila 12-year-old",
+            "dossierdescription": null,
+            "ID": 32,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(32)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(32)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(32)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "00c42062-31b9-41f6-8bd1-5b998600b0fb",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(33)",
+            "Id": 33,
+            "Title": "Caol Ila 13-year-old",
+            "dossierdescription": null,
+            "ID": 33,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(33)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(33)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(33)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "cb0dc151-83b6-4bbb-b53a-3b36b7652cbb",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(34)",
+            "Id": 34,
+            "Title": "Caol Ila cask strength 1991",
+            "dossierdescription": null,
+            "ID": 34,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(34)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(34)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(34)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "ceb598ad-3d32-42be-8e15-73921c04d691",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(35)",
+            "Id": 35,
+            "Title": "Connemara Original",
+            "dossierdescription": null,
+            "ID": 35,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(35)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(35)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(35)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "098a19ab-e794-42f4-b566-d72c3b046a6f",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(36)",
+            "Id": 36,
+            "Title": "Finlaggan old reserve",
+            "dossierdescription": null,
+            "ID": 36,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(36)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(36)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(36)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "21d55857-119c-436e-b260-aa7e61b71851",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(37)",
+            "Id": 37,
+            "Title": "Finlaggan Original",
+            "dossierdescription": null,
+            "ID": 37,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(37)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(37)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(37)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "82b6ef0b-690c-4a1f-aced-6e7aa62b6a5b",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(38)",
+            "Id": 38,
+            "Title": "Finlaggan Cask Strength",
+            "dossierdescription": null,
+            "ID": 38,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(38)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(38)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(38)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "89f6d5c1-09ac-4b57-908a-ec387467d177",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(39)",
+            "Id": 39,
+            "Title": "Finlaggan Port Finish VM",
+            "dossierdescription": null,
+            "ID": 39,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(39)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(39)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(39)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "90d92ef8-7c16-4eb1-b7ee-510873633569",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(40)",
+            "Id": 40,
+            "Title": "Finlaggan Sherry Finish VM",
+            "dossierdescription": null,
+            "ID": 40,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(40)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(40)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(40)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "eceb86a6-310f-418a-99a1-5931a4f4f2c5",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(41)",
+            "Id": 41,
+            "Title": "Frysk Hynder",
+            "dossierdescription": null,
+            "ID": 41,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(41)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(41)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(41)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "dbe91385-f17f-4797-b79e-195c06c0c073",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(42)",
+            "Id": 42,
+            "Title": "Glenfiddich XX",
+            "dossierdescription": null,
+            "ID": 42,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(42)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(42)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(42)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "49d9e949-fff4-4ac1-875c-46c4d2ce4237",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(43)",
+            "Id": 43,
+            "Title": "Glenfiddich 12-year-old",
+            "dossierdescription": null,
+            "ID": 43,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(43)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(43)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(43)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "c9db8e11-473f-41b2-a3c4-20f14b03d6e0",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(44)",
+            "Id": 44,
+            "Title": "Glenfiddich IPA experiment",
+            "dossierdescription": null,
+            "ID": 44,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(44)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(44)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(44)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "e5c89b00-cb45-491b-b5cd-5142cb3f9c82",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(45)",
+            "Id": 45,
+            "Title": "Glenfiddich Single Malt Collection (3x20cl)",
+            "dossierdescription": null,
+            "ID": 45,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(45)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(45)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(45)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "083e6367-62ec-4524-bad5-69b4acae6a44",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(46)",
+            "Id": 46,
+            "Title": "Glenfiddich 14-year-old Rich Oak",
+            "dossierdescription": null,
+            "ID": 46,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(46)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(46)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(46)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "6dc8ebf6-9622-42ea-8496-2282dff168d4",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(47)",
+            "Id": 47,
+            "Title": "Glenfiddich 15-year-old",
+            "dossierdescription": null,
+            "ID": 47,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(47)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(47)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(47)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "9cc7974c-61fb-47a9-b902-ac89c8b1b726",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(48)",
+            "Id": 48,
+            "Title": "Glengoyne 12-year-old SingleCask",
+            "dossierdescription": null,
+            "ID": 48,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(48)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(48)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(48)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "2c504d97-6448-465b-b3eb-b08aafe5a810",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(49)",
+            "Id": 49,
+            "Title": "Glenlivet 12-year-old",
+            "dossierdescription": null,
+            "ID": 49,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(49)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(49)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(49)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "efd3fae7-3df7-4d59-98fd-6fd011eb4c22",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(50)",
+            "Id": 50,
+            "Title": "Glenlivet 18-year-old",
+            "dossierdescription": null,
+            "ID": 50,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(50)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(50)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(50)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "be5d01a1-f397-4f79-98f1-5f88366a5650",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(51)",
+            "Id": 51,
+            "Title": "ILeach",
+            "dossierdescription": null,
+            "ID": 51,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(51)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(51)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(51)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "01f666f5-40c7-4750-aca9-f6b578095432",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(52)",
+            "Id": 52,
+            "Title": "Ileach Cask Strength",
+            "dossierdescription": null,
+            "ID": 52,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(52)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(52)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(52)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "02b8b58d-0ba9-45de-9ba7-a1fe37166c68",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(53)",
+            "Id": 53,
+            "Title": "Isle of Jura 10-year-old",
+            "dossierdescription": null,
+            "ID": 53,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(53)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(53)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(53)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "95f7bbf1-a4b3-415d-b793-af684f610b85",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(54)",
+            "Id": 54,
+            "Title": "Isle of Jura Superstition",
+            "dossierdescription": null,
+            "ID": 54,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(54)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(54)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(54)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "a84a1e3d-8cf0-447a-82e2-3d9a9f404095",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(55)",
+            "Id": 55,
+            "Title": "Kilchoman 2018 Loch Gorm",
+            "dossierdescription": null,
+            "ID": 55,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(55)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(55)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(55)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "53fbc9f8-ad33-4178-9362-b55e4b8ce05e",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(56)",
+            "Id": 56,
+            "Title": "Kilchoman Sanaig",
+            "dossierdescription": null,
+            "ID": 56,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(56)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(56)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(56)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "59ff95b1-12eb-4b4a-ac0b-045363fb1910",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(57)",
+            "Id": 57,
+            "Title": "Kilchoman 2010 Summer",
+            "dossierdescription": null,
+            "ID": 57,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(57)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(57)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(57)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "9b8375de-bad2-475a-9234-a558e6c28a77",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(58)",
+            "Id": 58,
+            "Title": "Kilchoman Machir Bay",
+            "dossierdescription": null,
+            "ID": 58,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(58)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(58)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(58)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "ab7c61da-e47a-406f-b40e-d143624af561",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(59)",
+            "Id": 59,
+            "Title": "Lagavulin 1999 Destiller Edition 16-year-old",
+            "dossierdescription": null,
+            "ID": 59,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(59)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(59)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(59)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "33413339-d944-4eab-98b9-8944836758ca",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(60)",
+            "Id": 60,
+            "Title": "Lagavulin 16-year-old",
+            "dossierdescription": null,
+            "ID": 60,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(60)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(60)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(60)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "924f135e-93a9-4f99-936b-8a7c99ed133c",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(61)",
+            "Id": 61,
+            "Title": "Lagavulin 1987",
+            "dossierdescription": null,
+            "ID": 61,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(61)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(61)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(61)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "cdeda16b-9ce9-4862-bda7-6281f84feeb9",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(62)",
+            "Id": 62,
+            "Title": "Lagavulin 8-year-old",
+            "dossierdescription": null,
+            "ID": 62,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(62)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(62)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(62)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "ff257c5f-67e1-4b0f-976b-c6a931e3133c",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(63)",
+            "Id": 63,
+            "Title": "Laphroaig 10-year-old",
+            "dossierdescription": null,
+            "ID": 63,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(63)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(63)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(63)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "95ada0b7-f709-4d00-a2ac-fc436c9ff285",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(64)",
+            "Id": 64,
+            "Title": "Laphroaig QA Cask",
+            "dossierdescription": null,
+            "ID": 64,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(64)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(64)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(64)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "5e2b201e-9a46-45d8-989e-7539c7e34fbc",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(65)",
+            "Id": 65,
+            "Title": "Macallan Amber",
+            "dossierdescription": null,
+            "ID": 65,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(65)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(65)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(65)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "2c4407e6-b9bc-4f99-866f-ac9c8fd808f3",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(66)",
+            "Id": 66,
+            "Title": "Double Barrel Macallan / Laphroaig DL",
+            "dossierdescription": null,
+            "ID": 66,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(66)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(66)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(66)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "8ea10b30-87b2-4e67-8074-33fb8d50bcea",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(67)",
+            "Id": 67,
+            "Title": "Macallan Select Oak",
+            "dossierdescription": null,
+            "ID": 67,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(67)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(67)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(67)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "34c3e2fa-0e81-46b4-b06b-b0ec120e7d4f",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(68)",
+            "Id": 68,
+            "Title": "Majesty Islay",
+            "dossierdescription": null,
+            "ID": 68,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(68)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(68)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(68)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "9a6eb223-4e72-49a2-960f-d3e132ff0ae3",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(69)",
+            "Id": 69,
+            "Title": "Mc Lelland's Port Charlotte",
+            "dossierdescription": null,
+            "ID": 69,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(69)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(69)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(69)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "e4f20630-cd48-4cd2-b20f-eff47cbd16c5",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(70)",
+            "Id": 70,
+            "Title": "Oban 14-year-old",
+            "dossierdescription": null,
+            "ID": 70,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(70)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(70)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(70)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "89dc584e-6cd7-4c5c-a5b7-0b593dc48eb0",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(71)",
+            "Id": 71,
+            "Title": "Peatmonster",
+            "dossierdescription": null,
+            "ID": 71,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(71)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(71)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(71)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "7ba18fc6-2314-4588-8204-be6aead3d57f",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(72)",
+            "Id": 72,
+            "Title": "Port Askaig",
+            "dossierdescription": null,
+            "ID": 72,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(72)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(72)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(72)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "a0350fda-6f12-48ad-a0b1-de1617d90837",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(73)",
+            "Id": 73,
+            "Title": "Port Ellen 1979 22-year-old",
+            "dossierdescription": null,
+            "ID": 73,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(73)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(73)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(73)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "38c6bd55-71f7-4f08-95d6-71e096901290",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(74)",
+            "Id": 74,
+            "Title": "Scapa 14-year-old",
+            "dossierdescription": null,
+            "ID": 74,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(74)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(74)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(74)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "4bbf969d-f8cf-4f5d-b01c-f8ca1c71f040",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(75)",
+            "Id": 75,
+            "Title": "The Six Isles",
+            "dossierdescription": null,
+            "ID": 75,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(75)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(75)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(75)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "bb9fd321-5970-469e-b191-cf612d2f27e7",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(76)",
+            "Id": 76,
+            "Title": "Smokehead",
+            "dossierdescription": null,
+            "ID": 76,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(76)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(76)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(76)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "7555c888-e1f7-4607-8abf-1c7ab4a5bc82",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(77)",
+            "Id": 77,
+            "Title": "Springbank",
+            "dossierdescription": null,
+            "ID": 77,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(77)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(77)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(77)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "398fbab6-50d5-44cd-b175-48a8d5f670b3",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(78)",
+            "Id": 78,
+            "Title": "Talisker 10-year-old",
+            "dossierdescription": null,
+            "ID": 78,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(78)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(78)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(78)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "2fea213d-3fb1-4adb-bc57-36f24bb03e89",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(79)",
+            "Id": 79,
+            "Title": "Tobermory 10-year-old",
+            "dossierdescription": null,
+            "ID": 79,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(79)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(79)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(79)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "674c92e1-5c34-4184-8b90-31d8f04bb767",
+            "@odata.etag": "\"5\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(80)",
+            "Id": 80,
+            "Title": "Wambrechies",
+            "dossierdescription": null,
+            "ID": 80,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(80)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(80)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(80)/ContentType",
+                "Name": "dossierbottling"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "ef4d5b7c-2077-4f11-a5ee-650417025a0e",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(81)",
+            "Id": 81,
+            "Title": "Brands",
+            "dossierdescription": null,
+            "ID": 81,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(81)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(81)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(81)/ContentType",
+                "Name": "dossierbrandfolder"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "5f3d3f25-92dd-499a-8677-da8542062022",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(82)",
+            "Id": 82,
+            "Title": "Distilleries",
+            "dossierdescription": null,
+            "ID": 82,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(82)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(82)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(82)/ContentType",
+                "Name": "dossierdistilleryfolder"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "d475eaea-65f6-45e9-835d-2eac87493e14",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(83)",
+            "Id": 83,
+            "Title": "Bottlers",
+            "dossierdescription": null,
+            "ID": 83,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(83)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(83)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(83)/ContentType",
+                "Name": "dossierbottlerfolder"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "dc654f62-46bc-4b27-a31f-80deecaf9adb",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(84)",
+            "Id": 84,
+            "Title": "Ardbeg",
+            "dossierdescription": "<div class=\"ExternalClassF87A0BDB5D644602A24F70A161EA0B19\">The distillery Ardbeg has arisen from an illegal distillery which has been in production since 1794. Ardbeg has been officially founded by John McDougall 1815. The distillery is located at the south side of Islay in the neighbourhood of Port Ellen, Lagavulin and Laphroaig. <br>Ardbeg has been closed from 1981 to 1989 and from 1996 to 1997. Especially the eight years in the 80s have a very negative influence to the Ardbeg products nowadays. Because of the interruption in the production, there are no casks from the eighties available. These vintage bottlings are missing in product palette. <br>As can be notified throughout a lot of distilleries, there is a wide range of bottlings without an age notice. This gives the distilleries a chance to mix older casks with pretty new ones. Ardbeg is one of the distilleries which drives this way of marketing to the top. All bottlings in last years have come out without an age declaration.<br>Ardbeg is furthermore one of the distilleries with a very aggressive marketing. Every year comes a new bottling to the market and there is a lot of commercials and advertising for that. The release of the new bottling is celebrated at the so called ,Ardbeg Day‘.</div>",
+            "ID": 84,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(84)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(84)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(84)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "4a2cdd9b-b9e7-4ff7-b9be-191b6c35eb97",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(85)",
+            "Id": 85,
+            "Title": "Arran",
+            "dossierdescription": "<div class=\"ExternalClass4D455D2D29A6482897D347B5E3F460AC\">The distillery Arran, located near the city of Lochranza on the Isle of Arran, is the first new distillery on that island since 150 years. it has been opened in 1991. The first bottles have been sold since 2001. In the past, there have been more than 50 distilleries on Arran, but most of then have been illegal and produced the whisky only for the private consume.<br>There is a wide range of bottlings of Arran whisky on the market. A lot of them got finishes in a wide variety of different cask types.<br>Arran is a small scale distillery and was designed from the outset to be aesthetically pleasing with mock pagodas and whitewashed buildings which blend in well with the island's older architecture.<br>Pronounced -arr-en; meaning Place of peaked hills.<br>Officially opened on August 17th.<br>They received the barley already malted and grinded.<br>First in 2007 a malt mill was installed.<br>No production 2002-04.<br>Has a stainless steel semi-lauter mash tun, with a copper dome.<br>Five washbacks made of Oregon pine.<br>Two indirect fired pot stills.<br>Shell and tube condensers. <br>Between October 2016 and January 2017 2 additional stills have been put in place to a new total of 4 stills.</div>",
+            "ID": 85,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(85)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(85)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(85)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "12dd9289-3643-4644-b02e-2b461cb9fc98",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(86)",
+            "Id": 86,
+            "Title": "Bowmore",
+            "dossierdescription": "<div class=\"ExternalClassC61E59F14A0542E0956BBE63D8BC654F\">Bowmore is one of only a handful of Scottish distilleries which still operates it's own floor maltings, with three currently in use. They provide up to 40 per cent of the distillery's malt requirements.<br>Bowmore is proud of it's environmental record, and in 1990 a warehouse was donated to the local community for conversion into a swimming pool. It is heated by hot water from the stillroom's condensers.<br>Pronounced bow-MORE Meaning The big bend/curve<br>Expands 1837-51. Closed 1929 and during WWII. Rebuilt, renovated and the two pair of pot stills gets Steam-heated in 1963. Their floor-malting (three floors) covers about a third of the needs. They switched back to wooden wash backs in 1990 because the felt that the stainless one affected the taste. When were they stainless installed? A stainless steel semi-lauter mash tun. The own malting covers about 30-40% of the needs. The rest from Simpsons are mixed together.</div>",
+            "ID": 86,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(86)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(86)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(86)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "a41fad73-a15f-4761-947a-18e59f10e450",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(87)",
+            "Id": 87,
+            "Title": "Bruichladdich",
+            "dossierdescription": "<div class=\"ExternalClass9C61193150714365A0DA68A47EADE398\">Pronounced Brew-ich-laddie. Since the Second World War, Bruichladdich has been a minimally peated Islay malt. Now batches of heavily peated spirit are also distilled, namely Port Charlotte, peated to 40 ppm, and Octomore the most heavily peated whisky in the world, peated to at least 80 ppm. Barley is exclusively Scottish grown, and is produced on 23 farms. Almost half is cultivated on Islay and the rest is organically grown on the mainland.<br><br>Closed 1929-36. Floor-malting ends 1961. Expands from one to two pair of pot stills 1975. In the early 1980's it only operated one day per week. Mothballed 1983. In production a few months 1998. Opens again 2001-05-29. 2011 a Lomond still from Inverleven were installed. Only been used for making gin so far. Have its own bottling line. Uses a cast iron, open mash tun from 1881.</div>",
+            "ID": 87,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(87)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(87)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(87)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "0d33e99a-4bf9-4f9f-9331-f3896745bb34",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(88)",
+            "Id": 88,
+            "Title": "Bunnahabhain",
+            "dossierdescription": "<div class=\"ExternalClass966F610AE5B74CEA837976B9DBA46506\">Pronounced Boon-a-havun, this distillery, although it may not seem obvious at first glance was constructed in the style of a Bordeaux watchtower or castel.<br>Since 2003 quantities of more heavily peated spirit have been distilled annually at Bunnahabhain for blending purposes and a single malt bottling.<br>To edit in if wanted&#58;<br>In the early 1960's they started to use another water source. Expands from one to two pair of pot stills 1963 and the floor-malting ends (three floors). Closed 1982-84. Closed Oct 2002-Jan 2003.<br>Since late 1990's they make some (20%?) peated spirit annually.<br>basbear</div>",
+            "ID": 88,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(88)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(88)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(88)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "ea55ce85-5060-4d35-b0c4-17eae64b8e39",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(89)",
+            "Id": 89,
+            "Title": "Caol Ila",
+            "dossierdescription": "<div class=\"ExternalClass40D1488BD58A4C3990F1386B042FBFCB\">Caol Ila is een distilleerderij nabij Port Askaig op het eiland Islay, Schotland. De distilleerderij is beroemd om het gelijknamige merk single malt Scotch whisky</div>",
+            "ID": 89,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(89)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(89)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(89)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "61ca3678-4360-4530-94ba-42d7f6c0b91b",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(90)",
+            "Id": 90,
+            "Title": "Cooley Distillery",
+            "dossierdescription": "<div class=\"ExternalClassEDD711CEE19A4903BE6B974087FAFE7F\">De Cooley Distillery is de enige onafhankelijke distilleerderij in Ierland en ligt op Cooley Peninsula in County Louth aan de Ierse oostkust. De distilleerderij is opgericht in 1987 door John Teeling die het verval van de Ierse whiskey zag en op deze manier een mogelijkheid had om hier wat tegen te doen.</div>",
+            "ID": 90,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(90)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(90)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(90)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "2220c1a1-ef53-4b8a-8ee6-5d8aa9531cd0",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(91)",
+            "Id": 91,
+            "Title": "Us Heit Distillery",
+            "dossierdescription": "<div class=\"ExternalClass346F298C6B9D4CCBBDB808F825819F2E\">Frysk Hynder is de eerste single malt van Nederlandse bodem en ontstond als liefhebberij van de bierbrouwers van Us Heit, Aart en Marianne van der Linde. De whisky is voor het eerst gestookt en gelagerd in 2002, de eerste flessen Frysk Hynder kwamen in 2005 op de markt.<br>De whisky wordt gedistilleerd uit een speciaal bier, welke gebrouwen is uit gerookt mout. Na het tweevoudige destillatieproces (waarbij het alcoholpercentage naar 40% gaat) wordt de whisky 3 jaar gelagerd (gerijpt) op eikenhouten vaten, wat voor een single malt whisky het minimum is. De vaten zijn afkomstig van wijnboeren uit Frankrijk en Portugal. De whisky wordt gebotteld volgens het un-chillfiltered principe (zonder diepkoeling en filtratie), waardoor deze bij koud serveren wat troebel kan lijken. De jaarproductie bedraagt 10.000 liter of 14.000 flessen (gemiddeld 77 flessen per dag); elke fles Frysk Hynder heeft etiket, waarop met de hand de kenmerken van de batch (de partij flessen die uit hetzelfde vat van 600 liter gebotteld zijn) ingevuld zijn.[2]</div>",
+            "ID": 91,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(91)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(91)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(91)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "f6ca46d6-33c1-4988-ab40-ee3485c18b09",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(92)",
+            "Id": 92,
+            "Title": "Glenfiddich",
+            "dossierdescription": "<div class=\"ExternalClassD1F79CF1C2B743F3B2B3609A1568B04E\">Glenfiddich is een Speyside single malt Scotch whisky, die door William Grant &amp; Sons in de Glenfiddich Distillery in Dufftown wordt gedistilleerd. Glenfiddich wordt uitgesproken met een harde g-klank aan het einde.</div>",
+            "ID": 92,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(92)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(92)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(92)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "80e98d3e-ce12-4591-bdff-cce014807a30",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(93)",
+            "Id": 93,
+            "Title": "Glengoyne",
+            "dossierdescription": null,
+            "ID": 93,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(93)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(93)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(93)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "0656d718-626a-4c52-91e4-8fb07d711ccd",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(94)",
+            "Id": 94,
+            "Title": "Glenlivet",
+            "dossierdescription": "<div class=\"ExternalClassD4D9804B2F1E4F67AD95D4AEC0699031\">The Glenlivet is een Speyside single malt whisky, geproduceerd in de The Glenlivet Distillery in Ballindalloch tussen Tomintoul en Dufftown, Gelegen in het graafschap Banffshire, Schotland.</div>",
+            "ID": 94,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(94)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(94)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(94)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "c71ad08c-2e81-4b02-8317-d28f23a069ba",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(95)",
+            "Id": 95,
+            "Title": "Isle of Jura",
+            "dossierdescription": "<div class=\"ExternalClass024182F6C1044939A592556D81E779F5\">Isle of Jura Single Malt is een Schotse single malt whisky, die op het eiland Jura wordt geproduceerd. Isle of Jura is een opvallend milde en droge whisky, met een lichte turfsmaak, en een tintje Acaciahoning. De whisky is er in een 10, 16 en 21 jaar oude botteling.</div>",
+            "ID": 95,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(95)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(95)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(95)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "e647a232-9822-4846-b4da-2aca86dd30af",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(96)",
+            "Id": 96,
+            "Title": "Kilchoman",
+            "dossierdescription": "<div class=\"ExternalClass4F91F7E8C573437EAFF67FB478D3A87F\">Kilchoman is een Schotse whiskydistilleerderij, in juni 2005 gestart met de productie. Het is de eerste nieuwe distilleerderij op het eiland Islay van de afgelopen 124 jaar. Het gehele proces, vanaf het verbouwen van de gerst tot aan het bottelen vindt plaats op Rockside Farm, aan de noordwestkant van het eiland.</div>",
+            "ID": 96,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(96)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(96)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(96)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "4b9aba67-b88e-48e5-9291-989523a5bb95",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(97)",
+            "Id": 97,
+            "Title": "Lagavulin",
+            "dossierdescription": "<div class=\"ExternalClass9D62626210EC460584D36BBB67CA00B0\">Lagavulin Single Malt is een Schotse Islay single malt whisky, die in het dorp Port Ellen wordt gedistilleerd. Deze single malt whisky vertegenwoordigt de Islay single malts in de Classic Malts of Scotland-serie van Diageo. Op de plaats waar nu de Lagavulin distilleerderij staat wordt vanaf 1742 al whisky gemaakt.</div>",
+            "ID": 97,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(97)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(97)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(97)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "59b7597e-b425-431a-a5c1-dd7216355873",
+            "@odata.etag": "\"4\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(98)",
+            "Id": 98,
+            "Title": "Laphroaig",
+            "dossierdescription": "<div class=\"ExternalClass96F99ED6AB4B41D0B2066C472D8E528B\">De Laphroaig distilleerderij werd in 1815[1] door de broers Alex en Donald Johnston opgericht. De Johnston broers waren in feite McDonalds, die na de mislukte Jacobitische opstand hun naam wijzigden, en neerstreken op het eiland Islay. Hun afstammelingen bestuurden de distilleerderij tot 1954. Toen Ian Hunter kinderloos stierf in 1954, liet hij de distilleerderij na aan een van zijn managers, Bessie Williamson. De distilleerderij werd verkocht aan Long John International in de jaren zestig, en vervolgens aan Allied Domecq. Allied Domecq werd op zijn beurt weer door Fortune Brands aangekocht in 2005.<br>Laphroaig is een whisky met een sterke, uitgesproken smaak. Ze wordt meestal verkocht als 10 years old, maar ook de 18 years old is populair. De 15 years old is al enige tijd van de markt, maar onder Laphroaig-kenners zeer geliefd. Daarnaast zijn er nog varianten van 30 en 40 jaar oud, maar deze treft men slechts zelden aan. Een druppel water in de whisky legt volgens sommige drinkers een goede nadruk op het turfachtige aroma.<br>Laphroaig experimenteert om de smaak van historische whisky’s terug te krijgen. Een kleiner vat (de Laphroaig Quarter Cask) is recentelijk in gebruik genomen, waarmee men hoopt de smaak van whisky zoals die honderd jaar geleden was, terug te vinden. In 1994 kreeg Laphroaigh een Koninklijke goedkeuring van ZKH Prins Charles, die persoonlijk door de prins werd uitgereikt.</div>",
+            "ID": 98,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(98)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(98)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(98)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "7459bcbb-6af1-4785-880d-d0a8e382a1fd",
+            "@odata.etag": "\"1\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(99)",
+            "Id": 99,
+            "Title": "Macallan",
+            "dossierdescription": null,
+            "ID": 99,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(99)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(99)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(99)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "1a50bb0c-ef12-4749-a840-074e49dee790",
+            "@odata.etag": "\"1\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(100)",
+            "Id": 100,
+            "Title": "Oban",
+            "dossierdescription": null,
+            "ID": 100,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(100)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(100)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(100)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "46cd893f-7c7b-49d8-beff-e0955e6a77e8",
+            "@odata.etag": "\"1\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(101)",
+            "Id": 101,
+            "Title": "Port Ellen",
+            "dossierdescription": null,
+            "ID": 101,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(101)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(101)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(101)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "2939366c-7ad0-4399-b5d0-1edb12c263b7",
+            "@odata.etag": "\"1\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(102)",
+            "Id": 102,
+            "Title": "Scapa",
+            "dossierdescription": null,
+            "ID": 102,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(102)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(102)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(102)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "fcb98966-e477-45d8-92e4-c375eb7027ca",
+            "@odata.etag": "\"1\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(103)",
+            "Id": 103,
+            "Title": "Springbank",
+            "dossierdescription": null,
+            "ID": 103,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(103)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(103)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(103)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "da6b1aef-acf9-4288-9806-bbde2a96dea6",
+            "@odata.etag": "\"1\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(104)",
+            "Id": 104,
+            "Title": "Talisker",
+            "dossierdescription": null,
+            "ID": 104,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(104)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(104)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(104)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "d220b967-77b2-4270-8de6-5d72b863bb5a",
+            "@odata.etag": "\"1\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(105)",
+            "Id": 105,
+            "Title": "Tobermory",
+            "dossierdescription": null,
+            "ID": 105,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(105)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(105)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(105)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "adadf56a-4885-4168-ac6a-92a8667468c3",
+            "@odata.etag": "\"1\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(106)",
+            "Id": 106,
+            "Title": "Distillerie Claeyssens de Wambrechies",
+            "dossierdescription": null,
+            "ID": 106,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(106)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(106)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(106)/ContentType",
+                "Name": "dossierdistillery"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "3b89efd2-f008-4f55-8fcd-fd493518aed8",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(107)",
+            "Id": 107,
+            "Title": "Douglas Laing (DL)",
+            "dossierdescription": null,
+            "ID": 107,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(107)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(107)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(107)/ContentType",
+                "Name": "dossierbottler"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "e6a12c15-a8aa-4dce-a2bd-b61d2bd00d50",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(108)",
+            "Id": 108,
+            "Title": "The Vintage Malt Whisky Co Ltd. (VM)",
+            "dossierdescription": null,
+            "ID": 108,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(108)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(108)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(108)/ContentType",
+                "Name": "dossierbottler"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "b172ab9e-50a3-4d18-ad31-265e419a127d",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(109)",
+            "Id": 109,
+            "Title": "Gordon & MacPhail (GM)",
+            "dossierdescription": null,
+            "ID": 109,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(109)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(109)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(109)/ContentType",
+                "Name": "dossierbottler"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "70cc9a72-c42e-4746-b9b2-cda1985c2107",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(110)",
+            "Id": 110,
+            "Title": "Ardbeg",
+            "dossierdescription": null,
+            "ID": 110,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(110)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(110)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(110)/ContentType",
+                "Name": "dossierbrand"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "09e64074-6156-4aa2-82f0-4ecae766bb0a",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(111)",
+            "Id": 111,
+            "Title": "Laphroaig",
+            "dossierdescription": null,
+            "ID": 111,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(111)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(111)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(111)/ContentType",
+                "Name": "dossierbrand"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "0b85f4ae-e489-417b-889b-914c7ac47a65",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(112)",
+            "Id": 112,
+            "Title": "Connemara",
+            "dossierdescription": null,
+            "ID": 112,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(112)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(112)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(112)/ContentType",
+                "Name": "dossierbrand"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "331ee71d-bace-470a-8ea9-f3d9b200f86e",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(113)",
+            "Id": 113,
+            "Title": "Kilbeggan",
+            "dossierdescription": null,
+            "ID": 113,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(113)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(113)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(113)/ContentType",
+                "Name": "dossierbrand"
+            }
+        },
+        {
+            "@odata.type": "#SP.Data.DossierListItem",
+            "@odata.id": "7b8b158c-bb19-426d-a26e-d7816044dfeb",
+            "@odata.etag": "\"2\"",
+            "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(114)",
+            "Id": 114,
+            "Title": "Ian Macleod (IM)",
+            "dossierdescription": "<div class=\"ExternalClass279DE24627B0405F82B4E61BDDF5C788\"><span id=\"ms-rterangecursor-start\"></span><div><span id=\"ms-rterangepaste-start\"></span>Leonard J Russell, our company's founder, believed strongly in the value of independence. Beholden to no single distiller, he bought only those whiskies which met his own and his customers' exacting standards. Success reinforced his beliefs, and within the space of a few years he established for the company an enviable reputation within the Scotch whisky trade.<br><br>Ian Macleod Distillers Ltd are the brand proprietors of Glengoyne Highland Single Malt Scotch Whisky, Isle of Skye Blended Scotch Whisky, Lang's Blended Scotch Whisky,Hedges &amp; Butler, King Robert II, London Hill Gin, The Chieftain's and Dun Bheagan Ranges, Smokehead Islay Single Malt, Six Isles Island Blended Malt Scotch Whisky, Wincarnis Tonic Wines and Macleod's Single Malt Whiskies. We currently produce and sell over 15 million bottles of spirits per year.<br><br>Ian Macleod Distillers Ltd is also a major supplier to the Buyer's Own Brand market. Innovators in the field we have supplied own-label spirits to some of Europe's largest supermarket groups for over 40 years.<br><br>Our aim is to offer our customers a choice of top quality spirit brands. We are therefore investing in our portfolio to build a range of strong, niche brands, creating long term value for both ourselves and our distributors. In a marketplace increasingly dominated by a few multi-national companies with global brands, our focus is on the traditional values of quality, value and customer service.<br><br>Ian Macleod Distillers Ltd is well positioned for continuing growth in sales of its core products. We have made strategic investments in the production capacity at Broxburn Bottlers, our bottling company, and in our stocks of Scotch whisky (including our recent acquisition of Glengoyne Distillery) to meet the increasing demand for our products from around the world.​<br><br><br><span id=\"ms-rterangepaste-end\"></span><br></div><span id=\"ms-rterangecursor-end\"></span></div>",
+            "ID": 114,
+            "ContentType@odata.navigationLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(114)/ContentType",
+            "ContentType": {
+                "@odata.type": "#SP.ContentType",
+                "@odata.id": "https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(114)/ContentType",
+                "@odata.editLink": "Web/Lists(guid'4216c9f4-6c08-43ff-b1ff-b3a2ab37ccbc')/Items(114)/ContentType",
+                "Name": "dossierbottler"
+            }
+        }
+    ]
+}

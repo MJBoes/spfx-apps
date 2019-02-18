@@ -11,15 +11,25 @@ import * as strings from 'DossierFilesWebPartStrings';
 import DossierFiles from './components/DossierFiles';
 import { IDossierFilesProps } from './components/IDossierFilesProps';
 
-import { IDataProvider } from './spdataprovider/SPDataProvider.ts';
+import { SharePointDataProvider } from './dataproviders/SPDataProvider';
+import { MockDataProvider } from './dataproviders/MockDataProvider';
+import { IDataProvider } from './dataproviders/IData';
 
 export interface IDossierFilesWebPartProps {
   dossierlistUrl: string;
-
 }
 
 export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierFilesWebPartProps> {
   private _dataProvider: IDataProvider;
+
+  protected onInit():Promise<void>{
+    if (DEBUG && Environment.type === EnvironmentType.Local) {
+      this._dataProvider = new MockDataProvider(this.context, this.properties.dossierlistUrl);
+    } else {
+      this._dataProvider = new SharePointDataProvider(this.context, this.properties.dossierlistUrl);
+    }
+    return super.onInit();
+  }
 
   public render(): void {
     const element: React.ReactElement<IDossierFilesProps> = React.createElement(
@@ -27,7 +37,7 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
       {
         title: "Browse Dossier Files",
         webPartDisplayMode: this.displayMode,
-        dataProvider: this._dataProvider
+        dataProvider: this._dataProvider,
       }
     );
 
@@ -53,8 +63,8 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneTextField('dossierlistUrl', {
+                  label: strings.DossierListUrlFieldLabel
                 })
               ]
             }

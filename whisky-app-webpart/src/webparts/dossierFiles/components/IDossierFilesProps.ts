@@ -1,4 +1,4 @@
-import { IDataProvider } from '../dataproviders/SPDataProviders';
+import { IDataProvider } from '../dataproviders/IData';
 import { DisplayMode } from '@microsoft/sp-core-library';
 
 export interface IDossierFilesProps {

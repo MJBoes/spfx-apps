@@ -1,7 +1,7 @@
 declare interface IDossierFilesWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
+  DossierListUrlFieldLabel: string;
 }
 
 declare module 'DossierFilesWebPartStrings' {

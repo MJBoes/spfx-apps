@@ -1,3 +1,9 @@
+export interface IDataProvider {
+    validateSettings(): boolean;
+    readDocumentsFromSearch(): Promise<IFile[]>;
+    readDossierFromList(): Promise<IDossierEntry[]>;
+}
+
 export interface IFile {
     name: string;
     unc: string;
