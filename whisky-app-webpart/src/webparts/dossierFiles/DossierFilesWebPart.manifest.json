@@ -20,7 +20,7 @@
     "description": { "default": "Display files connnected to dossier items" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "DossierFiles"
+      "dossierlistUrl": "/sites/showcase/factbook/_api/web/lists/dossier"
     }
   }]
 }

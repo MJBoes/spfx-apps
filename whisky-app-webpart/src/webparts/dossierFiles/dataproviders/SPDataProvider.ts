@@ -30,15 +30,15 @@ export class SharePointDataProvider implements IDataProvider {
         });
     }
 
-    public readDossierFromList(): Promise<IDossierEntry[]> {
+    public readDossierFromList(dossierType: string): Promise<IDossierEntry[]> {
         // probably not necessary, but a performance enhancement could be to fetch per dossier type: &$filter=ContentType%20eq%20%27dossierdistillery%27'
         let _root:string;
         if(DEBUG){
-            _root="http://localhost:8081/";
+            _root="http://localhost:8081";
         }else{
-            _root="https://desktopservices.sharepoint.com/";
+            _root="https://desktopservices.sharepoint.com";
         }
-        let rest=_root + "sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,dossierdescription,ContentType/Name&$expand=ContentType&$top=1000";
+        let rest=_root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,dossierdescription,ContentType/Name&$expand=ContentType&$top=1000";
         return this._webPartContext.spHttpClient.get(rest,SPHttpClient.configurations.v1).then((response: any) => {
             if (response.status >= 200 && response.status < 300) {
                 return response.json();
@@ -49,8 +49,9 @@ export class SharePointDataProvider implements IDataProvider {
             let dossiers:IDossierEntry[]=[];
             for (let i = 0; i < data.value.length; i++) {
                 dossiers.push({
-                    code: data.value[i].title,
-                    shortname: data.value[i].title,
+                    dossieritemcode: data.value[i].Title,
+                    dossiertype: data.value[i].ContentType.Name,
+                    shortname: data.value[i].Title,
                     description: data.value[i].dossierdescription
                 });
             }

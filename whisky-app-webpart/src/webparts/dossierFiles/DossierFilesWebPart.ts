@@ -36,6 +36,7 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
       DossierFiles,
       {
         title: "Browse Dossier Files",
+        dossierTypes: ['Distilleries','Bottlers','Brands','Bottlings'],
         webPartDisplayMode: this.displayMode,
         dataProvider: this._dataProvider,
       }

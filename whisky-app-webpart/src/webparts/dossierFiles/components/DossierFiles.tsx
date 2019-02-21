@@ -9,7 +9,7 @@ export default class DossierFiles extends React.Component<IDossierFilesProps, ID
     super(props);
     this.state={
       selectedViewMode: "list",
-      selectedDossierType: "Distillery",
+      selectedDossierType: "Distilleries",
       selectedDossierCode: ""
     };
   }
