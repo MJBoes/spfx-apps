@@ -1,5 +1,5 @@
 interface ITodoWebPartProps {
-    spListIndex: number;
-  }
-  
-  export default ITodoWebPartProps;
+  spListIndex: number;
+}
+
+export default ITodoWebPartProps;

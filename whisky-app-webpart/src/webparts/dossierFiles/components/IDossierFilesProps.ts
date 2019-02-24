@@ -1,4 +1,4 @@
-import { IDataProvider } from '../dataproviders/IData';
+import { IDataProvider, IDossierEntry } from '../dataproviders/IData';
 import { DisplayMode } from '@microsoft/sp-core-library';
 
 export interface IDossierFilesProps {
@@ -6,5 +6,6 @@ export interface IDossierFilesProps {
   dossierTypes: string[];
   webPartDisplayMode: DisplayMode;
   dataProvider: IDataProvider;
-  setPageState?(pageType: string, dossierType:string):void;
+  handleSelectList?(dossierType:string):void;
+  handleSelectItem?(dossierItem: IDossierEntry):void;
 }

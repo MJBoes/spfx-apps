@@ -38,7 +38,7 @@ export class SharePointDataProvider implements IDataProvider {
         }else{
             _root="https://desktopservices.sharepoint.com";
         }
-        let rest=_root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,dossierdescription,ContentType/Name&$expand=ContentType&$top=1000";
+        let rest=_root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,dossierdescription,ContentType/Name&$expand=ContentType&$filter=ContentType eq 'dossier" + dossierType.toLowerCase() +"'";
         return this._webPartContext.spHttpClient.get(rest,SPHttpClient.configurations.v1).then((response: any) => {
             if (response.status >= 200 && response.status < 300) {
                 return response.json();

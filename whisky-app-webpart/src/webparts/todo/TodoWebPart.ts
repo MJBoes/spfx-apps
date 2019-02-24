@@ -12,13 +12,13 @@ import {
 
 import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import * as lodash from '@microsoft/sp-lodash-subset';
-import * as strings from 'todoStrings';
+//import * as strings from 'todoStrings';
 import TodoContainer from './components/TodoContainer/TodoContainer';
 import ITodoContainerProps from './components/TodoContainer/ITodoContainerProps';
 import ITodoWebPartProps from './ITodoWebPartProps';
 import ITodoDataProvider from './dataProviders/ITodoDataProvider';
 import MockDataProvider from './tests/MockDataProvider';
-import SharePointDataProvider from './dataProviders/SharePointDataProvider';
+//import SharePointDataProvider from './dataProviders/SharePointDataProvider';
 import ITodoTaskList from './models/ITodoTaskList';
 
 export default class TodoWebPart extends BaseClientSideWebPart<ITodoWebPartProps> {
@@ -39,8 +39,9 @@ export default class TodoWebPart extends BaseClientSideWebPart<ITodoWebPartProps
     if (DEBUG && Environment.type === EnvironmentType.Local) {
       this._dataProvider = new MockDataProvider();
     } else {
-      this._dataProvider = new SharePointDataProvider();
-      this._dataProvider.webPartContext = this.context;
+      //this._dataProvider = new SharePointDataProvider();
+      //this._dataProvider.webPartContext = this.context;
+      this._dataProvider = new MockDataProvider();
     }
 
     this._openPropertyPane = this._openPropertyPane.bind(this);
@@ -126,11 +127,11 @@ export default class TodoWebPart extends BaseClientSideWebPart<ITodoWebPartProps
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: "Configure todo web part"//strings.PropertyPaneDescription
           },
           groups: [
             {
-              groupName: strings.BasicGroupName,
+              groupName: "Basics",//strings.BasicGroupName,
               /*
               Instead of creating the fields here, we call a method that will return the set of property fields to render.
               */

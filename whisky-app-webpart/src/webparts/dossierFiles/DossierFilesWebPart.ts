@@ -9,7 +9,7 @@ import {
 
 import * as strings from 'DossierFilesWebPartStrings';
 import DossierFiles from './components/DossierFiles';
-import { IDossierFilesProps } from './components/IDossierFilesProps';
+import { IDossierFilesProps } from './components/IComponentProps';
 
 import { SharePointDataProvider } from './dataproviders/SPDataProvider';
 import { MockDataProvider } from './dataproviders/MockDataProvider';
@@ -24,7 +24,8 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
 
   protected onInit():Promise<void>{
     if (DEBUG && Environment.type === EnvironmentType.Local) {
-      this._dataProvider = new MockDataProvider(this.context, this.properties.dossierlistUrl);
+      //this._dataProvider = new MockDataProvider(this.context, this.properties.dossierlistUrl);
+      this._dataProvider = new SharePointDataProvider(this.context, this.properties.dossierlistUrl);
     } else {
       this._dataProvider = new SharePointDataProvider(this.context, this.properties.dossierlistUrl);
     }
@@ -36,7 +37,7 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
       DossierFiles,
       {
         title: "Browse Dossier Files",
-        dossierTypes: ['Distilleries','Bottlers','Brands','Bottlings'],
+        dossierTypes: ['Distillery','Bottler','Brand','Bottling'],
         webPartDisplayMode: this.displayMode,
         dataProvider: this._dataProvider,
       }
