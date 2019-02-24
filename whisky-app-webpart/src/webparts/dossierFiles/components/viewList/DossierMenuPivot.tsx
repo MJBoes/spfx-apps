@@ -6,7 +6,7 @@ import { IDossierFilesProps } from '../IDossierFilesProps';
 export class DossierMenuPivot extends React.Component<IDossierFilesProps> {
   public render(): JSX.Element {
     const _pivotitems: JSX.Element[] = this.props.dossierTypes.map((item: string, i: number): JSX.Element => {
-      return(<PivotItem linkText={item}></PivotItem>);
+      return(<PivotItem key={item} linkText={item}></PivotItem>);
     });
     return (
       <div>
@@ -31,5 +31,6 @@ export class DossierMenuPivot extends React.Component<IDossierFilesProps> {
     // alert(item.props.linkText);
     // this.props.setPageType('list');
     // this.props.setDosierType(item.props.linkText);
+    this.props.setPageState('list',item.props.linkText);
   }
 }

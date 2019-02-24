@@ -10,15 +10,20 @@ export default class DossierFiles extends React.Component<IDossierFilesProps, ID
     this.state={
       selectedViewMode: "list",
       selectedDossierType: "Distilleries",
-      selectedDossierCode: ""
+      selectedDossierCode: "",
     };
   }
   public render(): React.ReactElement<IDossierFilesProps> {
     return (
       <div>
-        {this.state.selectedViewMode==="list" && <ViewList {...this.props} /> }
+        {/* Main component selectedDossiertype: {this.state.selectedDossierType} */}
+        {this.state.selectedViewMode==="list" && <ViewList {...this.props} setPageState={(pageType,dossierType)=>this.setPageState(pageType,dossierType)} /> }
         {this.state.selectedViewMode==="item" && <ViewItem {...this.props} /> }
       </div>
     );
+  }
+
+  private setPageState(pageType: string, dossierType:string): void {
+    this.setState({selectedViewMode:pageType, selectedDossierType:dossierType});
   }
 }

@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.2/MicrosoftTeams.schema.json",
   "manifestVersion": "1.2",
-  "packageName": "DossierFiles",
-  "id": "052639d2-0645-4849-9183-1a3be9275f9b",
+  "packageName": "Todo",
+  "id": "760e8e44-0d4d-403f-b0f3-0ef775b6b639",
   "version": "0.1",
   "developer": {
     "name": "SPFx + Teams Dev",
@@ -11,11 +11,11 @@
     "termsOfUseUrl": "https://www.microsoft.com/en-us/servicesagreement"
   },
   "name": {
-    "short": "DossierFiles"
+    "short": "Todo"
   },
   "description": {
-    "short": "Display files connnected to dossier items",
-    "full": "Display files connnected to dossier items"
+    "short": "Rebuild of sp-dev-fx-webparts example",
+    "full": "Rebuild of sp-dev-fx-webparts example"
   },
   "icons": {
     "outline": "tab20x20.png",
@@ -24,7 +24,7 @@
   "accentColor": "#004578",
   "configurableTabs": [
     {
-      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=052639d2-0645-4849-9183-1a3be9275f9b",
+      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=760e8e44-0d4d-403f-b0f3-0ef775b6b639",
       "canUpdateConfiguration": false,
       "scopes": [
         "team"

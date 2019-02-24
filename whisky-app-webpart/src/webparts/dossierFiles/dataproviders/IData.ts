@@ -23,6 +23,7 @@ export interface IFile {
 // a dossier entry has an item code ('Gall & Gall Markthal'), a dossier type ('Shop') and references to other dossier types ('Franchise':'Gall & Gall','Holding':'Ahold')
 // the properties can be read from the source. For example the address, opening hours
 export interface IDossierEntry {
+    dossieritemid: string;
     dossieritemcode: string;
     dossiertype: string;
     shortname: string;
@@ -42,7 +43,7 @@ export class DossierItem implements IDossierEntry{
     public properties: {title:string,value:string}[];
     public references: {dossiertype:string,dossieritemcodes:string[]}[];
     public imageurl: string;
-    constructor(public dossieritemcode: string, public dossiertype: string, public shortname: string, public description: string) {
+    constructor(public dossieritemid: string, public dossieritemcode: string, public dossiertype: string, public shortname: string, public description: string) {
 
     }
     public addFile(file:IFile){

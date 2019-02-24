@@ -90,6 +90,7 @@ export class MockDataProvider implements IDataProvider {
         let response: IDossierEntry[] = [];
         for (let i = 0; i < results.value.length; i++) {
             response.push({
+                dossieritemid: results.value[i].Id.toString(),
                 dossieritemcode: results.value[i].Title,
                 dossiertype: results.value[i].ContentType.Name,
                 shortname: results.value[i].Title,
@@ -99,7 +100,7 @@ export class MockDataProvider implements IDataProvider {
         return new Promise<IDossierEntry[]>((resolve) => {
             setTimeout(() => {
                 resolve(response);
-            }, 2000);
+            }, 200);
         });
     }
 }

@@ -6,4 +6,5 @@ export interface IDossierFilesProps {
   dossierTypes: string[];
   webPartDisplayMode: DisplayMode;
   dataProvider: IDataProvider;
+  setPageState?(pageType: string, dossierType:string):void;
 }

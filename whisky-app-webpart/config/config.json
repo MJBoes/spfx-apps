@@ -41,6 +41,14 @@
           "manifest": "./src/webparts/dossierFiles/DossierFilesWebPart.manifest.json"
         }
       ]
+    },
+    "todo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/todo/TodoWebPart.js",
+          "manifest": "./src/webparts/todo/TodoWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -49,6 +57,7 @@
     "CameraWebPartStrings": "lib/webparts/camera/loc/{locale}.js",
     "ReactAdaptiveCardsImageGalleryWebPartStrings": "lib/webparts/reactAdaptiveCardsImageGallery/loc/{locale}.js",
     "DataservicesWebPartStrings": "lib/webparts/dataservices/loc/{locale}.js",
-    "DossierFilesWebPartStrings": "lib/webparts/dossierFiles/loc/{locale}.js"
+    "DossierFilesWebPartStrings": "lib/webparts/dossierFiles/loc/{locale}.js",
+    "TodoWebPartStrings": "lib/webparts/todo/loc/{locale}.js"
   }
 }

@@ -49,6 +49,7 @@ export class SharePointDataProvider implements IDataProvider {
             let dossiers:IDossierEntry[]=[];
             for (let i = 0; i < data.value.length; i++) {
                 dossiers.push({
+                    dossieritemid: data.value[i].Id,
                     dossieritemcode: data.value[i].Title,
                     dossiertype: data.value[i].ContentType.Name,
                     shortname: data.value[i].Title,
