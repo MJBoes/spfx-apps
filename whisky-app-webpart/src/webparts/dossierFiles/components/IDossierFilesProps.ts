@@ -1,4 +1,4 @@
-import { IDataProvider, IDossierEntry } from '../dataproviders/IData';
+import { IDataProvider, IDossierListItem } from '../dataproviders/IData';
 import { DisplayMode } from '@microsoft/sp-core-library';
 
 export interface IDossierFilesProps {
@@ -7,5 +7,5 @@ export interface IDossierFilesProps {
   webPartDisplayMode: DisplayMode;
   dataProvider: IDataProvider;
   handleSelectList?(dossierType:string):void;
-  handleSelectItem?(dossierItem: IDossierEntry):void;
+  handleSelectItem?(dossierItem: IDossierListItem):void;
 }

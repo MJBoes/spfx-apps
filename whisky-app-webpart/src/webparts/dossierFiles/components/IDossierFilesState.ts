@@ -1,11 +1,12 @@
-import { IFile, IDossierEntry } from '../dataproviders/IData';
+import { IFile, IDossierListItem, IDossierItemDetails } from '../dataproviders/IData';
 import { IColumn, IContextualMenuProps } from 'office-ui-fabric-react';
 
 export interface IDossierFilesState {
     allDocuments?: IFile[];
     displayedDocuments?: IFile[];
-    allDossiers?: IDossierEntry[];
-    displayedDossiers?: IDossierEntry[];
+    allDossiers?: IDossierListItem[];
+    displayedDossiers?: IDossierListItem[];
+    selectedDossier?: IDossierItemDetails;
     showResetFilters?: boolean;
     isLoading?: boolean;
     columns?: IColumn[];
@@ -20,5 +21,4 @@ export interface IDossierFilesState {
 
     selectedViewMode:string;
     selectedDossierType: string;
-    selectedDossierCode: string;  
 }

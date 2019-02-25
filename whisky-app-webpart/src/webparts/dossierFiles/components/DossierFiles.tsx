@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IDossierFilesProps } from './IDossierFilesProps';
 import { IDossierFilesState } from './IDossierFilesState';
-import { IDossierEntry } from '../dataproviders/IData';
+import { IDossierListItem } from '../dataproviders/IData';
 import ViewList from './viewList/ViewList';
 import ViewItem from './viewItem/ViewItem';
 
@@ -11,7 +11,6 @@ export default class DossierFiles extends React.Component<IDossierFilesProps, ID
     this.state={
        selectedViewMode: "list",
        selectedDossierType: this.props.dossierTypes[0],
-       selectedDossierCode: "",
     };
     this.handleSelectItem=this.handleSelectItem.bind(this);
     this.handleSelectList=this.handleSelectList.bind(this);
@@ -24,19 +23,23 @@ export default class DossierFiles extends React.Component<IDossierFilesProps, ID
   public render(): React.ReactElement<IDossierFilesProps> {
     return (
       <div>
-        Main component selectedDossiertype: {this.state.selectedDossierType}
+        Main component selectedDossiertype: {this.state.selectedDossierType}, item {this.state.selectedDossier!==undefined && this.state.selectedDossier.id}
         {this.state.selectedViewMode==="list" && <ViewList items={this.state.displayedDossiers} dossierTypes={this.props.dossierTypes} handleSelectList={this.handleSelectList} handleSelectItem={this.handleSelectItem} /> }
-        {this.state.selectedViewMode==="item" && <ViewItem selectedDossierCode={this.state.selectedDossierCode} handleSelectList={this.handleSelectList} handleSelectItem={this.handleSelectItem} /> }
+        {this.state.selectedViewMode==="item" && <ViewItem selectedDossier={this.state.selectedDossier} handleSelectList={this.handleSelectList} handleSelectItem={this.handleSelectItem} /> }
       </div>
     );
   }
 
   private handleSelectList(dossierType:string): void {
-    this.props.dataProvider.readDossierFromList(dossierType).then((dossiers:IDossierEntry[])=>{
+    this.props.dataProvider.readDossierItemsFromList(dossierType).then((dossiers:IDossierListItem[])=>{
       this.setState({selectedViewMode:"list", selectedDossierType:dossierType, displayedDossiers:dossiers});
     });
   }
-  private handleSelectItem(dossierItem: IDossierEntry): void  {
-    this.setState({selectedViewMode:"item", selectedDossierCode:dossierItem.dossieritemcode});
+  private handleSelectItem(dossierItem: IDossierListItem): void  {
+    this.props.dataProvider.readDossierItemByIDFromList(dossierItem.id).then(
+      item=>{
+        this.setState({selectedViewMode:"item", selectedDossier:item});
+      }
+    );
   }
 }

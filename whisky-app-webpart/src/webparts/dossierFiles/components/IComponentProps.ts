@@ -1,21 +1,21 @@
-import { IDataProvider, IDossierEntry } from '../dataproviders/IData';
+import { IDataProvider, IDossierListItem, IDossierItemDetails } from '../dataproviders/IData';
 import { DisplayMode } from '@microsoft/sp-core-library';
 
 export interface IViewListItemProps {
-  item: IDossierEntry;
-  onSelectItem(dossierItem: IDossierEntry): void;
+  item: IDossierListItem;
+  onSelectItem(dossierItem: IDossierListItem): void;
 }
 
 export interface IViewListProps {
-  items: IDossierEntry[];
+  items: IDossierListItem[];
   dossierTypes: string[];
-  handleSelectItem?(dossierItem: IDossierEntry): void;
+  handleSelectItem?(dossierItem: IDossierListItem): void;
   handleSelectList?(dossierType: string): void;
 }
 
 export interface IViewItem {
-  selectedDossierCode: string;
-  handleSelectItem?(dossierItem: IDossierEntry): void;
+  selectedDossier: IDossierItemDetails;
+  handleSelectItem?(dossierItem: IDossierListItem): void;
   handleSelectList?(dossierType: string): void;
 }
 
@@ -30,5 +30,5 @@ export interface IDossierFilesProps {
   webPartDisplayMode: DisplayMode;
   dataProvider: IDataProvider;
   handleSelectList?(dossierType: string): void;
-  handleSelectItem?(dossierItem: IDossierEntry): void;
+  handleSelectItem?(dossierItem: IDossierListItem): void;
 }

@@ -1,6 +1,7 @@
 import { IWebPartContext } from '@microsoft/sp-webpart-base';
 import { SPHttpClient } from '@microsoft/sp-http';
-import { IDataProvider, IFile, IDossierEntry } from './IData';
+import { IDataProvider, IFile, IDossierListItem, IDossierItemDetails } from './IData';
+import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 
 export class SharePointDataProvider implements IDataProvider {
     private _webPartContext: IWebPartContext;
@@ -30,7 +31,7 @@ export class SharePointDataProvider implements IDataProvider {
         });
     }
 
-    public readDossierFromList(dossierType: string): Promise<IDossierEntry[]> {
+    public readDossierItemsFromList(dossierType: string): Promise<IDossierListItem[]> {
         // probably not necessary, but a performance enhancement could be to fetch per dossier type: &$filter=ContentType%20eq%20%27dossierdistillery%27'
         let _root:string;
         if(DEBUG){
@@ -46,17 +47,64 @@ export class SharePointDataProvider implements IDataProvider {
                 return Promise.reject(new Error(JSON.stringify(response)));
             }
         }).then((data:any)=>{
-            let dossiers:IDossierEntry[]=[];
+            let dossiers:IDossierListItem[]=[];
             for (let i = 0; i < data.value.length; i++) {
                 dossiers.push({
-                    dossieritemid: data.value[i].Id,
-                    dossieritemcode: data.value[i].Title,
-                    dossiertype: data.value[i].ContentType.Name,
-                    shortname: data.value[i].Title,
-                    description: data.value[i].dossierdescription
+                    id: data.value[i].Id,
+                    title: data.value[i].Title,
+                    type: data.value[i].ContentType.Name,
+                    description: data.value[i].dossierdescription,
+                    iconurl:''
                 });
             }
             return dossiers;
+        });
+    }
+    public readDossierItemByIDFromList(dossierID: string): Promise<IDossierItemDetails>{
+        let _root:string;
+        if(DEBUG){
+            _root="http://localhost:8081";
+        }else{
+            _root="https://desktopservices.sharepoint.com";
+        }
+        let rest=_root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items/getbyid(" + dossierID + ")?$expand=ContentType";
+        return this._webPartContext.spHttpClient.get(rest,SPHttpClient.configurations.v1).then((response: any) => {
+            if (response.status >= 200 && response.status < 300) {
+                return response.json();
+            } else {
+                return Promise.reject(new Error(JSON.stringify(response)));
+            }
+        }).then((data:any)=>{
+            rest=_root+"/sites/showcase/factbook/_api/web/lists/getbytitle('dossierfiles')/items?$select=id,Title,FileRef,dossierbottlingcodes,dossierbottlercodes,dossierbrandcodes,dossierdistillerycodes&$filter=substringof('"+data.Title+"',"+data.ContentType.Name+"codes)";
+            return this._webPartContext.spHttpClient.get(rest,SPHttpClient.configurations.v1).then((response: any) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    return Promise.reject(new Error(JSON.stringify(response)));
+                }
+            }).then((files:any)=>{
+                let iconUrl:string='';
+                let _iconroot:string=Environment.type === EnvironmentType.Local ? "https://localhost:4321/src/images" : "https://desktopservices.sharepoint.com/sites/showcase/factbook/_layouts/15/getpreview.ashx?resolution=0&path=https://desktopservices.sharepoint.com";
+                for(const file of files.value) {
+                    // console.log(file, data.ContentType.Name, data.Title);
+                    // console.log(file[data.ContentType.Name+'codes']);
+                    if(file[data.ContentType.Name+'codes']==data.Title){
+                        iconUrl=_iconroot+file.FileRef;
+                        console.log(_iconroot,file.FileRef);
+                    }
+                }
+                let dossier:IDossierItemDetails={
+                    id:data.Id,
+                    title: data.Title,
+                    type: data.ContentType.Name,
+                    description:data.dossierdescription,
+                    iconurl:iconUrl,
+                    properties:[],
+                    references:[{ dossiertype:"Distillery", dossieritems: [{id: '53', title: "Ardbeg", type:'Distillery', description:'', iconurl:''}]}],
+                    files:files
+                };
+                return dossier;
+            });
         });
     }
 }

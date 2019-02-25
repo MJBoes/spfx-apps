@@ -14,6 +14,7 @@ import { IDossierFilesProps } from './components/IComponentProps';
 import { SharePointDataProvider } from './dataproviders/SPDataProvider';
 import { MockDataProvider } from './dataproviders/MockDataProvider';
 import { IDataProvider } from './dataproviders/IData';
+import * as markdownit from 'markdown-it';
 
 export interface IDossierFilesWebPartProps {
   dossierlistUrl: string;
@@ -33,6 +34,7 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
   }
 
   public render(): void {
+    (<any>window).markdownit=()=>markdownit();
     const element: React.ReactElement<IDossierFilesProps> = React.createElement(
       DossierFiles,
       {

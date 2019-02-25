@@ -3,7 +3,8 @@ import { values } from "@uifabric/utilities";
 export interface IDataProvider {
     validateSettings(): boolean;
     readDocumentsFromSearch(): Promise<IFile[]>;
-    readDossierFromList(dossierType: string): Promise<IDossierEntry[]>;
+    readDossierItemsFromList(dossierType: string): Promise<IDossierListItem[]>;
+    readDossierItemByIDFromList(dossierID: string): Promise<IDossierItemDetails>;
 }
 
 // a file can have properties and references to dossier entries.
@@ -18,6 +19,32 @@ export interface IFile {
         dossiertype:string,
         dossieritemcodes:string[]
     }[];
+}
+
+// IDossierListItem contains the light weigth storage for selection and as attribute in the lists in IDossierItemDetails.
+export interface IDossierListItem {
+    id: string;
+    title: string;
+    type: string;
+    description: string;
+    iconurl: string;
+}
+
+export interface IDossierItemDetails {
+    id: string;
+    title: string;
+    type: string;
+    description: string;
+    iconurl: string;
+    properties:{
+        title:string;
+        value:string;
+    }[];
+    references:{
+        dossiertype:string;
+        dossieritems:IDossierListItem[];
+    }[];
+    files:IFile[];
 }
 
 // a dossier entry has an item code ('Gall & Gall Markthal'), a dossier type ('Shop') and references to other dossier types ('Franchise':'Gall & Gall','Holding':'Ahold')

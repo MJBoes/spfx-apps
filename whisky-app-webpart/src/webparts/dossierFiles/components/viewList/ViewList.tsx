@@ -3,7 +3,7 @@ import { IViewListProps } from '../IComponentProps';
 import { DossierMenuPivot } from './DossierMenuPivot';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { List } from 'office-ui-fabric-react/lib/List';
-import { IDossierEntry } from '../../dataproviders/IData';
+import { IDossierListItem } from '../../dataproviders/IData';
 import ViewListItem from './ViewListItem';
 import './ViewList.module.scss';
 
@@ -29,7 +29,7 @@ export default class ViewList extends React.Component<IViewListProps> {
     );  
   }
 
-  private _onRenderCell(item: IDossierEntry, index: number | undefined): JSX.Element {
+  private _onRenderCell(item: IDossierListItem, index: number | undefined): JSX.Element {
     return (
       <ViewListItem item={item} onSelectItem={this.props.handleSelectItem}></ViewListItem>
     );
