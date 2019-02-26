@@ -9,7 +9,8 @@ export interface IDataProvider {
 
 // a file can have properties and references to dossier entries.
 export interface IFile {
-    name: string;
+    id: string;
+    title: string;
     unc: string;
     properties?:{
         title:string;
@@ -19,6 +20,11 @@ export interface IFile {
         dossiertype:string,
         dossieritemcodes:string[]
     }[];
+}
+
+export interface IDossierReference {
+    dossiertype:string;
+    dossieritems:IDossierListItem[];
 }
 
 // IDossierListItem contains the light weigth storage for selection and as attribute in the lists in IDossierItemDetails.
@@ -40,10 +46,7 @@ export interface IDossierItemDetails {
         title:string;
         value:string;
     }[];
-    references:{
-        dossiertype:string;
-        dossieritems:IDossierListItem[];
-    }[];
+    references:IDossierReference[];
     files:IFile[];
 }
 
@@ -65,35 +68,35 @@ export interface IDossierEntry {
     }[];
 }
 
-export class DossierItem implements IDossierEntry{
-    public files: IFile[]=[];
-    public properties: {title:string,value:string}[];
-    public references: {dossiertype:string,dossieritemcodes:string[]}[];
-    public imageurl: string;
-    constructor(public dossieritemid: string, public dossieritemcode: string, public dossiertype: string, public shortname: string, public description: string) {
+// export class DossierItem implements IDossierEntry{
+//     public files: IFile[]=[];
+//     public properties: {title:string,value:string}[];
+//     public references: {dossiertype:string,dossieritemcodes:string[]}[];
+//     public imageurl: string;
+//     constructor(public dossieritemid: string, public dossieritemcode: string, public dossiertype: string, public shortname: string, public description: string) {
 
-    }
-    public addFile(file:IFile){
-        if(this.files.length==0){
-            let _root:string="https://desktopservices.sharepoint.com/sites/showcase/factbook/_layouts/15/getpreview.ashx?resolution=0&path=https://desktopservices.sharepoint.com/sites/showcase/factbook/DossierFiles";
-            this.imageurl=_root+file.unc;
-        }
-        this.files.push(file);
-    }
-    public addProperty(title: string, value:string){
-        this.properties.push({title,value});
-    }
-    public addReference(dossiertype: string, semicolumndelimiteddossieritemcodes:string){
-        let dossieritemcodes:string[]=semicolumndelimiteddossieritemcodes.split(';');
-        this.references.push({dossiertype,dossieritemcodes});
-    }
-}
+//     }
+//     public addFile(file:IFile){
+//         if(this.files.length==0){
+//             let _root:string="https://desktopservices.sharepoint.com/sites/showcase/factbook/_layouts/15/getpreview.ashx?resolution=0&path=https://desktopservices.sharepoint.com/sites/showcase/factbook/DossierFiles";
+//             this.imageurl=_root+file.unc;
+//         }
+//         this.files.push(file);
+//     }
+//     public addProperty(title: string, value:string){
+//         this.properties.push({title,value});
+//     }
+//     public addReference(dossiertype: string, semicolumndelimiteddossieritemcodes:string){
+//         let dossieritemcodes:string[]=semicolumndelimiteddossieritemcodes.split(';');
+//         this.references.push({dossiertype,dossieritemcodes});
+//     }
+// }
 
-export class File implements IFile {
-    constructor(public unc:string, public name:string){
+// export class File implements IFile {
+//     constructor(public unc:string, public name:string){
 
-    }
-}
+//     }
+// }
 
 // export interface IDistillery {
 //     code: string;

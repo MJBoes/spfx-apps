@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as AdaptiveCards from "adaptivecards";
 
 import { IViewItem } from '../IComponentProps';
+import { IFile } from '../../dataproviders/IData';
 
 export default class ViewItem extends React.Component<IViewItem, {}> {
   constructor(props: IViewItem) {
@@ -10,9 +11,9 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
     this._onSelectItem = this._onSelectItem.bind(this);
   }
   public render(): React.ReactElement<IViewItem> {
-    // console.log('View item render: ', this.props);
+    console.log('View item render: ', this.props.selectedDossier);
     let renderedCard: HTMLElement;
-    let card = this.adaptiveio(this.props.selectedDossier.title,this.props.selectedDossier.description, this.props.selectedDossier.iconurl);
+    let card = this.adaptiveio(this.props.selectedDossier.title,this.props.selectedDossier.description, this.props.selectedDossier.iconurl, this.props.selectedDossier.files);
     var adaptiveCard = new AdaptiveCards.AdaptiveCard();
     adaptiveCard.hostConfig = new AdaptiveCards.HostConfig({
         fontFamily: "Segoe UI, Helvetica Neue, sans-serif"
@@ -34,7 +35,9 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
 
     // this.props.handleSelectItem();
   }
-  private adaptiveio(title:string, description: string, iconurl:string): {} {
+  private adaptiveio(title:string, description: string, iconurl:string, files: any): {} {
+    // let images=files.value.map((item)=>{return({"type": "Image","url": item.FileRef});});
+    let images=files;
     return (
       {
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
@@ -71,7 +74,13 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
                     "text": description,
                     "size": "small",
                     "wrap": true
+                  },
+                  {
+                    "type": "ImageSet",
+                    "imageSize": "medium",
+                    "images": images
                   }
+
                 ]
               },
               {
