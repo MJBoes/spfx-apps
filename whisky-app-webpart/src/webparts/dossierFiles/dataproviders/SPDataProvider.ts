@@ -61,70 +61,6 @@ export class SharePointDataProvider implements IDataProvider {
             return dossiers;
         });
     }
-    private readDossierItemsByCodeColumn(parentDossierCode: string, dossierType: string): Promise<IDossierReference> {
-        // Get child items
-        let _root: string = this._rooturl();
-        let rest = _root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,dossierdescription,ContentType/Name&$expand=ContentType&$filter=substringof('" + parentDossierCode + "',dossier" + dossierType.toLowerCase() + "codes)";
-        return this._webPartContext.spHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
-            if (response.status >= 200 && response.status < 300) {
-                return response.json();
-            } else {
-                return Promise.reject(new Error(JSON.stringify(response)));
-            }
-        }).then((data: any) => {
-            let dossiers: IDossierListItem[] = [];
-            for (let i = 0; i < data.value.length; i++) {
-                console.log('readDossierItemsByCodeColumn',data.value[i]);
-                dossiers.push({
-                    id: data.value[i].Id,
-                    title: data.value[i].Title,
-                    type: data.value[i].ContentType.Name,
-                    description: data.value[i].dossierdescription,
-                    iconurl: ''
-                });
-            }
-            return { dossiertype: dossierType, dossieritems: dossiers };
-        });
-    }
-    private readDossierItemsByTitleColumn(delimitedDossierCodes: string[], dossierType: string): Promise<IDossierReference> {
-        // parameter example: ['ardbeg;lagavulin'],'dossierdistillery'. Return the 2 references based on content type and title
-        // Get 'parent' items like https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,FileRef&$filter=ContentType%20eq%20%27dossierdistillery%27 and (Title eq 'Ardbeg' or Title eq 'Lagavulin')
-        let _root: string = this._rooturl();
-        let rest = _root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,dossierdescription,ContentType/Name&$expand=ContentType&$filter=ContentType%20eq%20%27dossierdistillery%27 and (Title eq 'Ardbeg' or Title eq 'Lagavulin')";
-        return this._webPartContext.spHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
-            return response.json();
-        }).then((data:any)=>{
-            let dossiers: IDossierListItem[] = [];
-            for (let i = 0; i < data.value.length; i++) {
-                console.log('readDossierItemsByTitleColumn',data.value[i]);
-                dossiers.push({
-                    id: data.value[i].Id,
-                    title: data.value[i].Title,
-                    type: data.value[i].ContentType.Name,
-                    description: data.value[i].dossierdescription,
-                    iconurl: ''
-                });
-            }
-            return { dossiertype: dossierType, dossieritems: dossiers };
-        });
-    }
-    private readDossierItemReferences(dossierCode: string, referencesTo: IDossierProperty[]): Promise<any> {
-        // to be parameterized
-        let dossierTypes = ['Distillery', 'Bottler', 'Brand'];
-        let promisesMethods = [];
-        if (referencesTo === null) {
-            dossierTypes.map((item) => {
-                promisesMethods.push(this.readDossierItemsByCodeColumn(dossierCode, item));
-            });
-        }else{
-            referencesTo.map((item) => {
-                if(item.value!==null){
-                    promisesMethods.push(this.readDossierItemsByTitleColumn(item.value.split(';'),item.title));
-                }
-            });
-        }
-        return Promise.all(promisesMethods);
-    }
 
     public readDossierItemByIDFromList(dossierID: string): Promise<IDossierItemDetails> {
         let _root: string;
@@ -148,7 +84,6 @@ export class SharePointDataProvider implements IDataProvider {
             ];
             return this.readDossierItemReferences(data.Title, prop).then((referencesTo: IDossierReference[]) => {
                 return this.readDossierItemReferences(data.Title, null).then((referencedBy: IDossierReference[]) => {
-                    //console.log('SPDATAPROVIDER DATA: ', data);
                     rest = _root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossierfiles')/items?$select=id,Title,FileRef,dossierbottlingcodes,dossierbottlercodes,dossierbrandcodes,dossierdistillerycodes&$filter=substringof('" + data.Title + "'," + data.ContentType.Name + "codes)";
                     return this._webPartContext.spHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
                         if (response.status >= 200 && response.status < 300) {
@@ -164,13 +99,22 @@ export class SharePointDataProvider implements IDataProvider {
                                 iconUrl = _iconroot + file.FileRef;
                             }
                         }
+                        let _prop:IDossierProperty[]=[];
+                        Object.keys(data).map(k=>{
+                            if('@odata.context;@odata.type,@odata.id,@odata.etag,@odata.editLink,FileSystemObjectType,Id,ServerRedirectedEmbedUri,ServerRedirectedEmbedUrl,ContentTypeId,Title,ComplianceAssetId,dossierdescription,ID,Modified,Created,AuthorId,EditorId,OData__UIVersionString,Attachments,GUID,ContentType@odata.navigationLink,ContentType'.indexOf(k)==-1){
+                                if(data[k]!=null){
+                                    _prop.push({'title': k,'value':data[k]});
+                                }
+                            }
+                        });
+                        console.log('To map the properties of data:',data,_prop);
                         let dossier: IDossierItemDetails = {
                             id: data.Id,
                             title: data.Title,
                             type: data.ContentType.Name,
                             description: data.dossierdescription,
                             iconurl: iconUrl,
-                            properties: prop,
+                            properties: _prop,
                             // find the dossier items where that item is in the dossierXcodes field and the other way around, fetch all references of the current dossier item
                             referencedBy: referencedBy,
                             referencesTo: referencesTo,
@@ -182,6 +126,79 @@ export class SharePointDataProvider implements IDataProvider {
             });
         });
     }
+
+    private _readDossierItemsByCodeColumn(parentDossierCode: string, dossierType: string): Promise<IDossierReference> {
+        // Get child items
+        let _root: string = this._rooturl();
+        let rest = _root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,dossierdescription,ContentType/Name&$expand=ContentType&$filter=substringof('" + parentDossierCode + "',dossier" + dossierType.toLowerCase() + "codes)";
+        return this._webPartContext.spHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
+            if (response.status >= 200 && response.status < 300) {
+                return response.json();
+            } else {
+                return Promise.reject(new Error(JSON.stringify(response)));
+            }
+        }).then((data: any) => {
+            let dossiers: IDossierListItem[] = [];
+            for (let i = 0; i < data.value.length; i++) {
+                //console.log('readDossierItemsByCodeColumn',data.value[i]);
+                dossiers.push({
+                    id: data.value[i].Id,
+                    title: data.value[i].Title,
+                    type: data.value[i].ContentType.Name,
+                    description: data.value[i].dossierdescription,
+                    iconurl: ''
+                });
+            }
+            return { dossiertype: dossierType, dossieritems: dossiers };
+        });
+    }
+
+    private _readDossierItemsByTitleColumn(delimitedDossierCodes: string[], dossierType: string): Promise<IDossierReference> {
+        // parameter example: ['ardbeg;lagavulin'],'dossierdistillery'. Return the 2 references based on content type and title
+        // Get 'parent' items like https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,FileRef&$filter=ContentType%20eq%20%27dossierdistillery%27 and (Title eq 'Ardbeg' or Title eq 'Lagavulin')
+        let _root: string = this._rooturl();
+        let _filter: string[] = [];
+        delimitedDossierCodes.map(item => {
+            _filter.push("Title eq '" + item + "'");
+        });
+        //console.log('_readDossierItemsByTitleColumn build filter: ',_filter);
+        let rest = _root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,dossierdescription,ContentType/Name&$expand=ContentType&$filter=ContentType%20eq%20%27dossierdistillery%27 and (" + _filter.join(' or ') + ")";
+        return this._webPartContext.spHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
+            return response.json();
+        }).then((data: any) => {
+            let dossiers: IDossierListItem[] = [];
+            for (let i = 0; i < data.value.length; i++) {
+                //console.log('readDossierItemsByTitleColumn',data.value[i]);
+                dossiers.push({
+                    id: data.value[i].Id,
+                    title: data.value[i].Title,
+                    type: data.value[i].ContentType.Name,
+                    description: data.value[i].dossierdescription,
+                    iconurl: ''
+                });
+            }
+            return { dossiertype: dossierType, dossieritems: dossiers };
+        });
+    }
+
+    private readDossierItemReferences(dossierCode: string, referencesTo: IDossierProperty[]): Promise<any> {
+        // to be parameterized
+        let dossierTypes = ['Distillery', 'Bottler', 'Brand'];
+        let promisesMethods = [];
+        if (referencesTo === null) {
+            dossierTypes.map((item) => {
+                promisesMethods.push(this._readDossierItemsByCodeColumn(dossierCode, item));
+            });
+        } else {
+            referencesTo.map((item) => {
+                if (item.value !== null) {
+                    promisesMethods.push(this._readDossierItemsByTitleColumn(item.value.split(',').map(s => { return s.trim(); }), item.title));
+                }
+            });
+        }
+        return Promise.all(promisesMethods);
+    }
+
     private _rooturl(): string {
         let _root: string;
         if (DEBUG) {

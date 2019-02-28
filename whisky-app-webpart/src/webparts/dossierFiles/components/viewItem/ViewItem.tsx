@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as AdaptiveCards from "adaptivecards";
 
 import { IViewItem } from '../IComponentProps';
-import { IFile } from '../../dataproviders/IData';
+import { IDossierReference, IDossierProperty, IFile } from '../../dataproviders/IData';
 
 export default class ViewItem extends React.Component<IViewItem, {}> {
   constructor(props: IViewItem) {
@@ -13,11 +13,11 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
   public render(): React.ReactElement<IViewItem> {
     console.log('View item render: ', this.props.selectedDossier);
     let renderedCard: HTMLElement;
-    let card = this.adaptiveio(this.props.selectedDossier.title,this.props.selectedDossier.description, this.props.selectedDossier.iconurl, this.props.selectedDossier.files);
+    let card = this.adaptiveio(this.props.selectedDossier.title, this.props.selectedDossier.description, this.props.selectedDossier.iconurl, this.props.selectedDossier.referencedBy, this.props.selectedDossier.properties, this.props.selectedDossier.files);
     var adaptiveCard = new AdaptiveCards.AdaptiveCard();
     adaptiveCard.hostConfig = new AdaptiveCards.HostConfig({
-        fontFamily: "Segoe UI, Helvetica Neue, sans-serif"
-        // More host config options
+      fontFamily: "Segoe UI, Helvetica Neue, sans-serif"
+      // More host config options
     });
     adaptiveCard.parse(card);
     renderedCard = adaptiveCard.render();
@@ -35,9 +35,16 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
 
     // this.props.handleSelectItem();
   }
-  private adaptiveio(title:string, description: string, iconurl:string, files: any): {} {
+  private adaptiveio(title: string, description: string, iconurl: string, referencedBy: IDossierReference[], dossierproperties: IDossierProperty[], files: any): {} {
     // let images=files.value.map((item)=>{return({"type": "Image","url": item.FileRef});});
-    let images=files;
+    let images = files;
+    let _referencedBy:{}[]=[];
+    referencedBy.map(ref=>{
+      ref.dossieritems.map(i=>{
+        _referencedBy.push({'title':i.type,'value':i.title});
+      });
+    });
+    //console.log('_referencesTo: ',_referencedBy);
     return (
       {
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
@@ -76,11 +83,23 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
                     "wrap": true
                   },
                   {
+                    "type": "FactSet",
+                    "facts": dossierproperties,
+                  },
+                  {
+                    "type": "FactSet",
+                    "facts": _referencedBy,
+                  },
+                  {
+                    "type": "TextBlock",
+                    "size": "Large",
+                    "text": "Files"
+                  },
+                  {
                     "type": "ImageSet",
                     "imageSize": "medium",
                     "images": images
                   }
-
                 ]
               },
               {
