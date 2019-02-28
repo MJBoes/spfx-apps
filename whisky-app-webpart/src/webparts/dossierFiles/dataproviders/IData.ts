@@ -27,6 +27,11 @@ export interface IDossierReference {
     dossieritems:IDossierListItem[];
 }
 
+export interface IDossierProperty {
+    title: string;
+    value: string;
+}
+
 // IDossierListItem contains the light weigth storage for selection and as attribute in the lists in IDossierItemDetails.
 export interface IDossierListItem {
     id: string;
@@ -42,11 +47,9 @@ export interface IDossierItemDetails {
     type: string;
     description: string;
     iconurl: string;
-    properties:{
-        title:string;
-        value:string;
-    }[];
-    references:IDossierReference[];
+    properties:IDossierProperty[];
+    referencedBy: IDossierReference[];
+    referencesTo: IDossierReference[];
     files:IFile[];
 }
 

@@ -1,6 +1,6 @@
 import { IWebPartContext } from '@microsoft/sp-webpart-base';
 import { SPHttpClient } from '@microsoft/sp-http';
-import { IDataProvider, IFile, IDossierListItem, IDossierItemDetails, IDossierReference } from './IData';
+import { IDataProvider, IFile, IDossierListItem, IDossierItemDetails, IDossierProperty, IDossierReference } from './IData';
 import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import { PromotedState } from 'sp-pnp-js';
 
@@ -74,6 +74,7 @@ export class SharePointDataProvider implements IDataProvider {
         }).then((data: any) => {
             let dossiers: IDossierListItem[] = [];
             for (let i = 0; i < data.value.length; i++) {
+                console.log('readDossierItemsByCodeColumn',data.value[i]);
                 dossiers.push({
                     id: data.value[i].Id,
                     title: data.value[i].Title,
@@ -85,14 +86,41 @@ export class SharePointDataProvider implements IDataProvider {
             return { dossiertype: dossierType, dossieritems: dossiers };
         });
     }
-
-    private readDossierItemReferences(dossierCode: string, childDossier:any): Promise<any> {
+    private readDossierItemsByTitleColumn(delimitedDossierCodes: string[], dossierType: string): Promise<IDossierReference> {
+        // parameter example: ['ardbeg;lagavulin'],'dossierdistillery'. Return the 2 references based on content type and title
+        // Get 'parent' items like https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,FileRef&$filter=ContentType%20eq%20%27dossierdistillery%27 and (Title eq 'Ardbeg' or Title eq 'Lagavulin')
+        let _root: string = this._rooturl();
+        let rest = _root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossier')/items?$select=id,Title,dossierdescription,ContentType/Name&$expand=ContentType&$filter=ContentType%20eq%20%27dossierdistillery%27 and (Title eq 'Ardbeg' or Title eq 'Lagavulin')";
+        return this._webPartContext.spHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
+            return response.json();
+        }).then((data:any)=>{
+            let dossiers: IDossierListItem[] = [];
+            for (let i = 0; i < data.value.length; i++) {
+                console.log('readDossierItemsByTitleColumn',data.value[i]);
+                dossiers.push({
+                    id: data.value[i].Id,
+                    title: data.value[i].Title,
+                    type: data.value[i].ContentType.Name,
+                    description: data.value[i].dossierdescription,
+                    iconurl: ''
+                });
+            }
+            return { dossiertype: dossierType, dossieritems: dossiers };
+        });
+    }
+    private readDossierItemReferences(dossierCode: string, referencesTo: IDossierProperty[]): Promise<any> {
         // to be parameterized
         let dossierTypes = ['Distillery', 'Bottler', 'Brand'];
         let promisesMethods = [];
-        if (childDossier===null) {
+        if (referencesTo === null) {
             dossierTypes.map((item) => {
                 promisesMethods.push(this.readDossierItemsByCodeColumn(dossierCode, item));
+            });
+        }else{
+            referencesTo.map((item) => {
+                if(item.value!==null){
+                    promisesMethods.push(this.readDossierItemsByTitleColumn(item.value.split(';'),item.title));
+                }
             });
         }
         return Promise.all(promisesMethods);
@@ -113,34 +141,43 @@ export class SharePointDataProvider implements IDataProvider {
                 return Promise.reject(new Error(JSON.stringify(response)));
             }
         }).then((data: any) => {
-            return this.readDossierItemReferences(data.Title,null).then((childRefs: any) => {
-                rest = _root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossierfiles')/items?$select=id,Title,FileRef,dossierbottlingcodes,dossierbottlercodes,dossierbrandcodes,dossierdistillerycodes&$filter=substringof('" + data.Title + "'," + data.ContentType.Name + "codes)";
-                return this._webPartContext.spHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
-                    if (response.status >= 200 && response.status < 300) {
-                        return response.json();
-                    } else {
-                        return Promise.reject(new Error(JSON.stringify(response)));
-                    }
-                }).then((files: any) => {
-                    let iconUrl: string = '';
-                    let _iconroot: string = Environment.type === EnvironmentType.Local ? "https://localhost:4321/src/images" : "https://desktopservices.sharepoint.com/sites/showcase/factbook/_layouts/15/getpreview.ashx?resolution=0&path=https://desktopservices.sharepoint.com";
-                    for (const file of files.value) {
-                        if (file[data.ContentType.Name + 'codes'] == data.Title) {
-                            iconUrl = _iconroot + file.FileRef;
+            let prop: IDossierProperty[] = [
+                { title: 'dossierbottler', value: data.dossierbottlercodes },
+                { title: 'dossierdistillery', value: data.dossierdistillerycodes },
+                { title: 'dossierbrand', value: data.dossierbrandcodes }
+            ];
+            return this.readDossierItemReferences(data.Title, prop).then((referencesTo: IDossierReference[]) => {
+                return this.readDossierItemReferences(data.Title, null).then((referencedBy: IDossierReference[]) => {
+                    //console.log('SPDATAPROVIDER DATA: ', data);
+                    rest = _root + "/sites/showcase/factbook/_api/web/lists/getbytitle('dossierfiles')/items?$select=id,Title,FileRef,dossierbottlingcodes,dossierbottlercodes,dossierbrandcodes,dossierdistillerycodes&$filter=substringof('" + data.Title + "'," + data.ContentType.Name + "codes)";
+                    return this._webPartContext.spHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
+                        if (response.status >= 200 && response.status < 300) {
+                            return response.json();
+                        } else {
+                            return Promise.reject(new Error(JSON.stringify(response)));
                         }
-                    }
-                    let dossier: IDossierItemDetails = {
-                        id: data.Id,
-                        title: data.Title,
-                        type: data.ContentType.Name,
-                        description: data.dossierdescription,
-                        iconurl: iconUrl,
-                        properties: [],
-                        // find the dossier items where that item is in the dossierXcodes field and the other way around, fetch all references of the current dossier item
-                        references: childRefs,
-                        files: files.value.map((item) => { return ({ "type": "Image", "url": _iconroot + item.FileRef }); })
-                    };
-                    return dossier;
+                    }).then((files: any) => {
+                        let iconUrl: string = '';
+                        let _iconroot: string = Environment.type === EnvironmentType.Local ? "https://localhost:4321/src/images" : "https://desktopservices.sharepoint.com/sites/showcase/factbook/_layouts/15/getpreview.ashx?resolution=0&path=https://desktopservices.sharepoint.com";
+                        for (const file of files.value) {
+                            if (file[data.ContentType.Name + 'codes'] == data.Title) {
+                                iconUrl = _iconroot + file.FileRef;
+                            }
+                        }
+                        let dossier: IDossierItemDetails = {
+                            id: data.Id,
+                            title: data.Title,
+                            type: data.ContentType.Name,
+                            description: data.dossierdescription,
+                            iconurl: iconUrl,
+                            properties: prop,
+                            // find the dossier items where that item is in the dossierXcodes field and the other way around, fetch all references of the current dossier item
+                            referencedBy: referencedBy,
+                            referencesTo: referencesTo,
+                            files: files.value.map((item) => { return ({ "type": "Image", "url": _iconroot + item.FileRef }); })
+                        };
+                        return dossier;
+                    });
                 });
             });
         });

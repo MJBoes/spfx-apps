@@ -168,7 +168,8 @@ export class MockDataProvider implements IDataProvider {
             description: results.value[1].dossierdescription,
             iconurl:'',
             properties:[],
-            references:[],
+            referencedBy:[],
+            referencesTo:[],
             files:[]
         });
         return new Promise<IDossierItemDetails>((resolve) => {
