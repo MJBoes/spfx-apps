@@ -103,7 +103,7 @@ export class SharePointDataProvider implements IDataProvider {
                         Object.keys(data).map(k=>{
                             if('@odata.context;@odata.type,@odata.id,@odata.etag,@odata.editLink,FileSystemObjectType,Id,ServerRedirectedEmbedUri,ServerRedirectedEmbedUrl,ContentTypeId,Title,ComplianceAssetId,dossierdescription,ID,Modified,Created,AuthorId,EditorId,OData__UIVersionString,Attachments,GUID,ContentType@odata.navigationLink,ContentType'.indexOf(k)==-1){
                                 if(data[k]!=null){
-                                    _prop.push({'title': k,'value':data[k]});
+                                    _prop.push({'title': k,'value':''+data[k]});
                                 }
                             }
                         });

@@ -8,25 +8,23 @@ import ViewListItem from './ViewListItem';
 import './ViewList.module.scss';
 
 export default class ViewList extends React.Component<IViewListProps> {
-
   constructor(props: IViewListProps) {
     //, setPage(pageType: string, dossierType: string)
     super(props);
-    this._onRenderCell=this._onRenderCell.bind(this);
+    this._onRenderCell = this._onRenderCell.bind(this);
   }
 
-  public componentDidMount(){
-    //console.log("VIEWLIST MOUNT");    
+  public componentDidMount() {
   }
 
   public render(): React.ReactElement<IViewListProps> {
     return (
       <div>
-        <DossierMenuPivot dossierTypes={this.props.dossierTypes} onSelectList={this.props.handleSelectList}  />
-        <TextField label={'Filter by name of '} />
-        <List items={this.props.items} onRenderCell={this._onRenderCell} />
+        <DossierMenuPivot dossierTypes={this.props.dossierTypes} selectedDossierType={this.props.selectedDossierType} onSelectList={this.props.handleSelectList} />
+        <TextField label={'Filter by name '} onChanged={(value) => this.props.handleFilterItems(value)} />
+        <List items={this.props.displayedDossiers} onRenderCell={this._onRenderCell} />
       </div>
-    );  
+    );
   }
 
   private _onRenderCell(item: IDossierListItem, index: number | undefined): JSX.Element {

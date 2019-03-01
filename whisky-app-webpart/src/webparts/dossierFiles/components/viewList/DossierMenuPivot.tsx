@@ -6,11 +6,11 @@ import { IDossierMenuProps } from '../IComponentProps';
 export class DossierMenuPivot extends React.Component<IDossierMenuProps> {
   public render(): JSX.Element {
     const _pivotitems: JSX.Element[] = this.props.dossierTypes.map((item: string, i: number): JSX.Element => {
-      return(<PivotItem key={item} linkText={item}></PivotItem>);
+      return(<PivotItem key={item} linkText={item} itemKey={item}></PivotItem>);
     });
     return (
       <div>
-        <Pivot linkFormat={PivotLinkFormat.tabs} onLinkClick={this.onLinkClick}>
+        <Pivot linkFormat={PivotLinkFormat.tabs} onLinkClick={this.onLinkClick} selectedKey={this.props.selectedDossierType}>
           {_pivotitems}
         </Pivot>
       </div>

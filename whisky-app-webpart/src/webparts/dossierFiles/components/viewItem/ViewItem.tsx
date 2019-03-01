@@ -11,7 +11,7 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
     this._onSelectItem = this._onSelectItem.bind(this);
   }
   public render(): React.ReactElement<IViewItem> {
-    console.log('View item render: ', this.props.selectedDossier);
+    //console.log('View item render: ', this.props.selectedDossier);
     let renderedCard: HTMLElement;
     let card = this.adaptiveio(this.props.selectedDossier.title, this.props.selectedDossier.description, this.props.selectedDossier.iconurl, this.props.selectedDossier.referencedBy, this.props.selectedDossier.properties, this.props.selectedDossier.files);
     var adaptiveCard = new AdaptiveCards.AdaptiveCard();
@@ -23,13 +23,13 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
     renderedCard = adaptiveCard.render();
     return (
       <div>
-        <div onClick={this._onSelectList}>Distillery List</div>
+        <div onClick={this._onSelectList}>{this.props.selectedDossier.type}</div>
         <div ref={(n) => { n && n.appendChild(renderedCard); }} />
       </div>
     );
   }
   private _onSelectList() {
-    this.props.handleSelectList('Distillery');
+    this.props.handleSelectList(this.props.selectedDossier.type.replace('dossier',''));
   }
   private _onSelectItem() {
 
@@ -38,12 +38,12 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
   private adaptiveio(title: string, description: string, iconurl: string, referencedBy: IDossierReference[], dossierproperties: IDossierProperty[], files: any): {} {
     // let images=files.value.map((item)=>{return({"type": "Image","url": item.FileRef});});
     let images = files;
-    let _referencedBy:{}[]=[];
-    referencedBy.map(ref=>{
-      ref.dossieritems.map(i=>{
-        _referencedBy.push({'title':i.type,'value':i.title});
-      });
-    });
+    // let _referencedBy:{}[]=[];
+    // referencedBy.map(ref=>{
+    //   ref.dossieritems.map(i=>{
+    //     _referencedBy.push({'title':i.type.replace('dossier',''),'value':'['+i.title+'](https://www.nu.nl)'});
+    //   });
+    // });
     //console.log('_referencesTo: ',_referencedBy);
     return (
       {
@@ -88,7 +88,7 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
                   },
                   {
                     "type": "FactSet",
-                    "facts": _referencedBy,
+                    // "facts": _referencedBy,
                   },
                   {
                     "type": "TextBlock",

@@ -7,9 +7,11 @@ export interface IViewListItemProps {
 }
 
 export interface IViewListProps {
-  items: IDossierListItem[];
+  displayedDossiers: IDossierListItem[];
   dossierTypes: string[];
+  selectedDossierType: string;
   handleSelectItem?(dossierItem: IDossierListItem): void;
+  handleFilterItems?(dossierType: string): void;
   handleSelectList?(dossierType: string): void;
 }
 
@@ -21,6 +23,7 @@ export interface IViewItem {
 
 export interface IDossierMenuProps {
   dossierTypes: string[];
+  selectedDossierType: string;
   onSelectList?(dossierType: string): void;
 }
 

@@ -12,6 +12,7 @@ export default class DossierFiles extends React.Component<IDossierFilesProps, ID
        selectedViewMode: "list",
        selectedDossierType: this.props.dossierTypes[0],
     };
+    this.handleFilterItems=this.handleFilterItems.bind(this);
     this.handleSelectItem=this.handleSelectItem.bind(this);
     this.handleSelectList=this.handleSelectList.bind(this);
   }
@@ -24,15 +25,18 @@ export default class DossierFiles extends React.Component<IDossierFilesProps, ID
     return (
       <div>
         Main component selectedDossiertype: {this.state.selectedDossierType}, item {this.state.selectedDossier!==undefined && this.state.selectedDossier.id}
-        {this.state.selectedViewMode==="list" && <ViewList items={this.state.displayedDossiers} dossierTypes={this.props.dossierTypes} handleSelectList={this.handleSelectList} handleSelectItem={this.handleSelectItem} /> }
+        {this.state.selectedViewMode==="list" && <ViewList displayedDossiers={this.state.displayedDossiers} selectedDossierType={this.state.selectedDossierType} dossierTypes={this.props.dossierTypes} handleFilterItems={this.handleFilterItems} handleSelectList={this.handleSelectList} handleSelectItem={this.handleSelectItem} /> }
         {this.state.selectedViewMode==="item" && <ViewItem selectedDossier={this.state.selectedDossier} handleSelectList={this.handleSelectList} handleSelectItem={this.handleSelectItem} /> }
       </div>
     );
   }
 
   private handleSelectList(dossierType:string): void {
+    // bit messy, but sync dossierbrand vs Brand is refactor work
+    dossierType=dossierType.charAt(0).toUpperCase()+dossierType.substr(1);
+    //console.log(dossierType);
     this.props.dataProvider.readDossierItemsFromList(dossierType).then((dossiers:IDossierListItem[])=>{
-      this.setState({selectedViewMode:"list", selectedDossierType:dossierType, displayedDossiers:dossiers});
+      this.setState({selectedViewMode:"list", selectedDossierType:dossierType, allDossiers:dossiers, displayedDossiers: dossiers});
     });
   }
   private handleSelectItem(dossierItem: IDossierListItem): void  {
@@ -41,5 +45,10 @@ export default class DossierFiles extends React.Component<IDossierFilesProps, ID
         this.setState({selectedViewMode:"item", selectedDossier:item});
       }
     );
+  }
+  private handleFilterItems(text:string){
+    this.setState({
+      displayedDossiers:text? this.state.allDossiers.filter(i => i.title.toLowerCase().indexOf(text.toLocaleLowerCase()) > -1) : this.state.allDossiers
+    });
   }
 }
