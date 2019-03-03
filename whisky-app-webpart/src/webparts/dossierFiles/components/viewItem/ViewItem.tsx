@@ -3,37 +3,38 @@ import * as AdaptiveCards from "adaptivecards";
 
 import { IViewItem } from '../IComponentProps';
 import { IDossierReference, IDossierProperty, IFile } from '../../dataproviders/IData';
+import { ViewItemReferences } from './ViewItemReferencesToPivot';
+import { ViewItemReferencedBy } from './ViewItemReferencedBy';
 
 export default class ViewItem extends React.Component<IViewItem, {}> {
+  private adaptiveCard:AdaptiveCards.AdaptiveCard;
+
   constructor(props: IViewItem) {
     super(props);
     this._onSelectList = this._onSelectList.bind(this);
-    this._onSelectItem = this._onSelectItem.bind(this);
-  }
-  public render(): React.ReactElement<IViewItem> {
-    //console.log('View item render: ', this.props.selectedDossier);
-    let renderedCard: HTMLElement;
-    let card = this.adaptiveio(this.props.selectedDossier.title, this.props.selectedDossier.description, this.props.selectedDossier.iconurl, this.props.selectedDossier.referencedBy, this.props.selectedDossier.properties, this.props.selectedDossier.files);
-    var adaptiveCard = new AdaptiveCards.AdaptiveCard();
-    adaptiveCard.hostConfig = new AdaptiveCards.HostConfig({
+    this.adaptiveCard = new AdaptiveCards.AdaptiveCard();
+    this.adaptiveCard.hostConfig = new AdaptiveCards.HostConfig({
       fontFamily: "Segoe UI, Helvetica Neue, sans-serif"
       // More host config options
     });
-    adaptiveCard.parse(card);
-    renderedCard = adaptiveCard.render();
+  }
+  public render(): React.ReactElement<IViewItem> {
+    let renderedCard: HTMLElement;
+    let card = this.adaptiveio(this.props.selectedDossier.title, this.props.selectedDossier.description, this.props.selectedDossier.iconurl, this.props.selectedDossier.referencedBy, this.props.selectedDossier.properties, this.props.selectedDossier.files);
+    this.adaptiveCard.parse(card);
+    renderedCard = this.adaptiveCard.render();
+    // console.log('ViewItem.Render',card,this.adaptiveCard,renderedCard);
     return (
       <div>
-        <div onClick={this._onSelectList}>{this.props.selectedDossier.type}</div>
+        {/* <div onClick={this._onSelectList}>{this.props.selectedDossier.type}</div> */}
+        <ViewItemReferences {...this.props}></ViewItemReferences>
         <div ref={(n) => { n && n.appendChild(renderedCard); }} />
+        <ViewItemReferencedBy {...this.props}></ViewItemReferencedBy>
       </div>
     );
   }
   private _onSelectList() {
     this.props.handleSelectList(this.props.selectedDossier.type.replace('dossier',''));
-  }
-  private _onSelectItem() {
-
-    // this.props.handleSelectItem();
   }
   private adaptiveio(title: string, description: string, iconurl: string, referencedBy: IDossierReference[], dossierproperties: IDossierProperty[], files: any): {} {
     // let images=files.value.map((item)=>{return({"type": "Image","url": item.FileRef});});

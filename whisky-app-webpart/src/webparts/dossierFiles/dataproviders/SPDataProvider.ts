@@ -107,7 +107,7 @@ export class SharePointDataProvider implements IDataProvider {
                                 }
                             }
                         });
-                        console.log('To map the properties of data:',data,_prop);
+                        //console.log('To map the properties of data:',data,_prop);
                         let dossier: IDossierItemDetails = {
                             id: data.Id,
                             title: data.Title,

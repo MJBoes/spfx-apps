@@ -17,8 +17,9 @@ export interface IViewListProps {
 
 export interface IViewItem {
   selectedDossier: IDossierItemDetails;
-  handleSelectItem?(dossierItem: IDossierListItem): void;
-  handleSelectList?(dossierType: string): void;
+  handleSelectItem(dossierItem: IDossierListItem): void;
+  handleSelectList(dossierType: string): void;
+  handleSelectReference(dossierTypeOrID: string): void;
 }
 
 export interface IDossierMenuProps {
