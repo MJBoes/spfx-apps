@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ViewItemReferencedByItem } from './ViewItemReferencedByItem';
 import { List } from 'office-ui-fabric-react/lib/List';
+import './ViewItemReferencedBy.module.scss';
 
 import { IViewItem } from '../IComponentProps';
 import { IDossierListItem } from '../../dataproviders/IData';
@@ -18,8 +19,9 @@ export class ViewItemReferencedBy extends React.Component<IViewItem> {
         _items.push({ 'id': i.id, 'title': i.title, 'description': '', 'iconurl': '', 'type': '' });
       });
     });
+    
     return (
-      <List items={_items} onRenderCell={this._onRenderCell} />
+      <List className="referencedby" items={_items} onRenderCell={this._onRenderCell} />
     );
   }
   private _onRenderCell(item: IDossierListItem, index: number | undefined): JSX.Element {

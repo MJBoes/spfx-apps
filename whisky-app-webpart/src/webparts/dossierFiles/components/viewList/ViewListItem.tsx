@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { IViewListItemProps } from '../IComponentProps';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { Image, ImageFit } from 'office-ui-fabric-react/lib/Image';
 import { getRTL } from 'office-ui-fabric-react/lib/Utilities';
 
 export default class ViewListItem extends React.Component<IViewListItemProps, {}> {
@@ -12,7 +13,7 @@ export default class ViewListItem extends React.Component<IViewListItemProps, {}
     public render(): JSX.Element {
         return (
             <div className="ms-ListBasicExample-itemCell" data-is-focusable={true} onClick={this._onSelect}>
-                {/* <Image className="ms-ListBasicExample-itemImage" src={item.imageurl} width={50} height={50} imageFit={ImageFit.cover} /> */}
+                {/* <Image className="ms-ListBasicExample-itemImage" src={this.props.item.iconurl} width={50} height={50} imageFit={ImageFit.cover} /> */}
                 <div className="ms-ListBasicExample-itemContent">
                     <div className="ms-ListBasicExample-itemName">{this.props.item.title}</div>
                     {/* <div className="ms-ListBasicExample-itemIndex">{`Item ${index}`}</div> */}

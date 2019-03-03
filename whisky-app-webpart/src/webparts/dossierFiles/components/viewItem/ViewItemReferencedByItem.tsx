@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IViewListItemProps } from '../IComponentProps';
+import './ViewItemReferencedBy.module.scss';
 
 export class ViewItemReferencedByItem extends React.Component<IViewListItemProps>{
   constructor(props: IViewListItemProps) {
@@ -8,7 +9,7 @@ export class ViewItemReferencedByItem extends React.Component<IViewListItemProps
 }
 
     public render(): JSX.Element {
-      return(<a onClick={this._onSelectItem}>{this.props.item.title}</a>);
+      return(<div className="referencedbyTile"><a onClick={this._onSelectItem}>{this.props.item.title}</a></div>);
     }
     private _onSelectItem=()=> {
       this.props.onSelectItem(this.props.item);

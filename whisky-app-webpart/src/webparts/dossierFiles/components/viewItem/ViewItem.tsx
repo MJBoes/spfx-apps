@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as AdaptiveCards from "adaptivecards";
 
 import { IViewItem } from '../IComponentProps';
-import { IDossierReference, IDossierProperty, IFile } from '../../dataproviders/IData';
+import { IDossierItemDetails } from '../../dataproviders/IData';
 import { ViewItemReferences } from './ViewItemReferencesToPivot';
 import { ViewItemReferencedBy } from './ViewItemReferencedBy';
 
@@ -20,7 +20,8 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
   }
   public render(): React.ReactElement<IViewItem> {
     let renderedCard: HTMLElement;
-    let card = this.adaptiveio(this.props.selectedDossier.title, this.props.selectedDossier.description, this.props.selectedDossier.iconurl, this.props.selectedDossier.referencedBy, this.props.selectedDossier.properties, this.props.selectedDossier.files);
+    // let card = this.adaptiveio(this.props.selectedDossier.title, this.props.selectedDossier.description, this.props.selectedDossier.iconurl, this.props.selectedDossier.referencedBy, this.props.selectedDossier.properties, this.props.selectedDossier.files);
+    let card = this.adaptiveio(this.props.selectedDossier);
     this.adaptiveCard.parse(card);
     renderedCard = this.adaptiveCard.render();
     // console.log('ViewItem.Render',card,this.adaptiveCard,renderedCard);
@@ -36,16 +37,9 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
   private _onSelectList() {
     this.props.handleSelectList(this.props.selectedDossier.type.replace('dossier',''));
   }
-  private adaptiveio(title: string, description: string, iconurl: string, referencedBy: IDossierReference[], dossierproperties: IDossierProperty[], files: any): {} {
-    // let images=files.value.map((item)=>{return({"type": "Image","url": item.FileRef});});
-    let images = files;
-    // let _referencedBy:{}[]=[];
-    // referencedBy.map(ref=>{
-    //   ref.dossieritems.map(i=>{
-    //     _referencedBy.push({'title':i.type.replace('dossier',''),'value':'['+i.title+'](https://www.nu.nl)'});
-    //   });
-    // });
-    //console.log('_referencesTo: ',_referencedBy);
+  private adaptiveio(item:IDossierItemDetails): {} {
+    let images = item.files;
+    let _properties=this.props.selectedDossier.properties.filter(p=>{return(p.title.indexOf('dossier')!==0);});
     return (
       {
         "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
@@ -53,7 +47,7 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
         "version": "1.0",
         "body": [
           {
-            "speak": description,
+            "speak": item.description,
             "type": "ColumnSet",
             "columns": [
               {
@@ -62,11 +56,11 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
                 "items": [
                   {
                     "type": "TextBlock",
-                    "text": "Sub title"
+                    "text": item.type
                   },
                   {
                     "type": "TextBlock",
-                    "text": title,
+                    "text": item.title,
                     "weight": "bolder",
                     "size": "extraLarge",
                     "spacing": "none"
@@ -79,27 +73,17 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
                   },
                   {
                     "type": "TextBlock",
-                    "text": description,
+                    "text": item.description,
                     "size": "small",
                     "wrap": true
                   },
                   {
                     "type": "FactSet",
-                    "facts": dossierproperties,
+                    "facts": _properties,
                   },
                   {
                     "type": "FactSet",
                     // "facts": _referencedBy,
-                  },
-                  {
-                    "type": "TextBlock",
-                    "size": "Large",
-                    "text": "Files"
-                  },
-                  {
-                    "type": "ImageSet",
-                    "imageSize": "medium",
-                    "images": images
                   }
                 ]
               },
@@ -109,12 +93,21 @@ export default class ViewItem extends React.Component<IViewItem, {}> {
                 "items": [
                   {
                     "type": "Image",
-                    "url": iconurl,
-                    "size": "auto"
+                    "url": item.iconurl,
                   }
                 ]
               }
             ]
+          },
+          {
+            "type": "TextBlock",
+            "size": "Large",
+            "text": "Files"
+          },
+          {
+            "type": "ImageSet",
+            "imageSize": "medium",
+            "images": images
           }
         ]
       }
