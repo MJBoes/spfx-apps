@@ -21,7 +21,10 @@ export class ViewItemReferencedBy extends React.Component<IViewItem> {
     });
     
     return (
-      <List className="referencedby" items={_items} onRenderCell={this._onRenderCell} />
+      <div className="referencedBy">
+        <h4>References to this item</h4>
+        <List className="referencedby" items={_items} onRenderCell={this._onRenderCell} />
+      </div>
     );
   }
   private _onRenderCell(item: IDossierListItem, index: number | undefined): JSX.Element {
