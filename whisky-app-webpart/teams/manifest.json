@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.2/MicrosoftTeams.schema.json",
   "manifestVersion": "1.2",
-  "packageName": "Todo",
-  "id": "760e8e44-0d4d-403f-b0f3-0ef775b6b639",
+  "packageName": "HelloWorld",
+  "id": "cb29c5f4-e39f-43c2-8bb9-54caa60ad857",
   "version": "0.1",
   "developer": {
     "name": "SPFx + Teams Dev",
@@ -11,11 +11,11 @@
     "termsOfUseUrl": "https://www.microsoft.com/en-us/servicesagreement"
   },
   "name": {
-    "short": "Todo"
+    "short": "HelloWorld"
   },
   "description": {
-    "short": "Rebuild of sp-dev-fx-webparts example",
-    "full": "Rebuild of sp-dev-fx-webparts example"
+    "short": "HelloWorld description",
+    "full": "HelloWorld description"
   },
   "icons": {
     "outline": "tab20x20.png",
@@ -24,7 +24,7 @@
   "accentColor": "#004578",
   "configurableTabs": [
     {
-      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=760e8e44-0d4d-403f-b0f3-0ef775b6b639",
+      "configurationUrl": "https://{teamSiteDomain}{teamSitePath}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest={teamSitePath}/_layouts/15/teamshostedapp.aspx%3FopenPropertyPane=true%26teams%26componentId=cb29c5f4-e39f-43c2-8bb9-54caa60ad857",
       "canUpdateConfiguration": false,
       "scopes": [
         "team"

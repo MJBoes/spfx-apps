@@ -27,6 +27,7 @@ npm install --save @types/markdown-it
 
 ### Data Design notes
 The information items are constructed such, that the have a code, a referencesTo and/or a referencedBy property, a title and description and an icon reference.
+The icon reference is for example 'aa', and refers to a file like 'dossierassets/flags/aa-lgflag.gif'. This transformation is left to a calculated field 'entIconSiteAssetsRelativeUrl'.
 THe assumption is that for a particular subject, 4 types of information items suffice, with a possible sub items.
 As an example the CIA factbook is taken. The information types are:
 - geo (continents, areas and so forth)

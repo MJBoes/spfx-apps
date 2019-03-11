@@ -25,10 +25,11 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
     const element: React.ReactElement<IDossierFilesProps > = React.createElement(
       Main,
       {
-        context: this.context
+        ctxHttpClient: this.context.httpClient,
+        dossierGenericList:this.properties.dossierGenericList,
+        dossierDocumentLibrary:this.properties.dossierDocumentLibrary
       }
     );
-
     ReactDom.render(element, this.domElement);
   }
 
@@ -54,7 +55,7 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
                 // PropertyPaneTextField('description', {
                 //   label: strings.DescriptionFieldLabel
                 // }),
-                PropertyFieldListPicker('lists', {
+                PropertyFieldListPicker('dossierGenericList', {
                   label: 'Select a Dossier Generic List',
                   selectedList: this.properties.dossierGenericList,
                   baseTemplate: 100,
@@ -68,7 +69,7 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
                   deferredValidationTime: 0,
                   key: 'listGLPickerFieldId'
                 }),
-                PropertyFieldListPicker('lists', {
+                PropertyFieldListPicker('dossierDocumentLibrary', {
                   label: 'Select a Dossier Document Library',
                   selectedList: this.properties.dossierDocumentLibrary,
                   baseTemplate: 101,

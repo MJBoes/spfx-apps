@@ -2,38 +2,6 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    // "whisky-app-web-part": {
-    //   "components": [
-    //     {
-    //       "entrypoint": "./lib/webparts/whiskyApp/WhiskyAppWebPart.js",
-    //       "manifest": "./src/webparts/whiskyApp/WhiskyAppWebPart.manifest.json"
-    //     }
-    //   ]
-    // },
-    // "camera-web-part": {
-    //   "components": [
-    //     {
-    //       "entrypoint": "./lib/webparts/camera/CameraWebPart.js",
-    //       "manifest": "./src/webparts/camera/CameraWebPart.manifest.json"
-    //     }
-    //   ]
-    // },
-    // "react-adaptive-cards-image-gallery-web-part": {
-    //   "components": [
-    //     {
-    //       "entrypoint": "./lib/webparts/reactAdaptiveCardsImageGallery/ReactAdaptiveCardsImageGalleryWebPart.js",
-    //       "manifest": "./src/webparts/reactAdaptiveCardsImageGallery/ReactAdaptiveCardsImageGalleryWebPart.manifest.json"
-    //     }
-    //   ]
-    // },
-    // "dataservices-web-part": {
-    //   "components": [
-    //     {
-    //       "entrypoint": "./lib/webparts/dataservices/DataservicesWebPart.js",
-    //       "manifest": "./src/webparts/dataservices/DataservicesWebPart.manifest.json"
-    //     }
-    //   ]
-    // },
     "dossier-files-web-part": {
       "components": [
         {
@@ -49,15 +17,20 @@
           "manifest": "./src/webparts/todo/TodoWebPart.manifest.json"
         }
       ]
+    },
+    "hello-world-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/helloWorld/HelloWorldWebPart.js",
+          "manifest": "./src/webparts/helloWorld/HelloWorldWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    // "WhiskyAppWebPartStrings": "lib/webparts/whiskyApp/loc/{locale}.js",
-    // "CameraWebPartStrings": "lib/webparts/camera/loc/{locale}.js",
-    // "ReactAdaptiveCardsImageGalleryWebPartStrings": "lib/webparts/reactAdaptiveCardsImageGallery/loc/{locale}.js",
-    // "DataservicesWebPartStrings": "lib/webparts/dataservices/loc/{locale}.js",
     "DossierFilesWebPartStrings": "lib/webparts/dossierFiles/loc/{locale}.js",
-    "TodoWebPartStrings": "lib/webparts/todo/loc/{locale}.js"
+    "TodoWebPartStrings": "lib/webparts/todo/loc/{locale}.js",
+    "HelloWorldWebPartStrings": "lib/webparts/helloWorld/loc/{locale}.js"
   }
 }
