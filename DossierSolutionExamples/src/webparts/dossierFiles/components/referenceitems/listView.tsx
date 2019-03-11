@@ -1,6 +1,5 @@
 import * as React from 'react';
-import styles from './DossierFiles.module.scss';
-import { IDossierFilesProps, IDossierFilesState } from './IDossierFilesProps';
+import { IDossierFilesProps, IDossierFilesState } from './IListView';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { ListView, IViewField, SelectionMode, GroupOrder, IGrouping } from "@pnp/spfx-controls-react/lib/ListView";
 import { SPHttpClient } from '@microsoft/sp-http';

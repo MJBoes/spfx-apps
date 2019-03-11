@@ -6,7 +6,3 @@ export interface IDossierFilesProps {
 export interface IDossierFilesState {
   items: any[];
 }
-
-export interface IPropertyControlsDossierFilesProps {
-  lists: string | string[]; // Stores the list ID(s)
-}
