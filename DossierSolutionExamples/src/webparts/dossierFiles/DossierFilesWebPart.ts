@@ -3,31 +3,43 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
-  IPropertyPaneConfiguration
+  IPropertyPaneConfiguration,
+  PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 import { PropertyFieldListPicker, PropertyFieldListPickerOrderBy } from '@pnp/spfx-property-controls/lib/PropertyFieldListPicker';
 
 import * as strings from 'DossierFilesWebPartStrings';
 import Main from './components/main/Main';
-import { IDossierFilesProps } from './components/IDossierFilesProps';
+import { IDossierFilesProps, IDataProvider } from './components/IDossierFilesProps';
+import { DataProvider } from './components/services/dataprovider';
 import * as markdownit from 'markdown-it';
 
-export interface IDossierFilesWebPartProps {
-  description: string;
-  dossierGenericList: string;
-  dossierDocumentLibrary: string;
-}
+// export interface IDossierFilesWebPartProps {
+//   description: string;
+//   dossierGenericList: string;
+//   dossierDocumentLibrary: string;
+//   dossierTypes: string;
+// }
 
-export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierFilesWebPartProps> {
+export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierFilesProps> {
+  private _dataProvider:IDataProvider;
+  protected onInit():Promise<void>{
+    this._dataProvider = new DataProvider(this.context.httpClient);
+    return super.onInit();
+  }
 
   public render(): void {
     (<any>window).markdownit=()=>markdownit();
     const element: React.ReactElement<IDossierFilesProps > = React.createElement(
       Main,
       {
-        ctxHttpClient: this.context.httpClient,
+        dataProvider:this._dataProvider,
         dossierGenericList:this.properties.dossierGenericList,
-        dossierDocumentLibrary:this.properties.dossierDocumentLibrary
+        dossierDocumentLibrary:this.properties.dossierDocumentLibrary,
+        dossierTypes:this.properties.dossierTypes,
+        currentItemID:0,
+        currentDossierType:"",
+        currentView:"Initialize"
       }
     );
     ReactDom.render(element, this.domElement);
@@ -82,6 +94,9 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
                   onGetErrorMessage: null,
                   deferredValidationTime: 0,
                   key: 'listDLPickerFieldId'
+                }),
+                PropertyPaneTextField('dossierTypes', {
+                  label: strings.DescriptionFieldLabel
                 })
               ]
             }

@@ -1,18 +1,27 @@
 import { Context } from 'react';
 import { HttpClient } from '@microsoft/sp-http';
 
-export type viewTypes = 'Configure' | 'List' | 'Item';
+export type viewTypes = 'Initialize' | 'Configure' | 'List' | 'Item';
 
 export interface IDossierFilesProps {
-  ctxHttpClient: HttpClient;
+  dataProvider: IDataProvider;
   dossierGenericList: string;
   dossierDocumentLibrary: string;
+  dossierTypes: string;
+  currentItemID: number;
+  currentDossierType: string;
+  currentView: viewTypes;
+}
+export interface IDossierMenuProps {
+  dossierTypes: string;
+  currentDossierType: string;
+  onSelectList?(dossierType: string): void;
 }
 
-export interface IDossierFilesState {
-  currentItemID: number;
-  currentDossierListType: string;
-  currentView: viewTypes;
+export interface IViewListProps {
+  dossierTypes: string;
+  currentDossierType: string;
+  dataProvider: IDataProvider;
 }
 
 export interface IDataProvider {
@@ -38,24 +47,24 @@ export interface IDossierItemDetails {
   type: string;
   description: string;
   iconurl: string;
-  properties:IDossierProperty[];
+  properties: IDossierProperty[];
   referencedBy: IDossierReference[];
   referencesTo: IDossierReference[];
-  files:IFile[];
+  files: IFile[];
 }
 // a file can have properties and references to dossier entries.
 export interface IFile {
   id: string;
   title: string;
   encodedAbsoluteUrl: string;
-  properties:IDossierProperty[];
+  properties: IDossierProperty[];
   referencedBy: IDossierReference[];
   referencesTo: IDossierReference[];
 }
 
 export interface IDossierReference {
-  dossiertype:string;
-  dossieritems:IDossierListItem[];
+  dossiertype: string;
+  dossieritems: IDossierListItem[];
 }
 
 export interface IDossierProperty {

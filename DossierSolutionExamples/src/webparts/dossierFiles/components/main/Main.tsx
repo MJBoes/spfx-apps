@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { IDossierFilesProps, IDossierFilesState } from '../IDossierFilesProps';
-import { escape } from '@microsoft/sp-lodash-subset';
-import { SPHttpClient } from '@microsoft/sp-http';
-import { PropertyPaneSlider } from '@microsoft/sp-webpart-base';
+import { IDossierFilesProps, IDataProvider } from '../IDossierFilesProps';
+import DossierList from '../dossierlist/DossierList';
 
-export default class Main extends React.Component<IDossierFilesProps, IDossierFilesState> {
+export default class Main extends React.Component<IDossierFilesProps> {
   constructor(props: IDossierFilesProps) {
     super(props);
 
@@ -12,9 +10,12 @@ export default class Main extends React.Component<IDossierFilesProps, IDossierFi
   public componentDidMount() {
   }
   public render(): React.ReactElement<IDossierFilesProps> {
-    console.log(this.props);
+    // console.log(this.props);
     return (
-        <div>Main Container {this.props.dossierGenericList}</div>
+        <div>
+          <DossierList {...this.props}></DossierList>
+          <p>Main Container {this.props.dossierGenericList}</p>
+        </div>
     );
   }
 }

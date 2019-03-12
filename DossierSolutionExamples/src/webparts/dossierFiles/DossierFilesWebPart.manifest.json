@@ -14,13 +14,14 @@
   "requiresCustomScript": false,
 
   "preconfiguredEntries": [{
-    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
+    "groupId": "46b56c8a-de92-4eb3-a5c8-9d67df4f4bd2", // Other
     "group": { "default": "Other" },
     "title": { "default": "dossierFiles" },
     "description": { "default": "Web part UX for a POC way to connect documents to a dossier structure" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "dossierFiles"
+      "dossierGenericList": "6770c83b-29e8-494b-87b6-468a2066bcc6",
+      "dossierTypes": "Country;Organisation;Geo"
     }
   }]
 }
