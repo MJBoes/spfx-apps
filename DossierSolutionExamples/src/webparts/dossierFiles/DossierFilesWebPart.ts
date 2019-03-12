@@ -10,7 +10,7 @@ import { PropertyFieldListPicker, PropertyFieldListPickerOrderBy } from '@pnp/sp
 
 import * as strings from 'DossierFilesWebPartStrings';
 import Main from './components/main/Main';
-import { IDossierFilesProps, IDataProvider } from './components/IDossierFilesProps';
+import { viewTypes, IDossierFilesProps, IDataProvider } from './components/IDossierFilesProps';
 import { DataProvider } from './components/services/dataprovider';
 import * as markdownit from 'markdown-it';
 
@@ -23,13 +23,21 @@ import * as markdownit from 'markdown-it';
 
 export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierFilesProps> {
   private _dataProvider:IDataProvider;
+  private _view: viewTypes;
+
   protected onInit():Promise<void>{
-    this._dataProvider = new DataProvider(this.context.httpClient);
+    this._dataProvider = new DataProvider(this.context.httpClient, this.context.pageContext.web.absoluteUrl);
+    this._onConfigure = this._onConfigure.bind(this);
     return super.onInit();
   }
 
   public render(): void {
     (<any>window).markdownit=()=>markdownit();
+    if(this.properties.dossierDocumentLibrary!='' && this.properties.dossierGenericList!='' && this.properties.dossierTypes!=''){
+      this._view='List';
+    }else{
+      this._view='Configure';
+    }
     const element: React.ReactElement<IDossierFilesProps > = React.createElement(
       Main,
       {
@@ -39,10 +47,15 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
         dossierTypes:this.properties.dossierTypes,
         currentItemID:0,
         currentDossierType:"",
-        currentView:"Initialize"
+        currentView:this._view,
+        onConfigure:this._onConfigure
       }
     );
     ReactDom.render(element, this.domElement);
+  }
+
+  private _onConfigure() {
+    this.context.propertyPane.open();
   }
 
   protected onDispose(): void {

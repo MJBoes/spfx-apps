@@ -11,6 +11,7 @@ export interface IDossierFilesProps {
   currentItemID: number;
   currentDossierType: string;
   currentView: viewTypes;
+  onConfigure?():void;
 }
 export interface IDossierMenuProps {
   dossierTypes: string;
@@ -26,7 +27,7 @@ export interface IViewListProps {
 
 export interface IDataProvider {
   ctxHttpClient: HttpClient;
-  validateSettings(): boolean;
+  pageContextWebAbsoluteUrl: string;
   readDocumentList(): Promise<IFile[]>;
   readDossierList(dossierType: string): Promise<IDossierListItem[]>;
   readDossierItem(dossierID: string): Promise<IDossierItemDetails>;

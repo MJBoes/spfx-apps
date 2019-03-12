@@ -5,26 +5,19 @@ export class SPDataProvider implements IDataProvider {
     private _currentList: IDossierListItem[];
     private _currentItem: IDossierItemDetails;
 
-    constructor(public ctxHttpClient:HttpClient) {
+    constructor(public ctxHttpClient:HttpClient, public pageContextWebAbsoluteUrl: string) {
 
-    }
-
-    public validateSettings(): boolean {
-        if (true) {
-            return false;
-        }
-        return true;
     }
 
     public readDocumentList(): Promise<IFile[]> {
-        return 
+        return;
     }
 
     public readDossierItem(dossierID: string): Promise<IDossierItemDetails> {
-        return 
+        return;
     }
 
     public readDossierList(dossierType: string): Promise<IDossierListItem[]>{
-        return
+        return;
     }
 }
