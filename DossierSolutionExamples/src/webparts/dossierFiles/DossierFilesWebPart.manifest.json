@@ -17,8 +17,9 @@
     "officeFabricIconFontName": "Page",
     "properties": {
       "dossierGenericList": "6770c83b-29e8-494b-87b6-468a2066bcc6",
-      "dossierDocumentLibrary": "",
-      "dossierTypes": "Country;Organisation;Geo"
+      "dossierDocumentLibrary": "6770c83b-29e8-494b-87b6-468a2066bcc6",
+      "dossierTypes": "Geo;Country;Organisation",
+      "dossierRootTitle": "World"
     }
   }]
 }

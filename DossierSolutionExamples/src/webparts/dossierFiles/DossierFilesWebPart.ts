@@ -10,45 +10,24 @@ import { PropertyFieldListPicker, PropertyFieldListPickerOrderBy } from '@pnp/sp
 
 import * as strings from 'DossierFilesWebPartStrings';
 import Main from './components/main/Main';
-import { viewTypes, IDossierFilesProps, IDataProvider } from './components/IDossierFilesProps';
-import { DataProvider } from './components/services/dataprovider';
+import { IDossierFilesProps, IDataProvider, IMain } from './components/IDossierFilesProps';
 import * as markdownit from 'markdown-it';
 
-// export interface IDossierFilesWebPartProps {
-//   description: string;
-//   dossierGenericList: string;
-//   dossierDocumentLibrary: string;
-//   dossierTypes: string;
-// }
-
 export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierFilesProps> {
-  private _dataProvider:IDataProvider;
-  private _view: viewTypes;
 
   protected onInit():Promise<void>{
-    this._dataProvider = new DataProvider(this.context.httpClient, this.context.pageContext.web.absoluteUrl);
-    this._onConfigure = this._onConfigure.bind(this);
+    this.properties.onConfigure = this._onConfigure.bind(this);
     return super.onInit();
   }
 
   public render(): void {
     (<any>window).markdownit=()=>markdownit();
-    if(this.properties.dossierDocumentLibrary!='' && this.properties.dossierGenericList!='' && this.properties.dossierTypes!=''){
-      this._view='List';
-    }else{
-      this._view='Configure';
-    }
-    const element: React.ReactElement<IDossierFilesProps > = React.createElement(
+    const element: React.ReactElement<IMain > = React.createElement(
       Main,
       {
-        dataProvider:this._dataProvider,
-        dossierGenericList:this.properties.dossierGenericList,
-        dossierDocumentLibrary:this.properties.dossierDocumentLibrary,
-        dossierTypes:this.properties.dossierTypes,
-        currentItemID:0,
-        currentDossierType:"",
-        currentView:this._view,
-        onConfigure:this._onConfigure
+        ctxHttpClient: this.context.spHttpClient,
+        pageContextWebAbsoluteUrl: this.context.pageContext.web.absoluteUrl,
+        parentProperties: this.properties,
       }
     );
     ReactDom.render(element, this.domElement);
@@ -110,6 +89,9 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
                 }),
                 PropertyPaneTextField('dossierTypes', {
                   label: strings.DescriptionFieldLabel
+                }),
+                PropertyPaneTextField('dossierRootTitle', {
+                  label: 'Dossier in first dossier type which acts as root'
                 })
               ]
             }

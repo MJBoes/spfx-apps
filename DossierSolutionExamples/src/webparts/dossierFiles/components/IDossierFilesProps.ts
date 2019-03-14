@@ -1,5 +1,5 @@
 import { Context } from 'react';
-import { HttpClient } from '@microsoft/sp-http';
+import { SPHttpClient } from '@microsoft/sp-http';
 
 export type viewTypes = 'Initialize' | 'Configure' | 'List' | 'Item';
 
@@ -8,11 +8,38 @@ export interface IDossierFilesProps {
   dossierGenericList: string;
   dossierDocumentLibrary: string;
   dossierTypes: string;
-  currentItemID: number;
-  currentDossierType: string;
-  currentView: viewTypes;
-  onConfigure?():void;
+  dossierRootTitle: string;
+  onConfigure():void;
 }
+
+export interface IMain{
+  ctxHttpClient:SPHttpClient;
+  pageContextWebAbsoluteUrl: string;
+  parentProperties: IDossierFilesProps;
+}
+
+export interface IDataProvider {
+  ctxHttpClient: SPHttpClient;
+  pageContextWebAbsoluteUrl: string;
+  dossierGenericList: string;
+  dossierDocumentLibrary: string;
+  dossierTypes: string;
+  currentDossierItem: IDossierItemDetails;
+  dataProviderIsValid():boolean;
+  setCurrentDossier(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails>;
+  filterCurrentDossier(filterType: string, filter: string):void;
+}
+
+export interface IDataAdapter {
+  ctxHttpClient: SPHttpClient;
+  pageContextWebAbsoluteUrl: string;
+  dossierGenericList: string;
+  dossierDocumentLibrary: string;
+  dossierTypes: string;
+  dataProviderIsValid():boolean;
+  readDossierItem(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails>;
+}
+
 export interface IDossierMenuProps {
   dossierTypes: string;
   currentDossierType: string;
@@ -25,12 +52,9 @@ export interface IViewListProps {
   dataProvider: IDataProvider;
 }
 
-export interface IDataProvider {
-  ctxHttpClient: HttpClient;
-  pageContextWebAbsoluteUrl: string;
-  readDocumentList(): Promise<IFile[]>;
-  readDossierList(dossierType: string): Promise<IDossierListItem[]>;
-  readDossierItem(dossierID: string): Promise<IDossierItemDetails>;
+export interface IViewItemProps {
+  dataProvider: IDataProvider;
+  setCurrentDossier(dossierType: string, dossierTitle: string): void;
 }
 
 // IDossierListItem contains the light weigth storage for selection and as attribute in the lists in IDossierItemDetails.
