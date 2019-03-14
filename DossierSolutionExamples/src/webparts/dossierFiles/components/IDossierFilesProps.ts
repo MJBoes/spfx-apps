@@ -24,9 +24,8 @@ export interface IDataProvider {
   dossierGenericList: string;
   dossierDocumentLibrary: string;
   dossierTypes: string;
-  currentDossierItem: IDossierItemDetails;
   dataProviderIsValid():boolean;
-  setCurrentDossier(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails>;
+  readDossierItem(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails>;
   filterCurrentDossier(filterType: string, filter: string):void;
 }
 
@@ -54,6 +53,7 @@ export interface IViewListProps {
 
 export interface IViewItemProps {
   dataProvider: IDataProvider;
+  currentDossierItem: IDossierItemDetails;
   setCurrentDossier(dossierType: string, dossierTitle: string): void;
 }
 
@@ -73,7 +73,7 @@ export interface IDossierItemDetails {
   description: string;
   iconurl: string;
   properties: IDossierProperty[];
-  referencedBy: IDossierReference[];
+  referencedBy: IDossierListItem[];
   referencesTo: IDossierReference[];
   files: IFile[];
 }
@@ -83,7 +83,7 @@ export interface IFile {
   title: string;
   encodedAbsoluteUrl: string;
   properties: IDossierProperty[];
-  referencedBy: IDossierReference[];
+  referencedBy: IDossierListItem[];
   referencesTo: IDossierReference[];
 }
 

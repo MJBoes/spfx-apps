@@ -24,6 +24,11 @@ Add web part on https://desktopservices.sharepoint.com/sites/DossierSolutionExam
 npm install @pnp/spfx-controls-react --save --save-exact
 npm install markdown-it --save
 npm install --save @types/markdown-it
+npm install adaptivecards --save
+
+Changed tslint.json to handle syntax for adaptivecards:
+replaced "no-unused-expression": true, with "no-unused-expression": [true, "allow-fast-null-checks"],
+
 
 ### Data Design notes
 The information items are constructed such, that the have a code, a referencesTo and/or a referencedBy property, a title and description and an icon reference.

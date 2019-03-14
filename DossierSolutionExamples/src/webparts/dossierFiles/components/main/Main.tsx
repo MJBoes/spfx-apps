@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { SPHttpClient } from '@microsoft/sp-http';
-import { viewTypes, IMain, IDataProvider } from '../IDossierFilesProps';
+import { viewTypes, IMain, IDataProvider, IDossierItemDetails } from '../IDossierFilesProps';
 import { DataProvider } from '../services/dataprovider';
 import DossierItem from '../dossieritem/DossierItem';
 import { Placeholder } from "@pnp/spfx-controls-react/lib/Placeholder";
 
-export default class Main extends React.Component<IMain> {
+export interface IMainState {
+  currentDossier: IDossierItemDetails;
+}
+
+export default class Main extends React.Component<IMain,IMainState> {
   private _dataProvider: IDataProvider;
   private _currentDossierType: string;
   private _currentItemTitle: string;
@@ -14,11 +18,14 @@ export default class Main extends React.Component<IMain> {
   constructor(props: IMain) {
     super(props);
     this._dataProvider = new DataProvider(this.props.ctxHttpClient, this.props.pageContextWebAbsoluteUrl, "", "", "");
+    this.state = {
+      currentDossier: null
+    };
     this.setCurrentDossier = this.setCurrentDossier.bind(this);
   }
 
   public componentDidMount() {
-    console.log('Main componentDidMount', this._dataProvider);
+    // console.log('Main componentDidMount', this._dataProvider);
     // this._dataProvider.setCurrentDossier(this._currentDossierType, this._currentItemTitle);
   }
   public render(): React.ReactElement<IMain> {
@@ -42,7 +49,7 @@ export default class Main extends React.Component<IMain> {
           onConfigure={this.props.parentProperties.onConfigure}
         />}
         {/* {this.props.currentView === 'List' && <DossierList {...this.props}></DossierList>} */}
-        {this._view === 'Item' && <DossierItem dataProvider={this._dataProvider} setCurrentDossier={this.setCurrentDossier}></DossierItem>}
+        {this._view === 'Item' && <DossierItem dataProvider={this._dataProvider} currentDossierItem={this.state.currentDossier} setCurrentDossier={this.setCurrentDossier}></DossierItem>}
       </div>
     );
   }
@@ -51,8 +58,9 @@ export default class Main extends React.Component<IMain> {
       currentDossierType=this._currentDossierType;
       currentItemTitle=this._currentItemTitle;
     }
-    this._dataProvider.setCurrentDossier(currentDossierType, currentItemTitle).then(item => {
-      this._dataProvider.currentDossierItem = item;
+    this._dataProvider.readDossierItem(currentDossierType, currentItemTitle).then(item => {
+      console.log('Main', item);
+      this.setState({ currentDossier: item });
     });
   }
 }

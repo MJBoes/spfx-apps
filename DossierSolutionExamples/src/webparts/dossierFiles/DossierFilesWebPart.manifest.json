@@ -16,8 +16,8 @@
     "description": { "default": "Web part UX for a POC way to connect documents to a dossier structure" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "dossierGenericList": "6770c83b-29e8-494b-87b6-468a2066bcc6",
-      "dossierDocumentLibrary": "6770c83b-29e8-494b-87b6-468a2066bcc6",
+      "dossierGenericList": "",
+      "dossierDocumentLibrary": "",
       "dossierTypes": "Geo;Country;Organisation",
       "dossierRootTitle": "World"
     }
