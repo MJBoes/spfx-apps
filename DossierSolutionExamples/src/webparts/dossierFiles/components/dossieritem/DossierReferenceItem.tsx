@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IViewItemProps, IDossierListItem } from '../IDossierFilesProps';
-import styles from './DossierReference.module.scss';
+import styles from '../DossierFilesStyles.module.scss';
 
 export interface IViewListItemProps {
   item: IDossierListItem;

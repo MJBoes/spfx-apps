@@ -72,6 +72,7 @@ export interface IDossierItemDetails {
   type: string;
   description: string;
   iconurl: string;
+  referencefields: {key:string; value:string;}[];
   properties: IDossierProperty[];
   referencedBy: IDossierListItem[];
   referencesTo: IDossierReference[];
@@ -81,6 +82,8 @@ export interface IDossierItemDetails {
 export interface IFile {
   id: string;
   title: string;
+  modified: string;
+  reviewdate: string;
   encodedAbsoluteUrl: string;
   properties: IDossierProperty[];
   referencedBy: IDossierListItem[];

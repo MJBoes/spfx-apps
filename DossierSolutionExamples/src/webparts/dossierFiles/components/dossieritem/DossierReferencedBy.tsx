@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DossierReference } from './DossierReferenceItem';
-import styles from './DossierReference.module.scss';
+import styles from '../DossierFilesStyles.module.scss';
 
 
 import { IViewItemProps, IDossierListItem } from '../IDossierFilesProps';
@@ -21,7 +21,7 @@ export class DossierReferencedBy extends React.Component<IViewItemProps> {
       });
     }
     return (
-      <div className={styles.referencedBy}>
+      <div className={styles.webpart}>
         <h4>Refered by</h4>
         {this._items.map(item => <DossierReference item={item} setCurrentDossier={this.props.setCurrentDossier} />)}
       </div>

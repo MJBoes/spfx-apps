@@ -45,8 +45,7 @@ export default class DossierItem extends React.Component<IViewItemProps> {
   }
 
   private adaptiveio(item: IDossierItemDetails): {} {
-    // let images = item.files;
-    console.log('DossierItems adaptiveio', item);
+    // console.log('DossierItems adaptiveio', item);
     if (this.props.currentDossierItem == null) {
       return (
         {
@@ -92,7 +91,8 @@ export default class DossierItem extends React.Component<IViewItemProps> {
                       "type": "TextBlock",
                       "text": item.description,
                       "size": "small",
-                      "wrap": true
+                      "maxLines": 0,
+                      "wrap": true,
                     },
                     {
                       "type": "FactSet",

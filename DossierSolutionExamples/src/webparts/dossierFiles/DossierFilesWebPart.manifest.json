@@ -14,7 +14,7 @@
     "group": { "default": "Other" },
     "title": { "default": "dossierFiles" },
     "description": { "default": "Web part UX for a POC way to connect documents to a dossier structure" },
-    "officeFabricIconFontName": "Page",
+    "officeFabricIconFontName": "FabricFormLibrary",
     "properties": {
       "dossierGenericList": "",
       "dossierDocumentLibrary": "",
