@@ -55,34 +55,53 @@ export class SPDataProvider implements IDataAdapter {
 
     private referencedBy(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {
         // note: this works only with single line (255 char) fields
-        // to do: map dossierType to refTypeX column
-        let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27' + _dossierItem.title + '%27,refType1)';    //entType%20eq%20%27'+dossierType+'%27%20and%20Title%20eq%20%27'+dossierTitle+'%27';
-        return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
-            return response.json();
-        }).then(data => {
+        let promisesMethods = [];
+        if(_dossierItem.referencefields.length>0){
+            _dossierItem.referencefields.map(types=>{
+                if(types.key.indexOf('_')==-1){
+                    //console.log('spadapter',this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27' + _dossierItem.title + '%27,'+types.key+')');
+                    promisesMethods.push(this._restpromise(this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27' + _dossierItem.title + '%27,'+types.key+')'));
+                }
+            });
+        }
+        return Promise.all(promisesMethods)
+        .then(_dossierListItemGroups => {
             let _refBy: IDossierListItem[] = [];
-            data.value.map(item => {
-                _refBy.push({
-                    'id': item.Id,
-                    'title': '' + item.Title,
-                    'type': item.entType,
-                    'description': 'not fetched',
-                    'iconurl': item.icon
+            _dossierListItemGroups.map(_dossierListItems=>{
+                _dossierListItems.map(_dossierListItem=>{
+                    _refBy.push(_dossierListItem);
                 });
             });
-            //_dossierItem.referencedBy.push({ 'dossiertype': '', 'dossieritems': _refBy });
-            _dossierItem.referencedBy = _refBy;
-            // console.log('spadapter 3', _dossierItem);
+            console.log('spadapter',_refBy);
+            _dossierItem.referencedBy=_refBy;
             return _dossierItem;
         });
+
+        // let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27' + _dossierItem.title + '%27,refType1)';    //entType%20eq%20%27'+dossierType+'%27%20and%20Title%20eq%20%27'+dossierTitle+'%27';
+        // return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
+        //     return response.json();
+        // }).then(data => {
+        //     let _refBy: IDossierListItem[] = [];
+        //     data.value.map(item => {
+        //         _refBy.push({
+        //             'id': item.Id,
+        //             'title': '' + item.Title,
+        //             'type': item.entType,
+        //             'description': 'not fetched',
+        //             'iconurl': item.icon
+        //         });
+        //     });
+        //     //_dossierItem.referencedBy.push({ 'dossiertype': '', 'dossieritems': _refBy });
+        //     _dossierItem.referencedBy = _refBy;
+        //     // console.log('spadapter 3', _dossierItem);
+        //     return _dossierItem;
+        //});
     }
 
     private referencesTo(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {
         // note: this works only with single line (255 char) fields
-        // to do: should be IDossierReference
         let promisesMethods = [];
-        let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon&$filter={Titles}';    //entType%20eq%20%27'+dossierType+'%27%20and%20Title%20eq%20%27'+dossierTitle+'%27';
-        //rest='https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%273859e06a-eb78-427d-bf41-c61ec939d739%27)/items?$select=id,Title,entType,icon&$filter=refType1%20eq%20%27'+_dossierItem.title+'%27';
+        let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon&$filter={Titles}';
         let _field=''; let _filter='';
         if(_dossierItem.referencefields.length>0){
             _dossierItem.referencefields.map(types=>{
@@ -90,14 +109,11 @@ export class SPDataProvider implements IDataAdapter {
                     types.value.split(';').map(ref=>{
                         _filter+=' or Title eq %27' + ref + '%27';
                     });
-                    // console.log('spadapter referencesTo', _filter.substr(3));
                     promisesMethods.push(this._restpromise(rest.replace('{Titles}',_filter.substr(3))));
                     _filter='';
                 }
             });
         }
-        //console.log('spadapter referencesTo', promisesMethods);
-        //return this._restpromise(rest)
         return Promise.all(promisesMethods)
         .then(_dossierListItemGroups => {
             _dossierListItemGroups.map(_dossierListItems=>{
