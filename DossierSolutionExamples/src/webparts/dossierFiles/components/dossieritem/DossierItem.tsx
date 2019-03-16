@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as AdaptiveCards from "adaptivecards";
 import { DossierReferencesTo } from './DossierReferencesTo';
 import { DossierReferencedBy } from './DossierReferencedBy';
+import { DossierFiles } from './DossierFiles';
 import { IViewItemProps, IDossierItemDetails } from '../IDossierFilesProps';
 
 export default class DossierItem extends React.Component<IViewItemProps> {
@@ -18,22 +19,19 @@ export default class DossierItem extends React.Component<IViewItemProps> {
     this._GoToHome = this._GoToHome.bind(this);
   }
 
-  public componentDidMount() {
-    // console.log('DossierItem componentDidMount');
-    // this.props.setCurrentDossier("", "");
-  }
-
   public render(): React.ReactElement<IViewItemProps> {
     let renderedCard: HTMLElement;
     let card = this.adaptiveio(this.props.currentDossierItem);
     this.adaptiveCard.parse(card);
     renderedCard = this.adaptiveCard.render();
+    // console.log('DossierItem',this.props);
     return (
       <div>
         <button onClick={this._GoToHome}>Home</button>
         <div ref={(n) => {
           n && n.childNodes.length==0 ? n &&  n.appendChild(renderedCard) : n &&  n.replaceChild(renderedCard,n.childNodes[0]);
         }} />
+        <DossierFiles {...this.props}></DossierFiles>
         <DossierReferencesTo {...this.props}></DossierReferencesTo>
         <DossierReferencedBy {...this.props}></DossierReferencedBy>
       </div>

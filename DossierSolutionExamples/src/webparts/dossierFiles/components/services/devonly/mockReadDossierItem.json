@@ -1,0 +1,128 @@
+{
+    "id": 16,
+    "title": "Belgium",
+    "type": "Country",
+    "description": "Belgium became independent from the Netherlands in 1830; it was occupied by Germany during World Wars I and II. The country prospered in the past half century as a modern, technologically advanced European state and member of NATO and the EU. In recent years, political divisions between the Dutch-speaking Flemish of the north and the French-speaking Walloons of the south have led to constitutional amendments granting these regions formal recognition and autonomy. The capital city of Brussels is home to numerous international organizations including the EU and NATO.",
+    "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/BE-lgflag.gif",
+    "referencefields": [
+        {
+            "key": "refType1",
+            "value": "Europe"
+        },
+        {
+            "key": "refType2",
+            "value": null
+        },
+        {
+            "key": "refType2_1",
+            "value": "Belgium’s central geographic location and highly developed transport network have helped develop a well-diversified economy, with a broad mix of transport, services, manufacturing, and high tech. Service and high-tech industries are concentrated in the northern Flanders region while the southern region of Wallonia is home to industries like coal and steel manufacturing. Belgium is completely reliant on foreign sources of fossil fuels, and the planned closure of its seven nuclear plants by 2025 should increase its dependence on foreign energy. Its role as a regional logistical hub makes its economy vulnerable to shifts in foreign demand, particularly with EU trading partners. Roughly three-quarters of Belgium's trade is with other EU countries, and the port of Zeebrugge conducts almost half its trade with the United Kingdom alone, leaving Belgium’s economy vulnerable to the outcome of negotiations on the UK’s exit from the EU.Belgium’s GDP grew by 1.7% in 2017 and the budget deficit was 1.5% of GDP. Unemployment stood at 7.3%, however the unemployment rate is lower in Flanders than Wallonia, 4.4% compared to 9.4%, because of industrial differences between the regions. The economy largely recovered from the March 2016 terrorist attacks that mainly impacted the Brussels region tourist and hospitality industry. Prime Minister Charles MICHEL's center-right government has pledged to further reduce the deficit in response to EU pressure to decrease Belgium's high public debt of about 104% of GDP, but such efforts would also dampen economic growth. In addition to restrained public spending, low wage growth and higher inflation promise to curtail a more robust recovery in private consumption.The government has pledged to pursue a reform program to improve Belgium’s competitiveness, including changes to labor market rules and welfare benefits. These changes have generally made Belgian wages more competitive regionally, but have raised tensions with trade unions, which have called for extended strikes. In 2017, Belgium approved a tax reform plan to ease corporate rates from 33% to 29% by 2018 and down to 25% by 2020. The tax plan also included benefits for innovation and SMEs, intended to spur competitiveness and private investment."
+        },
+        {
+            "key": "refType2_2",
+            "value": "Western Europe, bordering the North Sea, between France and the Netherlands"
+        },
+        {
+            "key": "refType3",
+            "value": "BIS;Benelux;CERN;EU"
+        },
+        {
+            "key": "refType4",
+            "value": null
+        }
+    ],
+    "properties": [],
+    "referencedBy": [],
+    "referencesTo": [
+        {
+            "dossiertype": "",
+            "dossieritems": [
+                {
+                    "id": 275,
+                    "title": "Europe",
+                    "type": "Geo",
+                    "description": "not fetched",
+                    "iconurl": ""
+                }
+            ]
+        },
+        {
+            "dossiertype": "",
+            "dossieritems": [
+                {
+                    "id": 524,
+                    "title": "BIS",
+                    "type": "Organisation",
+                    "description": "not fetched",
+                    "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/BIS-lgflag.gif"
+                },
+                {
+                    "id": 525,
+                    "title": "Benelux",
+                    "type": "Organisation",
+                    "description": "not fetched",
+                    "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/Benelux-lgflag.gif"
+                },
+                {
+                    "id": 528,
+                    "title": "CERN",
+                    "type": "Organisation",
+                    "description": "not fetched",
+                    "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/CERN-lgflag.gif"
+                },
+                {
+                    "id": 529,
+                    "title": "EU",
+                    "type": "Organisation",
+                    "description": "not fetched",
+                    "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/EU-lgflag.gif"
+                }
+            ]
+        },
+        {
+            "dossiertype": "",
+            "dossieritems": [
+                {
+                    "id": 275,
+                    "title": "Europe",
+                    "type": "Geo",
+                    "description": "not fetched",
+                    "iconurl": ""
+                }
+            ]
+        },
+        {
+            "dossiertype": "",
+            "dossieritems": [
+                {
+                    "id": 524,
+                    "title": "BIS",
+                    "type": "Organisation",
+                    "description": "not fetched",
+                    "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/BIS-lgflag.gif"
+                },
+                {
+                    "id": 525,
+                    "title": "Benelux",
+                    "type": "Organisation",
+                    "description": "not fetched",
+                    "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/Benelux-lgflag.gif"
+                },
+                {
+                    "id": 528,
+                    "title": "CERN",
+                    "type": "Organisation",
+                    "description": "not fetched",
+                    "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/CERN-lgflag.gif"
+                },
+                {
+                    "id": 529,
+                    "title": "EU",
+                    "type": "Organisation",
+                    "description": "not fetched",
+                    "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/EU-lgflag.gif"
+                }
+            ]
+        }
+    ],
+    "files": []
+}

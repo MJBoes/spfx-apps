@@ -36,6 +36,8 @@ export default class Main extends React.Component<IMain,IMainState> {
     this._dataProvider.dossierTypes = this.props.parentProperties.dossierTypes;
     if (!this._dataProvider.dataProviderIsValid()) {
       this._view = 'Configure';
+    }else{
+      if(this._view=='Configure'){this._view='Search';}
     }
     return (
       <div>
@@ -53,7 +55,6 @@ export default class Main extends React.Component<IMain,IMainState> {
   }
 
   private setCurrentDossier(currentDossierType: string, currentItemTitle: string): void {
-    // console.log('Main setCurrentDossier 1',currentDossierType+'/'+currentItemTitle);
     if(currentDossierType==''){
       this._view='Search';
       currentDossierType=this._currentDossierType;
@@ -63,7 +64,6 @@ export default class Main extends React.Component<IMain,IMainState> {
       this._currentDossierType=currentDossierType;
       this._currentItemTitle=currentItemTitle;
     }
-    // console.log('Main setCurrentDossier 2',this._currentDossierType+'/'+this._currentItemTitle);
     this._dataProvider.readDossierItem(this._currentDossierType, this._currentItemTitle).then(item => {
       this.setState({ currentDossier: item });
     });

@@ -15,9 +15,9 @@ export class DossierReferencesTo extends React.Component<IViewItemProps> {
   public render(): JSX.Element {
     if(this.props.currentDossierItem!=null){
       this._items=[];
+      // console.log('DossierReferencesTo',this.props.currentDossierItem);
       this.props.currentDossierItem.referencesTo.map(ref => {
         ref.dossieritems.map(item=>{
-          // console.log('DossierReferencesTo item',item);
           this._items.push({ 'id': item.id, 'title': item.title, 'description': item.description, 'iconurl': item.iconurl, 'type': item.type });
         });
       });

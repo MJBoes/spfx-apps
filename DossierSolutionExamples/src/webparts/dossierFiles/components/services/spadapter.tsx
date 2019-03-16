@@ -17,7 +17,9 @@ export class SPDataProvider implements IDataProvider {
     public readDossierList(filterValue:string): Promise<IDossierListItem[]> {
         this._baseGetItemUrl = this.pageContextWebAbsoluteUrl + '/_api/web/lists(%27' + this.dossierGenericList + '%27)';
         let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon&$filter=substringof(%27' + filterValue + '%27,Title)';
-        // console.log('spadapter',rest);
+        // this._restpromise(rest).then(mock=>{
+        //     console.log('Export Mock Data: ',JSON.stringify(mock));
+        // });
         return(this._restpromise(rest));
     }
 
@@ -52,9 +54,11 @@ export class SPDataProvider implements IDataProvider {
             };
             return _dossierItem;
         }).then((data) => {
-            // console.log('spadapter 1', data);
             return this.referencedBy(data);
         }).then((data) => {
+            // this.referencesTo(data).then(data=>{
+            //     console.log('Export Mock Data: ', JSON.stringify(data));
+            // });
             return this.referencesTo(data);
         });
     }
@@ -78,7 +82,6 @@ export class SPDataProvider implements IDataProvider {
                     _refBy.push(_dossierListItem);
                 });
             });
-            // console.log('spadapter',_refBy);
             _dossierItem.referencedBy=_refBy;
             return _dossierItem;
         });
