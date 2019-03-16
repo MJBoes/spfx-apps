@@ -1,7 +1,7 @@
 import { Context } from 'react';
 import { SPHttpClient } from '@microsoft/sp-http';
 
-export type viewTypes = 'Initialize' | 'Configure' | 'List' | 'Item';
+export type viewTypes = 'Initialize' | 'Configure' | 'Search' | 'Item';
 
 export interface IDossierFilesProps {
   dataProvider: IDataProvider;
@@ -26,18 +26,18 @@ export interface IDataProvider {
   dossierTypes: string;
   dataProviderIsValid():boolean;
   readDossierItem(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails>;
-  filterCurrentDossier(filterType: string, filter: string):void;
+  readDossierList(filterValue: string):Promise<IDossierListItem[]>;
 }
 
-export interface IDataAdapter {
-  ctxHttpClient: SPHttpClient;
-  pageContextWebAbsoluteUrl: string;
-  dossierGenericList: string;
-  dossierDocumentLibrary: string;
-  dossierTypes: string;
-  dataProviderIsValid():boolean;
-  readDossierItem(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails>;
-}
+// export interface IDataAdapter {
+//   ctxHttpClient: SPHttpClient;
+//   pageContextWebAbsoluteUrl: string;
+//   dossierGenericList: string;
+//   dossierDocumentLibrary: string;
+//   dossierTypes: string;
+//   dataProviderIsValid():boolean;
+//   readDossierItem(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails>;
+// }
 
 export interface IDossierMenuProps {
   dossierTypes: string;

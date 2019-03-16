@@ -20,7 +20,7 @@ export default class DossierItem extends React.Component<IViewItemProps> {
 
   public componentDidMount() {
     // console.log('DossierItem componentDidMount');
-    this.props.setCurrentDossier("", "");
+    // this.props.setCurrentDossier("", "");
   }
 
   public render(): React.ReactElement<IViewItemProps> {

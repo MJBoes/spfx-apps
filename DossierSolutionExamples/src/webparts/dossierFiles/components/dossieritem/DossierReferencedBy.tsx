@@ -15,7 +15,6 @@ export class DossierReferencedBy extends React.Component<IViewItemProps> {
   public render(): JSX.Element {
     if(this.props.currentDossierItem!=null){
       this._items=[];
-      this._items=[];
       this.props.currentDossierItem.referencedBy.map(item => {
         this._items.push({ 'id': item.id, 'title': item.title, 'description': item.description, 'iconurl': item.iconurl, 'type': item.type });
       });

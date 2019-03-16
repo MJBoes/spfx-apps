@@ -28,7 +28,7 @@ npm install adaptivecards --save
 
 Changed tslint.json to handle syntax for adaptivecards:
 replaced "no-unused-expression": true, with "no-unused-expression": [true, "allow-fast-null-checks"],
-
+Added "jsx-no-lambda": false to tslint.json
 
 ### Data Design notes
 The information items are constructed such, that the have a code, a referencesTo and/or a referencedBy property, a title and description and an icon reference.

@@ -4,9 +4,9 @@
 // https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists/getbytitle('Factbook_GL')/items?$select=id,Title,entDescription,entIconSiteAssetsRelativeUrlPara&$filter=entType eq 'Organisation'&$top=50
 
 import { SPHttpClient } from '@microsoft/sp-http';
-import { IFile, IDossierListItem, IDossierItemDetails, IDossierProperty, IDataAdapter } from '../../IDossierFilesProps';
+import { IFile, IDossierListItem, IDossierItemDetails, IDataProvider } from '../../IDossierFilesProps';
 
-export class MockDataProvider implements IDataAdapter {
+export class MockDataProvider implements IDataProvider {
     private _currentItem: IDossierItemDetails;
     private _baseGetItemUrl: string;
 

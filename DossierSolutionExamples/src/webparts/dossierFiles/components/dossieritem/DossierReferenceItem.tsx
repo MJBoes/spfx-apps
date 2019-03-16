@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IViewItemProps, IDossierListItem } from '../IDossierFilesProps';
+import { IDossierListItem } from '../IDossierFilesProps';
 import styles from '../DossierFilesStyles.module.scss';
 
 export interface IViewListItemProps {
@@ -24,8 +24,6 @@ export class DossierReference extends React.Component<IViewListItemProps>{
     );
   }
   private _onSelectItem = () => {
-    // console.log('DossierReferencedByItem', this.props.item);
-    // console.log('DossierReferencedByItem', this.props.item.type + '/' + this.props.item.title);
     this.props.setCurrentDossier(this.props.item.type, this.props.item.title);
   }
 }

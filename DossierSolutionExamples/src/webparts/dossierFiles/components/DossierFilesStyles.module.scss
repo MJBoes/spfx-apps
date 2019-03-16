@@ -27,3 +27,29 @@
     overflow-y: auto;
   }
 }
+
+.fabricList{
+  .fabricItemCell{
+    min-height: 54px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+  }
+  .fabricItemImage{
+    flex-shrink: 0;
+  }
+  .fabricItemContent{
+    margin-left: 10px;
+      overflow: hidden;
+      flex-grow: 1;
+  }
+  .fabricItemName{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .fabricItemChevron{
+    align-self: center;
+    flex-shrink: 0;
+  }
+}

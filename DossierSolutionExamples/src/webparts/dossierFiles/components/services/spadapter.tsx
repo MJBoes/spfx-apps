@@ -1,8 +1,7 @@
 import { SPHttpClient } from '@microsoft/sp-http';
-import { IDataProvider, IFile, IDossierListItem, IDossierItemDetails, IDossierProperty, IDataAdapter, IDossierReference } from '../IDossierFilesProps';
+import { IDataProvider, IFile, IDossierListItem, IDossierItemDetails } from '../IDossierFilesProps';
 
-export class SPDataProvider implements IDataAdapter {
-    private _currentItem: IDossierItemDetails;
+export class SPDataProvider implements IDataProvider {
     private _baseGetItemUrl: string;
 
     constructor(public ctxHttpClient: SPHttpClient, public pageContextWebAbsoluteUrl: string, public dossierGenericList: string, public dossierDocumentLibrary: string, public dossierTypes: string) {
@@ -13,6 +12,13 @@ export class SPDataProvider implements IDataAdapter {
             return true;
         }
         return false;
+    }
+
+    public readDossierList(filterValue:string): Promise<IDossierListItem[]> {
+        this._baseGetItemUrl = this.pageContextWebAbsoluteUrl + '/_api/web/lists(%27' + this.dossierGenericList + '%27)';
+        let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon&$filter=substringof(%27' + filterValue + '%27,Title)';
+        // console.log('spadapter',rest);
+        return(this._restpromise(rest));
     }
 
     public readDossierItem(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails> {
@@ -72,30 +78,10 @@ export class SPDataProvider implements IDataAdapter {
                     _refBy.push(_dossierListItem);
                 });
             });
-            console.log('spadapter',_refBy);
+            // console.log('spadapter',_refBy);
             _dossierItem.referencedBy=_refBy;
             return _dossierItem;
         });
-
-        // let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27' + _dossierItem.title + '%27,refType1)';    //entType%20eq%20%27'+dossierType+'%27%20and%20Title%20eq%20%27'+dossierTitle+'%27';
-        // return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
-        //     return response.json();
-        // }).then(data => {
-        //     let _refBy: IDossierListItem[] = [];
-        //     data.value.map(item => {
-        //         _refBy.push({
-        //             'id': item.Id,
-        //             'title': '' + item.Title,
-        //             'type': item.entType,
-        //             'description': 'not fetched',
-        //             'iconurl': item.icon
-        //         });
-        //     });
-        //     //_dossierItem.referencedBy.push({ 'dossiertype': '', 'dossieritems': _refBy });
-        //     _dossierItem.referencedBy = _refBy;
-        //     // console.log('spadapter 3', _dossierItem);
-        //     return _dossierItem;
-        //});
     }
 
     private referencesTo(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {

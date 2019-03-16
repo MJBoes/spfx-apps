@@ -1,15 +1,14 @@
 import { SPHttpClient } from '@microsoft/sp-http';
-import { IDataProvider, IFile, IDossierListItem, IDossierItemDetails, IDossierProperty, IDataAdapter } from '../IDossierFilesProps';
+import { IDataProvider, IDossierListItem, IDossierItemDetails } from '../IDossierFilesProps';
 import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import { MockDataProvider } from './devonly/mockadapter';
 import { SPDataProvider } from './spadapter';
 
 export class DataProvider implements IDataProvider {
-  private _adapter: IDataAdapter;
+  private _adapter: IDataProvider;
 
   constructor(public ctxHttpClient: SPHttpClient, public pageContextWebAbsoluteUrl: string, public dossierGenericList: string, public dossierDocumentLibrary: string, public dossierTypes: string) {
     if (DEBUG && Environment.type === EnvironmentType.Local) {
-      //this._dataProvider = new MockDataProvider(this.context, this.properties.dossierlistUrl);
       this._adapter = new MockDataProvider(this.ctxHttpClient, this.pageContextWebAbsoluteUrl, dossierGenericList, dossierDocumentLibrary, dossierTypes);
     } else {
       this._adapter = new SPDataProvider(this.ctxHttpClient, this.pageContextWebAbsoluteUrl, dossierGenericList, dossierDocumentLibrary, dossierTypes);
@@ -27,5 +26,7 @@ export class DataProvider implements IDataProvider {
     return this._adapter.readDossierItem(dossierType, dossierTitle);
   }
 
-  public filterCurrentDossier(filterType: string, filter: string) { }
+  public readDossierList(filterValue: string): Promise<IDossierListItem[]> {
+    return this._adapter.readDossierList(filterValue);
+  }
 }
