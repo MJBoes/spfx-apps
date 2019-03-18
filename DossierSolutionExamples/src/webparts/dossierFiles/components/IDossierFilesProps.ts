@@ -84,7 +84,9 @@ export interface IFile {
   title: string;
   modified: string;
   reviewdate: string;
-  encodedAbsoluteUrl: string;
+  serverRelativeUrl: string;
+  previewUrl: string;
+  category: string;
   properties: IDossierProperty[];
   referencedBy: IDossierListItem[];
   referencesTo: IDossierReference[];

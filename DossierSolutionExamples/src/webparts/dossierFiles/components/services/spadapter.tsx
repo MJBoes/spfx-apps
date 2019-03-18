@@ -60,7 +60,9 @@ export class SPDataProvider implements IDataProvider {
             //     console.log('Export Mock Data: ', JSON.stringify(data));
             // });
             return this.referencesTo(data);
-        });
+        }).then((data=>{
+            return this.dossierFiles(data);
+        }));
     }
 
     private referencedBy(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {
@@ -69,8 +71,8 @@ export class SPDataProvider implements IDataProvider {
         if(_dossierItem.referencefields.length>0){
             _dossierItem.referencefields.map(types=>{
                 if(types.key.indexOf('_')==-1){
-                    //console.log('spadapter',this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27' + _dossierItem.title + '%27,'+types.key+')');
-                    promisesMethods.push(this._restpromise(this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27' + _dossierItem.title + '%27,'+types.key+')'));
+                    // console.log('spadapter',this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27;' + _dossierItem.title + ';%27,'+types.key+')');
+                    promisesMethods.push(this._restpromise(this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27;' + _dossierItem.title + ';%27,'+types.key+')'));
                 }
             });
         }
@@ -111,6 +113,40 @@ export class SPDataProvider implements IDataProvider {
             return _dossierItem;
         });
     }
+
+    private dossierFiles(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {
+        // to do: category references, just the country for now
+        let promisesMethods = [];
+        let _dl=this.pageContextWebAbsoluteUrl + '/_api/web/lists(%27' + this.dossierDocumentLibrary + '%27)';
+        //$select=id,Title,FileRef&
+        //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%272f5dde6d-2187-4bf0-9df9-975d1817a3b8%27)/items?$select=File/Name&$expand=File&$filter=substringof(%27Japan%27,refType2)
+        //daarna icon: https://desktopservices.sharepoint.com/sites/dossierSolutionExamples/_api/web/maptoicon(filename='/sites/DossierSolutionExamples/Factbook_DL/Countries/JA_general_one_pager.pdf',%20progid='',%20size=1)
+        //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/GetFolderByServerRelativeUrl('Factbook_DL/Countries')/Files?$expand=ListItemAllFields&$filter=substringof(%27Japan%27,ListItemAllFields/refType2)
+
+        return this.ctxHttpClient.get(_dl + '/items?$filter=substringof(%27' + _dossierItem.title + '%27,refType2)&$expand=File', SPHttpClient.configurations.v1).then((response: any) => {
+            return response.json();
+        }).then(data => {
+            // console.log('spadapter ('+ _dl + '/items?$filter=substringof(%27' + _dossierItem.title + '%27,refType2)'+ ')',data.value);
+            let _files:IFile[]=[];
+            data.value.map(_fileitem=>{
+                _files.push({
+                    id:_fileitem.Id,
+                    title:_fileitem.File.Name,
+                    modified:_fileitem.Modified,
+                    reviewdate:'',
+                    serverRelativeUrl: _fileitem.File.ServerRelativeUrl,
+                    previewUrl:_fileitem.ServerRedirectedEmbedUri,
+                    category:_fileitem.OData__Category,
+                    properties:[],
+                    referencesTo:[],
+                    referencedBy:[]
+                });
+            });
+            _dossierItem.files=_files;
+            return _dossierItem;
+        });
+    }
+
     private _restpromise(rest:string): Promise<IDossierListItem[]>{
         return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
