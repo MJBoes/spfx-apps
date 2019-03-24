@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "3b331ebc-0904-4036-a7de-729198e43bee",
+  "alias": "DossierFoldersWebPart",
+  "componentType": "WebPart",
+
+  "version": "*",
+  "manifestVersion": 2,
+
+  "requiresCustomScript": false,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Other" },
+    "title": { "default": "dossierFolders" },
+    "description": { "default": "Implicit tag files to a ledger by placing them in the proper folder." },
+    "officeFabricIconFontName": "FabricFormLibrary",
+    "properties": {
+      "dossierGenericList": "",
+      "dossierDocumentLibrary": ""
+    }
+  }]
+}

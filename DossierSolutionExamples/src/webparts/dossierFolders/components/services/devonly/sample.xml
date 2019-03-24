@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xml:base="https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/" 
+    xmlns="http://www.w3.org/2005/Atom" 
+    xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" 
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" 
+    xmlns:georss="http://www.georss.org/georss" 
+    xmlns:gml="http://www.opengis.net/gml">
+    <id>f3fd63e0-09a1-4c58-a3ca-ab550aed48a9</id>
+    <title />
+    <updated>2019-03-24T14:45:23Z</updated>
+    <entry m:etag="&quot;3&quot;">
+        <id>905430a7-9752-4760-8905-9b9ffb809bfb</id>
+        <category term="SP.Data.Factbook_x005f_FolderLedgerListItem" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="Web/Lists(guid'40e8d757-574b-402d-8196-ea5042ebc290')/Items(193)" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/refType1" type="application/atom+xml;type=feed" title="refType1" href="Web/Lists(guid'40e8d757-574b-402d-8196-ea5042ebc290')/Items(193)/refType1">
+            <m:inline>
+                <feed>
+                    <id>62e404aa-9efc-4214-928e-0544e0a778ad</id>
+                    <title />
+                    <updated>2019-03-24T14:45:23Z</updated>
+                    <entry>
+                        <id>8fa4c71e-25e6-4c46-b22b-929a0854ea36</id>
+                        <category term="SP.Data.Factbook_x005f_FolderLedgerListItem" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                        <title />
+                        <updated>2019-03-24T14:45:23Z</updated>
+                        <author>
+                            <name />
+                        </author>
+                        <content type="application/xml">
+                            <m:properties>
+                                <d:Title>Aruba</d:Title>
+                            </m:properties>
+                        </content>
+                    </entry>
+                    <entry>
+                        <id>e1629053-2453-4d3a-b01f-eee481184551</id>
+                        <category term="SP.Data.Factbook_x005f_FolderLedgerListItem" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                        <title />
+                        <updated>2019-03-24T14:45:23Z</updated>
+                        <author>
+                            <name />
+                        </author>
+                        <content type="application/xml">
+                            <m:properties>
+                                <d:Title>Curacao</d:Title>
+                            </m:properties>
+                        </content>
+                    </entry>
+                    <entry>
+                        <id>d7db21e8-6acf-444d-9f93-e7eab5f69c4f</id>
+                        <category term="SP.Data.Factbook_x005f_FolderLedgerListItem" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                        <title />
+                        <updated>2019-03-24T14:45:23Z</updated>
+                        <author>
+                            <name />
+                        </author>
+                        <content type="application/xml">
+                            <m:properties>
+                                <d:Title>Sint Maarten</d:Title>
+                            </m:properties>
+                        </content>
+                    </entry>
+                </feed>
+            </m:inline>
+        </link>
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/refType2" type="application/atom+xml;type=feed" title="refType2" href="Web/Lists(guid'40e8d757-574b-402d-8196-ea5042ebc290')/Items(193)/refType2">
+            <m:inline>
+                <feed>
+                    <id>39fe13ca-2936-49a2-a227-a465add7574d</id>
+                    <title />
+                    <updated>2019-03-24T14:45:23Z</updated>
+                    <entry>
+                        <id>60f61b19-3945-4f9b-80b8-5b5ec39787f6</id>
+                        <category term="SP.Data.Factbook_x005f_FolderLedgerListItem" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+                        <title />
+                        <updated>2019-03-24T14:45:23Z</updated>
+                        <author>
+                            <name />
+                        </author>
+                        <content type="application/xml">
+                            <m:properties>
+                                <d:Title>Europe</d:Title>
+                            </m:properties>
+                        </content>
+                    </entry>
+                </feed>
+            </m:inline>
+        </link>
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/refType3" type="application/atom+xml;type=feed" title="refType3" href="Web/Lists(guid'40e8d757-574b-402d-8196-ea5042ebc290')/Items(193)/refType3">
+            <m:inline>
+                <feed>
+                    <id>42d469d9-118b-4841-801f-a02365a8e306</id>
+                    <title />
+                    <updated>2019-03-24T14:45:23Z</updated>
+                    <author>
+                        <name />
+                    </author>
+                </feed>
+            </m:inline>
+        </link>
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/refType4" type="application/atom+xml;type=feed" title="refType4" href="Web/Lists(guid'40e8d757-574b-402d-8196-ea5042ebc290')/Items(193)/refType4">
+            <m:inline>
+                <feed>
+                    <id>cf6024a7-e424-40e6-a9e8-23c71bb7f679</id>
+                    <title />
+                    <updated>2019-03-24T14:45:23Z</updated>
+                    <author>
+                        <name />
+                    </author>
+                </feed>
+            </m:inline>
+        </link>
+        <title />
+        <updated>2019-03-24T14:45:23Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:Title>Netherlands</d:Title>
+            </m:properties>
+        </content>
+    </entry>
+</feed>

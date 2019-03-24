@@ -8,7 +8,7 @@ export class SPDataProvider implements IDataProvider {
     }
 
     public dataProviderIsValid(): boolean {
-        if ((this.dossierDocumentLibrary + '') != '' && (this.dossierGenericList + '') != '' && (this.dossierTypes + '') != '') {
+        if ((this.dossierDocumentLibrary + '') != '' && (this.dossierGenericList + '') != '') {
             return true;
         }
         return false;
@@ -28,23 +28,19 @@ export class SPDataProvider implements IDataProvider {
         let _dossierItem: IDossierItemDetails;
         // console.log('SPDataprovider',this._baseGetItemUrl);
         //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists('3859e06a-eb78-427d-bf41-c61ec939d739')/items?$select=id,Title,entDescription,entIconSiteAssetsRelativeUrlPara&$filter=entType%20eq%20%27Geo%27%20and%20Title%20eq%20%27World%27
-        let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon,refType1,refType2,refType3,refType4&$filter=entType%20eq%20%27' + dossierType + '%27%20and%20Title%20eq%20%27' + dossierTitle + '%27';
+        //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%2740e8d757-574b-402d-8196-ea5042ebc290%27)/items?$select=Title,refType1/Title,refType2/Title,refType3/Title,refType4/Title&$expand=refType1,refType2,refType3,refType4&$filter=Title%20eq%20%27Netherlands%27
+        let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon,refType1/Title,refType2/Title,refType3/Title,refType4/Title&$expand=refType1,refType2,refType3,refType4&$filter=entType%20eq%20%27' + dossierType + '%27%20and%20Title%20eq%20%27' + dossierTitle + '%27';
         return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then((data) => {
-            // console.log('spadapter readDossierItem', data);
+            console.log('spadapter readDossierItem', data);
             _dossierItem = {
                 id: data.value[0].Id,
                 title: data.value[0].Title,
                 type: data.value[0].entType,
                 description: data.value[0].entDescription,
                 iconurl: data.value[0].icon,
-                referencefields: [
-                    { "key": "refType1", "value": data.value[0].refType1 },
-                    { "key": "refType2", "value": data.value[0].refType2 },
-                    { "key": "refType3", "value": data.value[0].refType3 },
-                    { "key": "refType4", "value": data.value[0].refType4 },
-                ],
+                referencefields: [],
                 properties: [],
                 referencedBy: [],
                 referencesTo: [],
@@ -58,9 +54,9 @@ export class SPDataProvider implements IDataProvider {
             //     console.log('Export Mock Data: ', JSON.stringify(data));
             // });
             return this.referencesTo(data);
-        }).then((data=>{
+        }).then((data)=>{
             return this.dossierFiles(data);
-        }));
+        });
     }
 
     private referencedBy(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {

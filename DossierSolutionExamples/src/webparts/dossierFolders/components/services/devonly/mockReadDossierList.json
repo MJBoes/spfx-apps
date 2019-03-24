@@ -1,0 +1,65 @@
+[
+    {
+        "id": 15,
+        "title": "Bermuda",
+        "type": "Country",
+        "description": "not fetched",
+        "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/BD-lgflag.gif"
+    },
+    {
+        "id": 16,
+        "title": "Belgium",
+        "type": "Country",
+        "description": "not fetched",
+        "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/BE-lgflag.gif"
+    },
+    {
+        "id": 19,
+        "title": "Belize",
+        "type": "Country",
+        "description": "not fetched",
+        "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/BH-lgflag.gif"
+    },
+    {
+        "id": 23,
+        "title": "Benin",
+        "type": "Country",
+        "description": "not fetched",
+        "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/BN-lgflag.gif"
+    },
+    {
+        "id": 24,
+        "title": "Belarus",
+        "type": "Country",
+        "description": "not fetched",
+        "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/BO-lgflag.gif"
+    },
+    {
+        "id": 132,
+        "title": "Liberia",
+        "type": "Country",
+        "description": "not fetched",
+        "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/LI-lgflag.gif"
+    },
+    {
+        "id": 240,
+        "title": "Uzbekistan",
+        "type": "Country",
+        "description": "not fetched",
+        "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/UZ-lgflag.gif"
+    },
+    {
+        "id": 276,
+        "title": "Central America and the Caribbean",
+        "type": "Geo",
+        "description": "not fetched",
+        "iconurl": ""
+    },
+    {
+        "id": 525,
+        "title": "Benelux",
+        "type": "Organisation",
+        "description": "not fetched",
+        "iconurl": "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/Factbook_DL/DossierAssets/flags/Benelux-lgflag.gif"
+    }
+]

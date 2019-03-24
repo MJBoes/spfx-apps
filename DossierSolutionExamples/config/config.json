@@ -9,12 +9,21 @@
           "manifest": "./src/webparts/dossierFiles/DossierFilesWebPart.manifest.json"
         }
       ]
+    },
+    "dossier-folders-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/dossierFolders/DossierFoldersWebPart.js",
+          "manifest": "./src/webparts/dossierFolders/DossierFoldersWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "DossierFilesWebPartStrings": "lib/webparts/dossierFiles/loc/{locale}.js",
     "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
-    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
+    "DossierFoldersWebPartStrings": "lib/webparts/dossierFolders/loc/{locale}.js"
   }
 }
