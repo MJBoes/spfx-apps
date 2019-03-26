@@ -3,7 +3,7 @@
   "solution": {
     "name": "dossier-solution-examples-client-side-solution",
     "id": "24ee7323-15f9-473b-9b7e-5426592ed4fb",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "includeClientSideAssets": true,
     "isDomainIsolated": false
   },

@@ -92,6 +92,7 @@ export interface IFile {
   serverRelativeUrl: string;
   previewUrl: string;
   properties: IDossierProperty[];
+  group: string;
 }
 
 export interface IDossierReference {

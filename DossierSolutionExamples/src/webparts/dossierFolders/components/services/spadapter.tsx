@@ -22,7 +22,7 @@ export class SPDataProvider implements IDataProvider {
         // this._restpromise(rest).then(mock=>{
         //     console.log('Export Mock Data: ',JSON.stringify(mock));
         // });
-        return(this._restpromise(rest));
+        return(this._restpromiseRefBy(rest));
     }
 
     public readDossierItem(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails> {
@@ -97,7 +97,7 @@ export class SPDataProvider implements IDataProvider {
                     types.value.split(';').map(ref=>{
                         _filter+=' or Title eq %27' + ref + '%27';
                     });
-                    promisesMethods.push(this._restpromise(rest.replace('{Titles}',_filter.substr(3))));
+                    promisesMethods.push(this._restpromiseRefBy(rest.replace('{Titles}',_filter.substr(3))));
                     _filter='';
                 }
             });
@@ -118,25 +118,16 @@ export class SPDataProvider implements IDataProvider {
         // instead use https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef&$filter=startswith(FileRef,%20%27/sites/DossierSolutionExamples/Factbook_Folders/Client%20Folders/Afghanistan%27)
         let promisesMethods = [];
         _dossierItem.folders.map(_folder=>{
-            promisesMethods.push(this._restpromise(this._baseGetFileUrl+"/items?$select=id,FileRef,FileLeafRef&$filter=startswith(FileRef,%27"+_folder.serverRelativeUrl+"%27)"));
+            promisesMethods.push(this._restpromiseFile(this._baseGetFileUrl+"/items?$select=id,FileRef,FileLeafRef&$filter=startswith(FileRef,%27"+_folder.serverRelativeUrl+"/%27)",_folder.title));
         });
         return Promise.all(promisesMethods)
-        .then(data => {
-            // console.log('spadapter ('+ _dl + '/items?$filter=substringof(%27' + _dossierItem.title + '%27,refType2)'+ ')',data.value);
-            let _files:IFile[]=[];
-            console.log('dossierFiles',data);
-            // data.value.map(_fileitem=>{
-            //     _files.push({
-            //         id:_fileitem.Id,
-            //         title:_fileitem.File.Name,
-            //         modified:_fileitem.Modified,
-            //         reviewdate:'',
-            //         serverRelativeUrl: _fileitem.File.ServerRelativeUrl,
-            //         previewUrl:_fileitem.ServerRedirectedEmbedUri,
-            //         properties:[],
-            //     });
-            // });
-            _dossierItem.files=_files;
+        .then(fileGroups => {
+            fileGroups.map(_files=>{
+                _files.map(_file=>{
+                    _dossierItem.files.push(_file);
+                });
+            });
+            //console.log('spadapter dossierFiles',_dossierItem);
             return _dossierItem;
         });
     }
@@ -149,7 +140,7 @@ export class SPDataProvider implements IDataProvider {
         // console.log('dossierFolder', _url);
         return this.ctxHttpClient.get(_url, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
-        }).then(data=>{a
+        }).then(data=>{
             data.value.map(_folder=>{
                 _dossierItem.folders.push({id:_folder.Id, title:_folder.FileLeafRef, serverRelativeUrl:_folder.FileRef, reviewdate:_folder.reviewDate});
             });
@@ -157,7 +148,7 @@ export class SPDataProvider implements IDataProvider {
         });
     }
 
-    private _restpromise(rest:string): Promise<IDossierListItem[]>{
+    private _restpromiseRefBy(rest:string): Promise<IDossierListItem[]>{
         return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then(data => {
@@ -172,6 +163,26 @@ export class SPDataProvider implements IDataProvider {
                 });
             });
             return _refBy;
+        });
+    }
+    private _restpromiseFile(rest:string, group: string): Promise<IFile[]>{
+        return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
+            return response.json();
+        }).then(data => {
+            let _file: IFile[] = [];
+            data.value.map(item => {
+                _file.push({
+                    id:item.Id,
+                    title:item.FileLeafRef,
+                    modified:item.Modified,
+                    reviewdate:'',
+                    serverRelativeUrl: item.FileLeafRef,
+                    previewUrl:item.ServerRedirectedEmbedUri,
+                    properties:[],
+                    group: group
+                });
+            });
+            return _file;
         });
     }
 }
