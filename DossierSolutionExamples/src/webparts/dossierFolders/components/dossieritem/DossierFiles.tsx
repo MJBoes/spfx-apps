@@ -27,7 +27,7 @@ export class DossierFiles extends React.Component<IViewItemProps> {
       <div className={styles.webpart}>
         <h4>Files</h4>
         <ListView
-          items={this.props.currentDossierItem.files}
+          items={this.props.currentDossierItem.folders}
           viewFields={_viewFields}
           iconFieldName="serverRelativeUrl"
           compact={true}

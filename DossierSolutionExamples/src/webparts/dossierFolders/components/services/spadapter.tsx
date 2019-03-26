@@ -1,8 +1,9 @@
 import { SPHttpClient } from '@microsoft/sp-http';
-import { IDataProvider, IFile, IDossierListItem, IDossierItemDetails } from '../IDossierFilesProps';
+import { IDataProvider, IFolder, IFile, IDossierListItem, IDossierItemDetails } from '../IDossierFilesProps';
 
 export class SPDataProvider implements IDataProvider {
     private _baseGetItemUrl: string;
+    private _baseGetFileUrl: string;
 
     constructor(public ctxHttpClient: SPHttpClient, public pageContextWebAbsoluteUrl: string, public dossierGenericList: string, public dossierDocumentLibrary: string, public dossierTypes: string) {
     }
@@ -16,6 +17,7 @@ export class SPDataProvider implements IDataProvider {
 
     public readDossierList(filterValue:string): Promise<IDossierListItem[]> {
         this._baseGetItemUrl = this.pageContextWebAbsoluteUrl + '/_api/web/lists(%27' + this.dossierGenericList + '%27)';
+        this._baseGetFileUrl = this.pageContextWebAbsoluteUrl + '/_api/web/lists(%27' + this.dossierDocumentLibrary + '%27)';
         let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon&$filter=substringof(%27' + filterValue + '%27,Title)';
         // this._restpromise(rest).then(mock=>{
         //     console.log('Export Mock Data: ',JSON.stringify(mock));
@@ -33,18 +35,26 @@ export class SPDataProvider implements IDataProvider {
         return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then((data) => {
-            console.log('spadapter readDossierItem', data);
+            // Loop through the refType fields to find the details of entities refered by the active item
+            let refFields=[];
+            ['refType1','refType2','refType3','refType4'].map(field=>{
+                data.value[0][field].map(ref=>{
+                    refFields.push({ "key": field, "value": ref.Title });
+                });
+            });
+            //console.log('spadapter readDossierItem', data);
             _dossierItem = {
                 id: data.value[0].Id,
                 title: data.value[0].Title,
                 type: data.value[0].entType,
                 description: data.value[0].entDescription,
                 iconurl: data.value[0].icon,
-                referencefields: [],
+                referencefields: refFields,
                 properties: [],
                 referencedBy: [],
                 referencesTo: [],
-                files: []
+                folders: [],
+                files:[]
             };
             return _dossierItem;
         }).then((data) => {
@@ -55,39 +65,32 @@ export class SPDataProvider implements IDataProvider {
             // });
             return this.referencesTo(data);
         }).then((data)=>{
+            return this.dossierFolders(data);
+        }).then(data=>{
             return this.dossierFiles(data);
         });
     }
 
     private referencedBy(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {
-        // note: this works only with single line (255 char) fields
-        let promisesMethods = [];
-        if(_dossierItem.referencefields.length>0){
-            _dossierItem.referencefields.map(types=>{
-                if(types.key.indexOf('_')==-1){
-                    // console.log('spadapter',this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27;' + _dossierItem.title + ';%27,'+types.key+')');
-                    promisesMethods.push(this._restpromise(this._baseGetItemUrl + '/items?$select=id,Title,entType,icon&$filter=substringof(%27;' + _dossierItem.title + ';%27,'+types.key+')'));
-                }
+        // Find ledger items which refer to the dossier list item. Basically items where refType<entType> contains a reference to the Title
+        // https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%2740e8d757-574b-402d-8196-ea5042ebc290%27)/items?$select=id,Title,entType,icon,refType1/Title&$expand=refType1&$filter=refType1/Title%20eq%20%27Netherlands%27
+        let _url=this._baseGetItemUrl + '/items?$select=id,Title,entType,icon,refType'+_dossierItem.type+'/Title&$expand=refType'+_dossierItem.type;
+        _url=_url+'&$filter=refType' +_dossierItem.type + '/Title%20eq%20%27' +_dossierItem.title + '%27';
+        // console.log('referencedBy',_url);
+        return this.ctxHttpClient.get(_url, SPHttpClient.configurations.v1).then((response: any) => {
+            return response.json();
+        }).then(_data => {
+            _data.value.map(_referencingItem=>{
+                _dossierItem.referencedBy.push({title:_referencingItem.Title,iconurl:_referencingItem.icon,type:_referencingItem.entType, id: _referencingItem.Id, description:''});
             });
-        }
-        return Promise.all(promisesMethods)
-        .then(_dossierListItemGroups => {
-            let _refBy: IDossierListItem[] = [];
-            _dossierListItemGroups.map(_dossierListItems=>{
-                _dossierListItems.map(_dossierListItem=>{
-                    _refBy.push(_dossierListItem);
-                });
-            });
-            _dossierItem.referencedBy=_refBy;
             return _dossierItem;
         });
     }
 
     private referencesTo(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {
-        // note: this works only with single line (255 char) fields
         let promisesMethods = [];
         let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon&$filter={Titles}';
-        let _field=''; let _filter='';
+        let _filter='';
         if(_dossierItem.referencefields.length>0){
             _dossierItem.referencefields.map(types=>{
                 if(types.value!=null&&types.key.indexOf('_')==-1){
@@ -109,41 +112,49 @@ export class SPDataProvider implements IDataProvider {
     }
 
     private dossierFiles(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {
-        // to do: category references, just the country for now
+        // Fetch all files specified in the folders property of the dossier item
+        // GetFolderByServerRelativeUrl doesn't work: no recursion and slow:
+        // var url = "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/Web/GetFolderByServerRelativeUrl('/sites/DossierSolutionExamples/Factbook_Folders/Client%20Folders/Afghanistan')?$expand=Folders,Files";
+        // instead use https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef&$filter=startswith(FileRef,%20%27/sites/DossierSolutionExamples/Factbook_Folders/Client%20Folders/Afghanistan%27)
         let promisesMethods = [];
-        let _dl=this.pageContextWebAbsoluteUrl + '/_api/web/lists(%27' + this.dossierDocumentLibrary + '%27)';
-        //$select=id,Title,FileRef&
-        //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%272f5dde6d-2187-4bf0-9df9-975d1817a3b8%27)/items?$select=File/Name&$expand=File&$filter=substringof(%27Japan%27,refType2)
-        //daarna icon: https://desktopservices.sharepoint.com/sites/dossierSolutionExamples/_api/web/maptoicon(filename='/sites/DossierSolutionExamples/Factbook_DL/Countries/JA_general_one_pager.pdf',%20progid='',%20size=1)
-        //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/GetFolderByServerRelativeUrl('Factbook_DL/Countries')/Files?$expand=ListItemAllFields&$filter=substringof(%27Japan%27,ListItemAllFields/refType2)
-
-        return this.ctxHttpClient.get(_dl + '/items?$filter=substringof(%27' + _dossierItem.title + '%27,refType2)&$expand=File', SPHttpClient.configurations.v1).then((response: any) => {
-            return response.json();
-        }).then(data => {
+        _dossierItem.folders.map(_folder=>{
+            promisesMethods.push(this._restpromise(this._baseGetFileUrl+"/items?$select=id,FileRef,FileLeafRef&$filter=startswith(FileRef,%27"+_folder.serverRelativeUrl+"%27)"));
+        });
+        return Promise.all(promisesMethods)
+        .then(data => {
             // console.log('spadapter ('+ _dl + '/items?$filter=substringof(%27' + _dossierItem.title + '%27,refType2)'+ ')',data.value);
             let _files:IFile[]=[];
-            data.value.map(_fileitem=>{
-                _files.push({
-                    id:_fileitem.Id,
-                    title:_fileitem.File.Name,
-                    modified:_fileitem.Modified,
-                    reviewdate:'',
-                    serverRelativeUrl: _fileitem.File.ServerRelativeUrl,
-                    previewUrl:_fileitem.ServerRedirectedEmbedUri,
-                    category:_fileitem.OData__Category,
-                    properties:[],
-                    referencesTo:[],
-                    referencedBy:[]
-                });
-            });
+            console.log('dossierFiles',data);
+            // data.value.map(_fileitem=>{
+            //     _files.push({
+            //         id:_fileitem.Id,
+            //         title:_fileitem.File.Name,
+            //         modified:_fileitem.Modified,
+            //         reviewdate:'',
+            //         serverRelativeUrl: _fileitem.File.ServerRelativeUrl,
+            //         previewUrl:_fileitem.ServerRedirectedEmbedUri,
+            //         properties:[],
+            //     });
+            // });
             _dossierItem.files=_files;
             return _dossierItem;
         });
     }
 
-    private dossierFolders(){
+    private dossierFolders(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails>{
         // var url = _spPageContextInfo.webServerRelativeUrl + "/_api/Web/GetFolderByServerRelativeUrl('" + folderUrl + "')?$expand=Folders,Files";
-
+        //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef,refType1/Title&$expand=refType1&$filter=refType1/Title%20eq%20%27Afghanistan%27
+        let _url='https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef,reviewDate,refType' +_dossierItem.type + '/Title&$expand=';
+        _url=_url+'refType' +_dossierItem.type + '&$filter=refType' +_dossierItem.type + '/Title%20eq%20%27'+ _dossierItem.title +'%27';
+        // console.log('dossierFolder', _url);
+        return this.ctxHttpClient.get(_url, SPHttpClient.configurations.v1).then((response: any) => {
+            return response.json();
+        }).then(data=>{a
+            data.value.map(_folder=>{
+                _dossierItem.folders.push({id:_folder.Id, title:_folder.FileLeafRef, serverRelativeUrl:_folder.FileRef, reviewdate:_folder.reviewDate});
+            });
+            return _dossierItem;
+        });
     }
 
     private _restpromise(rest:string): Promise<IDossierListItem[]>{

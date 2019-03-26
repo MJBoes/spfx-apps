@@ -73,9 +73,17 @@ export interface IDossierItemDetails {
   properties: IDossierProperty[];
   referencedBy: IDossierListItem[];
   referencesTo: IDossierReference[];
+  folders: IFolder[];
   files: IFile[];
 }
-// a file can have properties and references to dossier entries.
+// a folder can have properties and references to dossier entries.
+export interface IFolder {
+  id: string;
+  title: string;
+  reviewdate: string;
+  serverRelativeUrl: string;
+  // files: IFile[];
+}
 export interface IFile {
   id: string;
   title: string;
@@ -83,10 +91,7 @@ export interface IFile {
   reviewdate: string;
   serverRelativeUrl: string;
   previewUrl: string;
-  category: string;
   properties: IDossierProperty[];
-  referencedBy: IDossierListItem[];
-  referencesTo: IDossierReference[];
 }
 
 export interface IDossierReference {
