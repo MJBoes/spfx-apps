@@ -135,6 +135,8 @@ export class SPDataProvider implements IDataProvider {
     private dossierFolders(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails>{
         // var url = _spPageContextInfo.webServerRelativeUrl + "/_api/Web/GetFolderByServerRelativeUrl('" + folderUrl + "')?$expand=Folders,Files";
         //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef,refType1/Title&$expand=refType1&$filter=refType1/Title%20eq%20%27Afghanistan%27
+
+        //https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/search/query?querytext='dossierReferencesTo1:Belgium'&selectproperties='Path%2cUrl%2cTitle%2cServerRedirectedEmbedURL'&clienttype='ContentSearchRegular'
         let _url='https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef,reviewDate,refType' +_dossierItem.type + '/Title&$expand=';
         _url=_url+'refType' +_dossierItem.type + '&$filter=refType' +_dossierItem.type + '/Title%20eq%20%27'+ _dossierItem.title +'%27';
         // console.log('dossierFolder', _url);
