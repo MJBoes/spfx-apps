@@ -117,8 +117,9 @@ export class SPDataProvider implements IDataProvider {
         // var url = "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/Web/GetFolderByServerRelativeUrl('/sites/DossierSolutionExamples/Factbook_Folders/Client%20Folders/Afghanistan')?$expand=Folders,Files";
         // instead use https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef&$filter=startswith(FileRef,%20%27/sites/DossierSolutionExamples/Factbook_Folders/Client%20Folders/Afghanistan%27)
         let promisesMethods = [];
+        let _restbase="https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/Web/GetFolderByServerRelativeUrl('{param}')?$select=Files/Name,Files/ServerRelativeUrl&$expand=Files";
         _dossierItem.folders.map(_folder=>{
-            promisesMethods.push(this._restpromiseFile(this._baseGetFileUrl+"/items?$select=id,FileRef,FileLeafRef&$filter=startswith(FileRef,%27"+_folder.serverRelativeUrl+"/%27)",_folder.title));
+            promisesMethods.push(this._restpromiseFile(_restbase.replace('{param}',_folder.serverRelativeUrl),_folder.title));
         });
         return Promise.all(promisesMethods)
         .then(fileGroups => {
@@ -127,7 +128,6 @@ export class SPDataProvider implements IDataProvider {
                     _dossierItem.files.push(_file);
                 });
             });
-            //console.log('spadapter dossierFiles',_dossierItem);
             return _dossierItem;
         });
     }
@@ -136,15 +136,23 @@ export class SPDataProvider implements IDataProvider {
         // var url = _spPageContextInfo.webServerRelativeUrl + "/_api/Web/GetFolderByServerRelativeUrl('" + folderUrl + "')?$expand=Folders,Files";
         //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef,refType1/Title&$expand=refType1&$filter=refType1/Title%20eq%20%27Afghanistan%27
 
-        //https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/search/query?querytext='dossierReferencesTo1:Belgium'&selectproperties='Path%2cUrl%2cTitle%2cServerRedirectedEmbedURL'&clienttype='ContentSearchRegular'
-        let _url='https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef,reviewDate,refType' +_dossierItem.type + '/Title&$expand=';
-        _url=_url+'refType' +_dossierItem.type + '&$filter=refType' +_dossierItem.type + '/Title%20eq%20%27'+ _dossierItem.title +'%27';
-        // console.log('dossierFolder', _url);
+        let _url="https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title+ "'&selectproperties='ListItemID%2cPath%2cTitle'&clienttype='ContentSearchRegular'";
+        //let _url='https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef,reviewDate,refType' +_dossierItem.type + '/Title&$expand=';
+        //_url=_url+'refType' +_dossierItem.type + '&$filter=refType' +_dossierItem.type + '/Title%20eq%20%27'+ _dossierItem.title +'%27';
+        //console.log('dossierFolder', _url);
         return this.ctxHttpClient.get(_url, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then(data=>{
-            data.value.map(_folder=>{
-                _dossierItem.folders.push({id:_folder.Id, title:_folder.FileLeafRef, serverRelativeUrl:_folder.FileRef, reviewdate:_folder.reviewDate});
+            data.PrimaryQueryResult.RelevantResults.Table.Rows.map(_row=>{
+                let _folder:IFolder={'id':'','title':'','serverRelativeUrl':'','reviewdate':''};
+                _row.Cells.map(_cell=>{
+                    if(_cell.Key==='ListItemID'){_folder.id=_cell.Value;}
+                    if(_cell.Key==='Title'){_folder.title=_cell.Value;}
+                    if(_cell.Key==='Path'){_folder.serverRelativeUrl=_cell.Value.replace(location.origin,'');}
+                });
+                // console.log('dossierFolder folder ', _folder);
+                _dossierItem.folders.push(_folder);
+                return(_dossierItem);
             });
             return _dossierItem;
         });
@@ -171,15 +179,16 @@ export class SPDataProvider implements IDataProvider {
         return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then(data => {
+            //console.log('_restpromiseFile',data);
             let _file: IFile[] = [];
-            data.value.map(item => {
+            data.Files.map(item => {
                 _file.push({
-                    id:item.Id,
-                    title:item.FileLeafRef,
-                    modified:item.Modified,
+                    id:'',
+                    title:item.Name,
+                    modified:'',
                     reviewdate:'',
-                    serverRelativeUrl: item.FileLeafRef,
-                    previewUrl:item.ServerRedirectedEmbedUri,
+                    serverRelativeUrl: item.ServerRelativeUrl,
+                    previewUrl:'',
                     properties:[],
                     group: group
                 });

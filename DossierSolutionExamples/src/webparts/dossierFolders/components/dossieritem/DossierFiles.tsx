@@ -22,8 +22,8 @@ export class DossierFiles extends React.Component<IViewItemProps> {
     // }
     let _viewFields:IViewField[]=[{'name':'title',displayName:'Name',linkPropertyName:'previewUrl',maxWidth:250},{'name':'modified',displayName:'Modified Date'}];
     let _groupByFields:IGrouping[]=[{'name':'group','order':1}];
-    console.log(this.props.currentDossierItem.files);
-    console.log(this.props.currentDossierItem.folders);
+    //console.log(this.props.currentDossierItem.files);
+    //console.log(this.props.currentDossierItem.folders);
     return (
       <div className={styles.webpart}>
         <h4>Files</h4>
