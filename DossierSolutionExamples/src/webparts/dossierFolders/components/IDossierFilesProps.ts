@@ -20,7 +20,6 @@ export interface IDataProvider {
   ctxHttpClient: SPHttpClient;
   pageContextWebAbsoluteUrl: string;
   dossierGenericList: string;
-  dossierDocumentLibrary: string;
   dataProviderIsValid():boolean;
   readDossierItem(dossierType: string, dossierTitle: string): Promise<IDossierItemDetails>;
   readDossierList(filterValue: string):Promise<IDossierListItem[]>;

@@ -18,7 +18,7 @@ export default class Main extends React.Component<IMain,IMainState> {
 
   constructor(props: IMain) {
     super(props);
-    this._dataProvider = new DataProvider(this.props.ctxHttpClient, this.props.pageContextWebAbsoluteUrl, "", "", "");
+    this._dataProvider = new DataProvider(this.props.ctxHttpClient, this.props.pageContextWebAbsoluteUrl, "", "");
     this.state = {
       currentDossier: null,
       searchItems: []
@@ -29,7 +29,6 @@ export default class Main extends React.Component<IMain,IMainState> {
   }
 
   public render(): React.ReactElement<IMain> {
-    this._dataProvider.dossierDocumentLibrary = this.props.parentProperties.dossierDocumentLibrary;
     this._dataProvider.dossierGenericList = this.props.parentProperties.dossierGenericList;
     if (!this._dataProvider.dataProviderIsValid()) {
       this._view = 'Configure';

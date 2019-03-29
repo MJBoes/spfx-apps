@@ -7,16 +7,15 @@ import { SPDataProvider } from './spadapter';
 export class DataProvider implements IDataProvider {
   private _adapter: IDataProvider;
 
-  constructor(public ctxHttpClient: SPHttpClient, public pageContextWebAbsoluteUrl: string, public dossierGenericList: string, public dossierDocumentLibrary: string, public dossierTypes: string) {
+  constructor(public ctxHttpClient: SPHttpClient, public pageContextWebAbsoluteUrl: string, public dossierGenericList: string, public dossierTypes: string) {
     if (DEBUG && Environment.type === EnvironmentType.Local) {
-      this._adapter = new MockDataProvider(this.ctxHttpClient, this.pageContextWebAbsoluteUrl, dossierGenericList, dossierDocumentLibrary, dossierTypes);
+      this._adapter = new MockDataProvider(this.ctxHttpClient, this.pageContextWebAbsoluteUrl, dossierGenericList, dossierTypes);
     } else {
-      this._adapter = new SPDataProvider(this.ctxHttpClient, this.pageContextWebAbsoluteUrl, dossierGenericList, dossierDocumentLibrary, dossierTypes);
+      this._adapter = new SPDataProvider(this.ctxHttpClient, this.pageContextWebAbsoluteUrl, dossierGenericList, dossierTypes);
     }
   }
 
   public dataProviderIsValid(): boolean {
-    this._adapter.dossierDocumentLibrary = this.dossierDocumentLibrary;
     this._adapter.dossierGenericList = this.dossierGenericList;
     return this._adapter.dataProviderIsValid();
   }

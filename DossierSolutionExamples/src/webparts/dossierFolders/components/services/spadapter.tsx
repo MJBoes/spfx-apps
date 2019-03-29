@@ -3,21 +3,21 @@ import { IDataProvider, IFolder, IFile, IDossierListItem, IDossierItemDetails } 
 
 export class SPDataProvider implements IDataProvider {
     private _baseGetItemUrl: string;
-    private _baseGetFileUrl: string;
+    private _baseWebAbsUrl: string;
 
-    constructor(public ctxHttpClient: SPHttpClient, public pageContextWebAbsoluteUrl: string, public dossierGenericList: string, public dossierDocumentLibrary: string, public dossierTypes: string) {
+    constructor(public ctxHttpClient: SPHttpClient, public pageContextWebAbsoluteUrl: string, public dossierGenericList: string, public dossierTypes: string) {
     }
 
     public dataProviderIsValid(): boolean {
-        if ((this.dossierDocumentLibrary + '') != '' && (this.dossierGenericList + '') != '') {
+        if ((this.dossierGenericList + '') != '') {
             return true;
         }
         return false;
     }
 
     public readDossierList(filterValue:string): Promise<IDossierListItem[]> {
+        this._baseWebAbsUrl = this.pageContextWebAbsoluteUrl;
         this._baseGetItemUrl = this.pageContextWebAbsoluteUrl + '/_api/web/lists(%27' + this.dossierGenericList + '%27)';
-        this._baseGetFileUrl = this.pageContextWebAbsoluteUrl + '/_api/web/lists(%27' + this.dossierDocumentLibrary + '%27)';
         let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon&$filter=substringof(%27' + filterValue + '%27,Title)';
         // this._restpromise(rest).then(mock=>{
         //     console.log('Export Mock Data: ',JSON.stringify(mock));
@@ -30,7 +30,6 @@ export class SPDataProvider implements IDataProvider {
         let _dossierItem: IDossierItemDetails;
         // console.log('SPDataprovider',this._baseGetItemUrl);
         //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists('3859e06a-eb78-427d-bf41-c61ec939d739')/items?$select=id,Title,entDescription,entIconSiteAssetsRelativeUrlPara&$filter=entType%20eq%20%27Geo%27%20and%20Title%20eq%20%27World%27
-        //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%2740e8d757-574b-402d-8196-ea5042ebc290%27)/items?$select=Title,refType1/Title,refType2/Title,refType3/Title,refType4/Title&$expand=refType1,refType2,refType3,refType4&$filter=Title%20eq%20%27Netherlands%27
         let rest = this._baseGetItemUrl + '/items?$select=id,Title,entType,entDescription,icon,refType1/Title,refType2/Title,refType3/Title,refType4/Title&$expand=refType1,refType2,refType3,refType4&$filter=entType%20eq%20%27' + dossierType + '%27%20and%20Title%20eq%20%27' + dossierTitle + '%27';
         return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
@@ -112,12 +111,9 @@ export class SPDataProvider implements IDataProvider {
     }
 
     private dossierFiles(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {
-        // Fetch all files specified in the folders property of the dossier item
-        // GetFolderByServerRelativeUrl doesn't work: no recursion and slow:
-        // var url = "https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/Web/GetFolderByServerRelativeUrl('/sites/DossierSolutionExamples/Factbook_Folders/Client%20Folders/Afghanistan')?$expand=Folders,Files";
-        // instead use https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef&$filter=startswith(FileRef,%20%27/sites/DossierSolutionExamples/Factbook_Folders/Client%20Folders/Afghanistan%27)
+        // Fetch all files specified in the folders property found by search of the dossier item
         let promisesMethods = [];
-        let _restbase="https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/Web/GetFolderByServerRelativeUrl('{param}')?$select=Files/Name,Files/ServerRelativeUrl&$expand=Files";
+        let _restbase=this._baseWebAbsUrl+"/_api/Web/GetFolderByServerRelativeUrl('{param}')?$select=Files/Name,Files/ServerRelativeUrl&$expand=Files";
         _dossierItem.folders.map(_folder=>{
             promisesMethods.push(this._restpromiseFile(_restbase.replace('{param}',_folder.serverRelativeUrl),_folder.title));
         });
@@ -133,13 +129,7 @@ export class SPDataProvider implements IDataProvider {
     }
 
     private dossierFolders(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails>{
-        // var url = _spPageContextInfo.webServerRelativeUrl + "/_api/Web/GetFolderByServerRelativeUrl('" + folderUrl + "')?$expand=Folders,Files";
-        //https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef,refType1/Title&$expand=refType1&$filter=refType1/Title%20eq%20%27Afghanistan%27
-
-        let _url="https://desktopservices.sharepoint.com/sites/showcase/factbook/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title+ "'&selectproperties='ListItemID%2cPath%2cTitle'&clienttype='ContentSearchRegular'";
-        //let _url='https://desktopservices.sharepoint.com/sites/DossierSolutionExamples/_api/web/lists(%271f7dec37-71b2-4128-bc1c-39e1adb91a43%27)/items?$select=id,FileRef,FileLeafRef,reviewDate,refType' +_dossierItem.type + '/Title&$expand=';
-        //_url=_url+'refType' +_dossierItem.type + '&$filter=refType' +_dossierItem.type + '/Title%20eq%20%27'+ _dossierItem.title +'%27';
-        //console.log('dossierFolder', _url);
+        let _url=this._baseWebAbsUrl+"/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title+ "'&selectproperties='ListItemID%2cPath%2cTitle'&clienttype='ContentSearchRegular'";
         return this.ctxHttpClient.get(_url, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then(data=>{

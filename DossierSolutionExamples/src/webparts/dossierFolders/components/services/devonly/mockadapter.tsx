@@ -10,7 +10,7 @@ export class MockDataProvider implements IDataProvider {
     private _currentItem: IDossierItemDetails;
     private _baseGetItemUrl: string;
 
-    constructor(public ctxHttpClient: SPHttpClient, public pageContextWebAbsoluteUrl: string, public dossierGenericList: string, public dossierDocumentLibrary: string, public dossierTypes: string) {
+    constructor(public ctxHttpClient: SPHttpClient, public pageContextWebAbsoluteUrl: string, public dossierGenericList: string, public dossierTypes: string) {
 
     }
 

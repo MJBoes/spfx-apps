@@ -9,7 +9,7 @@ import { PropertyFieldListPicker, PropertyFieldListPickerOrderBy } from '@pnp/sp
 
 import * as strings from 'DossierFoldersWebPartStrings';
 import Main from './components/main/Main';
-import { IDossierFilesProps, IDataProvider, IMain } from './components/IDossierFilesProps';
+import { IDossierFilesProps, IMain } from './components/IDossierFilesProps';
 import * as markdownit from 'markdown-it';
 
 export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierFilesProps> {
@@ -71,20 +71,6 @@ export default class DossierFilesWebPart extends BaseClientSideWebPart<IDossierF
                   onGetErrorMessage: null,
                   deferredValidationTime: 0,
                   key: 'listGLPickerFieldId'
-                }),
-                PropertyFieldListPicker('dossierDocumentLibrary', {
-                  label: 'Select a Dossier Document Library',
-                  selectedList: this.properties.dossierDocumentLibrary,
-                  baseTemplate: 101,
-                  includeHidden: false,
-                  orderBy: PropertyFieldListPickerOrderBy.Title,
-                  disabled: false,
-                  onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
-                  properties: this.properties,
-                  context: this.context,
-                  onGetErrorMessage: null,
-                  deferredValidationTime: 0,
-                  key: 'listDLPickerFieldId'
                 })
               ]
             }

@@ -16,8 +16,7 @@
     "description": { "default": "Implicit tag files to a ledger by placing them in the proper folder." },
     "officeFabricIconFontName": "FabricFormLibrary",
     "properties": {
-      "dossierGenericList": "",
-      "dossierDocumentLibrary": ""
+      "dossierGenericList": ""
     }
   }]
 }

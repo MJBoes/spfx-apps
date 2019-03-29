@@ -20,7 +20,7 @@ export class DossierFiles extends React.Component<IViewItemProps> {
     //     this._files.push({ 'id': item.id, 'title': item.title, 'encodedAbsoluteUrl':item.encodedAbsoluteUrl,'modified':item.modified,'reviewdate':item.reviewdate,'properties':item.properties,'referencedBy':item.referencedBy,'referencesTo':item.referencesTo });
     //   });
     // }
-    let _viewFields:IViewField[]=[{'name':'title',displayName:'Name',linkPropertyName:'previewUrl',maxWidth:250},{'name':'modified',displayName:'Modified Date'}];
+    let _viewFields:IViewField[]=[{'name':'title',displayName:'Name',linkPropertyName:'serverRelativeUrl',maxWidth:250},{'name':'modified',displayName:'Modified Date'}];
     let _groupByFields:IGrouping[]=[{'name':'group','order':1}];
     //console.log(this.props.currentDossierItem.files);
     //console.log(this.props.currentDossierItem.folders);
