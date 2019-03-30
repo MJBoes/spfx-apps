@@ -114,17 +114,17 @@ export class SPDataProvider implements IDataProvider {
 
     private individualFiles(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails> {
         //let _rest=this._baseWebAbsUrl+"/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title + "+IsContainer:false'&selectproperties='Title%2cName%2cCreatedOWSDate%2cEndDateOWSDate%2cModifiedOWSDate%2cDocumentLink'&clientType='ContentSearchRegular'";
-        let _rest=this._baseWebAbsUrl+"/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title + "+IsContainer:false'&rowlimit=500&selectproperties='Title%2cModifiedOWSDate%2cCreatedOWSDate%2cDocumentLink'&clientType='ContentSearchRegular'";
+        let _rest=this._baseWebAbsUrl+"/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title + "+IsContainer:false'&trimduplicates=false&rowlimit=500&selectproperties='Title%2cModifiedOWSDATE%2cStartDateOWSDATE%2cDocumentLink'&clientType='ContentSearchRegular'";
         return this.ctxHttpClient.get(_rest, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then(data => {
-            // console.log('individualFiles',data, _rest);
+            console.log('individualFiles',data, _rest);
             data.PrimaryQueryResult.RelevantResults.Table.Rows.map(_row=>{
                 let _file:IFile={'id':'','title':'','modified':'','reviewdate':'','serverRelativeUrl':'','previewUrl':'','properties':[],'group':' Managed Files'};
                 _row.Cells.map(_cell=>{
                     if(_cell.Key==='Title'){_file.title=_cell.Value;}
-                    if(_cell.Key==='ModifiedOWSDate'){_file.modified=_cell.Value;}
-                    if(_cell.Key==='CreatedOWSDate'){_file.reviewdate=_cell.Value;}
+                    if(_cell.Key==='ModifiedOWSDATE'){_file.modified=_cell.Value;}
+                    if(_cell.Key==='StartDateOWSDATE'){_file.reviewdate=_cell.Value;}
                     if(_cell.Key==='DocumentLink'){_file.serverRelativeUrl=_cell.Value;}
 
                 });
@@ -156,7 +156,7 @@ export class SPDataProvider implements IDataProvider {
     }
 
     private dossierFolders(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails>{
-        let _url=this._baseWebAbsUrl+"/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title + "+IsContainer:true'&rowlimit=500&selectproperties='ListItemID%2cPath%2cTitle'&clientType='ContentSearchRegular'";
+        let _url=this._baseWebAbsUrl+"/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title + "+IsContainer:true'&trimduplicates=false&rowlimit=500&selectproperties='ListItemID%2cPath%2cTitle'&clientType='ContentSearchRegular'";
         return this.ctxHttpClient.get(_url, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then(data=>{
