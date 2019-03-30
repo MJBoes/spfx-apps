@@ -115,6 +115,7 @@ export class SPDataProvider implements IDataProvider {
         let promisesMethods = [];
         let _restbase=this._baseWebAbsUrl+"/_api/Web/GetFolderByServerRelativeUrl('{param}')?$select=Files/Name,Files/ServerRelativeUrl&$expand=Files";
         _dossierItem.folders.map(_folder=>{
+            // console.log(_folder);
             promisesMethods.push(this._restpromiseFile(_restbase.replace('{param}',_folder.serverRelativeUrl),_folder.title));
         });
         return Promise.all(promisesMethods)
@@ -129,18 +130,18 @@ export class SPDataProvider implements IDataProvider {
     }
 
     private dossierFolders(_dossierItem: IDossierItemDetails): Promise<IDossierItemDetails>{
-        let _url=this._baseWebAbsUrl+"/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title+ "'&selectproperties='ListItemID%2cPath%2cTitle'&clienttype='ContentSearchRegular'";
+        let _url=this._baseWebAbsUrl+"/_api/search/query?querytext='dossierReferencesTo"+_dossierItem.type+":"+ _dossierItem.title + "+IsContainer:true'&rowlimit=500&selectproperties='ListItemID%2cPath%2cTitle'&clienttype='ContentSearchRegular'";
         return this.ctxHttpClient.get(_url, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then(data=>{
-            data.PrimaryQueryResult.RelevantResults.Table.Rows.map(_row=>{
+                // console.log('dossierFolder folder ', data,_url);
+                data.PrimaryQueryResult.RelevantResults.Table.Rows.map(_row=>{
                 let _folder:IFolder={'id':'','title':'','serverRelativeUrl':'','reviewdate':''};
                 _row.Cells.map(_cell=>{
                     if(_cell.Key==='ListItemID'){_folder.id=_cell.Value;}
                     if(_cell.Key==='Title'){_folder.title=_cell.Value;}
-                    if(_cell.Key==='Path'){_folder.serverRelativeUrl=_cell.Value.replace(location.origin,'');}
+                    if(_cell.Key==='Path'){_folder.serverRelativeUrl=_cell.Value.replace(location.origin,'').replace("'","''");}
                 });
-                // console.log('dossierFolder folder ', _folder);
                 _dossierItem.folders.push(_folder);
                 return(_dossierItem);
             });
@@ -169,7 +170,7 @@ export class SPDataProvider implements IDataProvider {
         return this.ctxHttpClient.get(rest, SPHttpClient.configurations.v1).then((response: any) => {
             return response.json();
         }).then(data => {
-            //console.log('_restpromiseFile',data);
+            // console.log('_restpromiseFile',data, rest);
             let _file: IFile[] = [];
             data.Files.map(item => {
                 _file.push({

@@ -43,6 +43,14 @@
       overflow: hidden;
       flex-grow: 1;
   }
+  .fabricItemTitle{
+    margin-left: 10px;
+    overflow: hidden;
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    font-size: xx-large;
+    font-style: bold;
+  }
   .fabricItemName{
     white-space: nowrap;
     overflow: hidden;
