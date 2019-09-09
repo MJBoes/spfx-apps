@@ -1,0 +1,63 @@
+.webpart{
+  h4: {
+      margin-block-end: 6px;
+  }
+
+  .chip {
+    display: inline-block;
+    padding: 0px 25px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    border-radius: 15px;
+    background-color: #f1f1f1;
+    margin: 10px 10px 10px 10px;
+  }
+    
+  .chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+
+  #descriptionid {
+    max-height: 100px;
+    overflow-y: auto;
+  }
+}
+
+.fabricList{
+  .fabricItemCell{
+    min-height: 54px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+  }
+  .fabricItemImage{
+    flex-shrink: 0;
+  }
+  .fabricItemContent{
+    margin-left: 10px;
+      overflow: hidden;
+      flex-grow: 1;
+  }
+  .fabricItemTitle{
+    margin-left: 10px;
+    overflow: hidden;
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    font-size: xx-large;
+    font-style: bold;
+  }
+  .fabricItemName{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .fabricItemChevron{
+    align-self: center;
+    flex-shrink: 0;
+  }
+}

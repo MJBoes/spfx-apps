@@ -2,14 +2,6 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "dossier-files-web-part": {
-      "components": [
-        {
-          "entrypoint": "./lib/webparts/dossierFiles/DossierFilesWebPart.js",
-          "manifest": "./src/webparts/dossierFiles/DossierFilesWebPart.manifest.json"
-        }
-      ]
-    },
     "dossier-folders-web-part": {
       "components": [
         {
@@ -21,9 +13,8 @@
   },
   "externals": {},
   "localizedResources": {
-    "DossierFilesWebPartStrings": "lib/webparts/dossierFiles/loc/{locale}.js",
     "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
     "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
-    "DossierFoldersWebPartStrings": "lib/webparts/dossierFolders/loc/{locale}.js"
+    "DossierFoldersWebPartStrings": "lib/webparts/dossierFolders/loc/{locale}.js",
   }
 }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "dossier-solution-client-side-solution",
+    "id": "0c7e094a-e148-428f-aeef-f069aa3d6e1d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/dossier-solution.sppkg"
+  }
+}
